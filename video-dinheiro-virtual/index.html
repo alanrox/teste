@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dinheiro virtual</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #0b1020; }
+  body { display: flex; align-items: center; justify-content: center; }
+  canvas { height: 100vh; max-width: 100vw; aspect-ratio: 9 / 16; display: block; }
+</style>
+</head>
+<body>
+<canvas id="c" width="1080" height="1920"></canvas>
+<script>
+// Vídeo vertical de 30 s desenhado inteiramente em canvas.
+// render(t) é determinístico: o mesmo t sempre gera o mesmo quadro,
+// o que permite tanto tocar ao vivo quanto exportar quadro a quadro.
+
+const W = 1080, H = 1920, DURATION = 30;
+const canvas = document.getElementById('c');
+const ctx = canvas.getContext('2d');
+const FONT = '"Inter", "DejaVu Sans", Arial, sans-serif';
+
+const C = {
+  blue: '#3b82f6', green: '#22c55e', yellow: '#facc15', orange: '#fb923c',
+  gold: '#f5b301', goldDark: '#b97a00', goldLight: '#ffe08a',
+  note: '#2fa866', noteDark: '#1c7a47', ink: '#0b1020', white: '#ffffff',
+  digital: '#38bdf8', red: '#ef4444',
+};
+
+// ---------- utilidades ----------
+const clamp = (v, a = 0, b = 1) => Math.max(a, Math.min(b, v));
+const prog = (t, a, b) => clamp((t - a) / (b - a));
+const lerp = (a, b, k) => a + (b - a) * k;
+const easeOut = k => 1 - Math.pow(1 - k, 3);
+const easeInOut = k => k < 0.5 ? 4 * k * k * k : 1 - Math.pow(-2 * k + 2, 3) / 2;
+const easeBack = k => { const c = 1.9; return 1 + (c + 1) * Math.pow(k - 1, 3) + c * Math.pow(k - 1, 2); };
+const pop = (t, start, dur = 0.35) => { const k = prog(t, start, start + dur); return k <= 0 ? 0 : easeBack(k); };
+const rand = i => { const x = Math.sin(i * 127.1 + 311.7) * 43758.5453; return x - Math.floor(x); };
+
+function rr(x, y, w, h, r) {
+  ctx.beginPath();
+  ctx.roundRect(x, y, w, h, r);
+}
+function text(str, x, y, size, color, opts = {}) {
+  ctx.save();
+  ctx.font = `${opts.weight || 800} ${size}px ${FONT}`;
+  ctx.textAlign = opts.align || 'center';
+  ctx.textBaseline = opts.baseline || 'middle';
+  if (opts.stroke) { ctx.lineWidth = opts.strokeWidth || 10; ctx.strokeStyle = opts.stroke; ctx.lineJoin = 'round'; ctx.strokeText(str, x, y); }
+  ctx.fillStyle = color;
+  ctx.fillText(str, x, y);
+  ctx.restore();
+}
+function wrapLines(str, size, maxW, weight = 800) {
+  ctx.save();
+  ctx.font = `${weight} ${size}px ${FONT}`;
+  const lines = []; let line = '';
+  for (const word of str.split(' ')) {
+    const test = line ? line + ' ' + word : word;
+    if (ctx.measureText(test).width > maxW && line) { lines.push(line); line = word; } else line = test;
+  }
+  if (line) lines.push(line);
+  ctx.restore();
+  return lines;
+}
+// Desenha algo com escala em torno de um ponto (para os "pops").
+function scaled(x, y, s, fn) {
+  if (s <= 0) return;
+  ctx.save(); ctx.translate(x, y); ctx.scale(s, s); ctx.translate(-x, -y); fn(); ctx.restore();
+}
+
+// ---------- cenários ----------
+function bgDark(t) {
+  const g = ctx.createLinearGradient(0, 0, 0, H);
+  g.addColorStop(0, '#0a1230'); g.addColorStop(0.55, '#101d4a'); g.addColorStop(1, '#070b1e');
+  ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+  // brilho central
+  const r = ctx.createRadialGradient(W / 2, 820, 50, W / 2, 820, 900);
+  r.addColorStop(0, 'rgba(80,120,255,0.22)'); r.addColorStop(1, 'rgba(80,120,255,0)');
+  ctx.fillStyle = r; ctx.fillRect(0, 0, W, H);
+  // partículas
+  for (let i = 0; i < 70; i++) {
+    const x = rand(i) * W + Math.sin(t * 0.4 + i) * 14;
+    const y = ((rand(i + 100) * H - t * (12 + rand(i + 200) * 30)) % H + H) % H;
+    const a = 0.25 + 0.45 * (0.5 + 0.5 * Math.sin(t * 1.5 + i * 2.1));
+    ctx.fillStyle = `rgba(170,200,255,${a})`;
+    ctx.beginPath(); ctx.arc(x, y, 1.5 + rand(i + 300) * 3, 0, Math.PI * 2); ctx.fill();
+  }
+  // riscos de luz
+  ctx.save(); ctx.globalAlpha = 0.10; ctx.strokeStyle = '#9cc0ff'; ctx.lineWidth = 3;
+  for (let i = 0; i < 6; i++) {
+    const y = ((rand(i + 500) * H + t * 40) % H);
+    const x = rand(i + 600) * W;
+    ctx.beginPath(); ctx.moveTo(x, y); ctx.lineTo(x + 160, y - 60); ctx.stroke();
+  }
+  ctx.restore();
+}
+
+function cloud(x, y, s) {
+  ctx.fillStyle = '#ffffff';
+  ctx.beginPath();
+  ctx.arc(x, y, 46 * s, 0, 7); ctx.arc(x + 55 * s, y - 22 * s, 58 * s, 0, 7);
+  ctx.arc(x + 120 * s, y, 48 * s, 0, 7); ctx.arc(x + 60 * s, y + 14 * s, 52 * s, 0, 7);
+  ctx.fill();
+}
+const GROUND = 1290;
+function bgLight(t) {
+  const g = ctx.createLinearGradient(0, 0, 0, GROUND);
+  g.addColorStop(0, '#6ec3ff'); g.addColorStop(1, '#d6f0ff');
+  ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+  // sol
+  ctx.save(); ctx.translate(880, 330); ctx.rotate(t * 0.25);
+  ctx.strokeStyle = 'rgba(255,214,64,0.75)'; ctx.lineWidth = 14; ctx.lineCap = 'round';
+  for (let i = 0; i < 12; i++) { ctx.rotate(Math.PI / 6); ctx.beginPath(); ctx.moveTo(105, 0); ctx.lineTo(140, 0); ctx.stroke(); }
+  ctx.restore();
+  ctx.fillStyle = '#ffd640'; ctx.beginPath(); ctx.arc(880, 330, 84, 0, 7); ctx.fill();
+  // nuvens
+  cloud(((120 + t * 14) % (W + 300)) - 150, 420, 1);
+  cloud(((620 + t * 9) % (W + 300)) - 150, 560, 0.75);
+  // colinas
+  ctx.fillStyle = '#7ccf6b';
+  ctx.beginPath(); ctx.ellipse(250, GROUND + 40, 520, 200, 0, 0, 7); ctx.fill();
+  ctx.beginPath(); ctx.ellipse(900, GROUND + 60, 560, 230, 0, 0, 7); ctx.fill();
+  // grama
+  const gg = ctx.createLinearGradient(0, GROUND, 0, H);
+  gg.addColorStop(0, '#56b947'); gg.addColorStop(1, '#2f8a2c');
+  ctx.fillStyle = gg; ctx.fillRect(0, GROUND, W, H - GROUND);
+  // cerca
+  ctx.fillStyle = '#b07a43';
+  ctx.fillRect(0, GROUND - 62, W, 12); ctx.fillRect(0, GROUND - 30, W, 12);
+  for (let x = 30; x < W; x += 90) {
+    ctx.beginPath(); ctx.moveTo(x, GROUND); ctx.lineTo(x, GROUND - 84); ctx.lineTo(x + 11, GROUND - 98); ctx.lineTo(x + 22, GROUND - 84); ctx.lineTo(x + 22, GROUND); ctx.fill();
+  }
+}
+
+// ---------- objetos ----------
+function goldBar(cx, cy, w, alpha = 1) {
+  const h = w * 0.42, top = w * 0.72;
+  ctx.save(); ctx.globalAlpha *= alpha;
+  ctx.beginPath();
+  ctx.moveTo(cx - w / 2, cy + h / 2); ctx.lineTo(cx - top / 2, cy - h / 2);
+  ctx.lineTo(cx + top / 2, cy - h / 2); ctx.lineTo(cx + w / 2, cy + h / 2); ctx.closePath();
+  const g = ctx.createLinearGradient(0, cy - h / 2, 0, cy + h / 2);
+  g.addColorStop(0, C.goldLight); g.addColorStop(0.5, C.gold); g.addColorStop(1, C.goldDark);
+  ctx.fillStyle = g; ctx.fill();
+  ctx.lineWidth = Math.max(2, w * 0.035); ctx.strokeStyle = '#8a5a00'; ctx.lineJoin = 'round'; ctx.stroke();
+  ctx.fillStyle = 'rgba(255,255,255,0.55)';
+  ctx.beginPath(); ctx.moveTo(cx - top * 0.36, cy - h * 0.3); ctx.lineTo(cx - top * 0.1, cy - h * 0.3);
+  ctx.lineTo(cx - top * 0.2, cy + h * 0.05); ctx.lineTo(cx - top * 0.46, cy + h * 0.05); ctx.fill();
+  ctx.restore();
+}
+
+function note(cx, cy, w, opts = {}) {
+  const h = w * 0.5;
+  ctx.save();
+  ctx.translate(cx, cy); ctx.rotate(opts.rot || 0); ctx.globalAlpha *= opts.alpha ?? 1;
+  rr(-w / 2, -h / 2, w, h, w * 0.06); ctx.fillStyle = opts.color || C.note; ctx.fill();
+  ctx.lineWidth = w * 0.025; ctx.strokeStyle = opts.dark || C.noteDark; ctx.stroke();
+  rr(-w / 2 + w * 0.06, -h / 2 + w * 0.06, w * 0.88, h - w * 0.12, w * 0.03);
+  ctx.lineWidth = w * 0.012; ctx.strokeStyle = 'rgba(255,255,255,0.6)'; ctx.stroke();
+  text(opts.label || 'R$ 100', 0, 2, w * 0.2, '#ffffff', { weight: 900 });
+  ctx.restore();
+}
+
+// Boneco-palito. (x, y) = ponto entre os pés. arms: 0 = baixos, 1 = levantados.
+function figure(x, y, s, color, num, arms = 0, opts = {}) {
+  const jump = arms * Math.abs(Math.sin((opts.t || 0) * 7)) * 22 * s;
+  y -= jump;
+  ctx.save();
+  ctx.strokeStyle = color; ctx.fillStyle = color; ctx.lineCap = 'round'; ctx.lineWidth = 16 * s;
+  // sombra
+  ctx.save(); ctx.fillStyle = 'rgba(0,0,0,0.18)';
+  ctx.beginPath(); ctx.ellipse(x, y + jump + 6 * s, 70 * s, 14 * s, 0, 0, 7); ctx.fill(); ctx.restore();
+  // pernas
+  ctx.beginPath(); ctx.moveTo(x - 20 * s, y - 105 * s); ctx.lineTo(x - 32 * s, y);
+  ctx.moveTo(x + 20 * s, y - 105 * s); ctx.lineTo(x + 32 * s, y); ctx.stroke();
+  // braços
+  const ang = lerp(1.15, -1.0, arms); // radianos em relação à horizontal
+  const len = 88 * s, sy = y - 195 * s;
+  const lArm = opts.leftArm ?? ang, rArm = opts.rightArm ?? ang;
+  ctx.beginPath();
+  ctx.moveTo(x - 40 * s, sy); ctx.lineTo(x - 40 * s - Math.cos(lArm) * len, sy + Math.sin(lArm) * len);
+  ctx.moveTo(x + 40 * s, sy); ctx.lineTo(x + 40 * s + Math.cos(rArm) * len, sy + Math.sin(rArm) * len);
+  ctx.stroke();
+  // tronco
+  rr(x - 44 * s, y - 218 * s, 88 * s, 122 * s, 22 * s); ctx.fill();
+  if (num) text(String(num), x, y - 155 * s, 64 * s, '#ffffff', { weight: 900 });
+  // cabeça
+  ctx.beginPath(); ctx.arc(x, y - 262 * s, 40 * s, 0, 7); ctx.fill();
+  ctx.fillStyle = '#ffffff';
+  const look = opts.lookUp ? -8 * s : 0;
+  ctx.beginPath(); ctx.arc(x - 14 * s, y - 268 * s + look, 7 * s, 0, 7); ctx.arc(x + 14 * s, y - 268 * s + look, 7 * s, 0, 7); ctx.fill();
+  ctx.restore();
+  // posição da mão direita, útil para segurar objetos
+  return { hx: x + 40 * s + Math.cos(rArm) * len, hy: sy + Math.sin(rArm) * len };
+}
+
+function bank(x, y, s, vaultOpen, goldAlpha) {
+  // x = centro, y = base
+  const w = 430 * s, h = 330 * s;
+  ctx.save();
+  ctx.fillStyle = '#f4f1ea'; ctx.strokeStyle = '#9a927f'; ctx.lineWidth = 5 * s; ctx.lineJoin = 'round';
+  ctx.fillRect(x - w / 2, y - h, w, h); ctx.strokeRect(x - w / 2, y - h, w, h);
+  // frontão
+  ctx.beginPath(); ctx.moveTo(x - w / 2 - 26 * s, y - h); ctx.lineTo(x, y - h - 150 * s); ctx.lineTo(x + w / 2 + 26 * s, y - h); ctx.closePath();
+  ctx.fillStyle = '#e7e2d6'; ctx.fill(); ctx.stroke();
+  text('BANCO', x, y - h - 52 * s, 46 * s, '#6b6455', { weight: 900 });
+  // colunas
+  ctx.fillStyle = '#dcd6c8';
+  for (const cx of [-170, 170]) { ctx.fillRect(x + cx * s - 22 * s, y - h + 12 * s, 44 * s, h - 12 * s); ctx.strokeRect(x + cx * s - 22 * s, y - h + 12 * s, 44 * s, h - 12 * s); }
+  // cofre
+  const vw = 230 * s, vh = 240 * s, vx = x - vw / 2, vy = y - vh - 20 * s;
+  rr(vx, vy, vw, vh, 16 * s); ctx.fillStyle = '#1b2233'; ctx.fill(); ctx.strokeStyle = '#555f77'; ctx.stroke();
+  // ouro empilhado
+  ctx.save(); ctx.beginPath(); rr(vx, vy, vw, vh, 16 * s); ctx.clip();
+  const bw = 78 * s;
+  const rows = [[-1, 0, 1], [-0.5, 0.5], [0]];
+  rows.forEach((row, r) => row.forEach(c => goldBar(x + c * bw * 0.92, y - 44 * s - r * bw * 0.44, bw, goldAlpha)));
+  ctx.restore();
+  // porta do cofre (fecha deslizando)
+  if (vaultOpen < 1) {
+    ctx.save(); ctx.beginPath(); rr(vx, vy, vw, vh, 16 * s); ctx.clip();
+    const dx = vx - vw * vaultOpen;
+    ctx.fillStyle = '#8b93a7'; ctx.fillRect(dx, vy, vw, vh);
+    ctx.strokeStyle = '#5c6478'; ctx.lineWidth = 8 * s;
+    ctx.beginPath(); ctx.arc(dx + vw / 2, vy + vh / 2, 54 * s, 0, 7); ctx.stroke();
+    for (let i = 0; i < 4; i++) { const a = i * Math.PI / 2 + 0.4; ctx.beginPath(); ctx.moveTo(dx + vw / 2, vy + vh / 2); ctx.lineTo(dx + vw / 2 + Math.cos(a) * 80 * s, vy + vh / 2 + Math.sin(a) * 80 * s); ctx.stroke(); }
+    ctx.restore();
+  }
+  ctx.restore();
+}
+
+function dashed(x1, y1, x2, y2, color, width = 10, offset = 0) {
+  ctx.save(); ctx.strokeStyle = color; ctx.lineWidth = width; ctx.lineCap = 'round';
+  ctx.setLineDash([26, 24]); ctx.lineDashOffset = offset;
+  ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke(); ctx.restore();
+}
+
+function badge(str, x, y, s, opts = {}) {
+  scaled(x, y, s, () => {
+    const size = opts.size || 54;
+    ctx.save(); ctx.font = `900 ${size}px ${FONT}`;
+    const w = ctx.measureText(str).width + size * 1.3, h = size * 1.75; ctx.restore();
+    rr(x - w / 2, y - h / 2, w, h, h / 2);
+    ctx.fillStyle = opts.bg || C.gold; ctx.fill();
+    ctx.lineWidth = 6; ctx.strokeStyle = opts.border || '#ffffff'; ctx.stroke();
+    text(str, x, y + 2, size, opts.color || C.ink, { weight: 900 });
+  });
+}
+
+function tag(str, x, y, s, bg) {
+  badge(str, x, y, s, { size: 36, bg: bg || 'rgba(11,16,32,0.85)', color: '#fff', border: 'rgba(255,255,255,0.7)' });
+}
+
+// ---------- legendas (fazem o papel da narração) ----------
+const CAPTIONS = [
+  [0.2, 3.5, 'Onde está o seu dinheiro de verdade?'],
+  [3.7, 6.3, 'Antes, cada nota era um recibo…'],
+  [6.3, 9.0, '…de ouro guardado no cofre.'],
+  [9.2, 11.6, 'Em 1971, os EUA cortaram esse laço.'],
+  [11.6, 14.0, 'Isso se chama moeda fiduciária.'],
+  [14.2, 16.2, 'De todo o dinheiro do mundo…'],
+  [16.2, 18.4, '…só uns 8% são papel e moeda.'],
+  [18.4, 20.5, 'O resto são números em computadores.'],
+  [20.7, 23.0, 'E o ouro? Em 1971, a onça valia 35 dólares.'],
+  [23.0, 26.0, 'Hoje, passa de 3 mil. Cada vez mais longe.'],
+  [26.2, 28.0, 'O dinheiro não é ouro. É confiança.'],
+  [28.0, 30.0, 'E você, confia em quê? 1, 2 ou 3?'],
+];
+function captions(t) {
+  const c = CAPTIONS.find(c => t >= c[0] && t < c[1]);
+  if (!c) return;
+  const k = pop(t, c[0], 0.25);
+  const size = 60, lines = wrapLines(c[2], size, 880, 800);
+  const lh = size * 1.25, bh = lines.length * lh + 56, cy = 1560;
+  scaled(W / 2, cy, lerp(0.85, 1, clamp(k)), () => {
+    ctx.save(); ctx.globalAlpha = clamp(k * 1.5);
+    let bw = 0; ctx.font = `800 ${size}px ${FONT}`;
+    lines.forEach(l => bw = Math.max(bw, ctx.measureText(l).width));
+    rr(W / 2 - bw / 2 - 44, cy - bh / 2, bw + 88, bh, 30);
+    ctx.fillStyle = 'rgba(8,12,28,0.86)'; ctx.fill();
+    lines.forEach((l, i) => text(l, W / 2, cy - (lines.length - 1) * lh / 2 + i * lh + 2, size, '#ffffff', { weight: 800 }));
+    ctx.restore();
+  });
+}
+
+// ---------- cenas ----------
+// 1. Gancho (fundo escuro)
+function scene1(t) {
+  bgDark(t);
+  const kt = pop(t, 0.15, 0.4);
+  scaled(W / 2, 330, kt, () => {
+    text('SEU DINHEIRO', W / 2, 280, 104, '#ffffff', { weight: 900 });
+    text('EXISTE?', W / 2, 400, 124, C.gold, { weight: 900 });
+  });
+  // nota que se desfaz em dígitos
+  const dissolve = prog(t, 1.6, 3.0);
+  const ny = 800 + Math.sin(t * 2.2) * 14;
+  scaled(W / 2, ny, pop(t, 0.5, 0.4), () => note(W / 2, ny, 520, { rot: Math.sin(t * 1.7) * 0.05, alpha: 1 - dissolve * 0.82 }));
+  for (let i = 0; i < 26; i++) {
+    const k = prog(t, 1.6 + rand(i + 40) * 0.9, 3.4);
+    if (k <= 0) continue;
+    const x = W / 2 + (rand(i) - 0.5) * 520 + (rand(i + 9) - 0.5) * 200 * k;
+    const y = ny + (rand(i + 20) - 0.5) * 220 - k * (120 + rand(i + 5) * 260);
+    text(rand(i + 70) > 0.5 ? '1' : '0', x, y, 44 + rand(i + 3) * 26, `rgba(56,189,248,${Math.sin(Math.min(k * 1.4, 1) * Math.PI) * 0.95})`, { weight: 900 });
+  }
+  // personagem confuso
+  figure(W / 2, 1330, 1.15, C.blue, 1, 0, { t, lookUp: true });
+  const q = pop(t, 1.1, 0.35);
+  scaled(W / 2 + 130, 960, q, () => text('?', W / 2 + 130, 960 + Math.sin(t * 5) * 8, 130, C.gold, { weight: 900, stroke: C.ink, strokeWidth: 14 }));
+}
+
+// 2 e 3. História (cenário claro): o recibo de ouro e o corte de 1971
+function sceneStory(t) {
+  const lt = t - 3.5;            // tempo local da história
+  const cut = t >= 9;            // segunda metade: 1971
+  bgLight(t);
+
+  const bx = 760, by = GROUND + 30;
+  const doorOpen = cut ? 1 - easeInOut(prog(t, 10.4, 11.4)) : easeOut(prog(lt, 0.5, 1.4));
+  bank(bx, by, 1.25, doorOpen, 1);
+
+  // personagem com a nota
+  const fx = 230, fy = GROUND + 120;
+  const hand = figure(fx, fy, 1.25, C.blue, 1, 0, { t, rightArm: -0.55 });
+  const nx = hand.hx + 40, ny = hand.hy - 70;
+  scaled(nx, ny, pop(lt, 0.2, 0.4), () => note(nx, ny, 250, { rot: -0.08 + Math.sin(t * 2) * 0.03 }));
+
+  // laço nota -> ouro
+  const gx = bx - 20, gy = by - 110;
+  if (!cut) {
+    const k = easeInOut(prog(lt, 1.6, 2.9));
+    if (k > 0) dashed(nx + 120, ny, lerp(nx + 120, gx - 150, k), lerp(ny, gy, k), C.gold, 12, -t * 60);
+    tag('RECIBO', nx, ny - 120, pop(lt, 1.0, 0.3));
+    tag('OURO', bx, by - 420 * 1.25 - 150, pop(lt, 2.8, 0.3), C.goldDark);
+  } else {
+    const ct = t - 9;
+    // as duas metades da linha recuam a partir do ponto de corte
+    const mx = (nx + 120 + gx - 150) / 2, my = (ny + gy) / 2;
+    const r = easeOut(prog(ct, 0.9, 1.9));
+    if (r < 1) {
+      dashed(nx + 120, ny, lerp(mx - 14, nx + 120, r), lerp(my, ny, r), C.gold, 12);
+      dashed(lerp(mx + 14, gx - 150, r), lerp(my, gy, r), gx - 150, gy, C.gold, 12);
+    }
+    // marca do corte
+    const xk = pop(ct, 0.75, 0.25) * (1 - prog(ct, 1.6, 2.1));
+    scaled(mx, my, xk, () => {
+      ctx.save(); ctx.strokeStyle = C.red; ctx.lineWidth = 20; ctx.lineCap = 'round';
+      ctx.beginPath(); ctx.moveTo(mx - 46, my - 46); ctx.lineTo(mx + 46, my + 46); ctx.moveTo(mx + 46, my - 46); ctx.lineTo(mx - 46, my + 46); ctx.stroke(); ctx.restore();
+    });
+    // carimbo do ano
+    const sk = pop(ct, 0.15, 0.35);
+    scaled(380, 260, sk, () => {
+      ctx.save(); ctx.translate(380, 260); ctx.rotate(-0.06);
+      rr(-250, -100, 500, 200, 28); ctx.fillStyle = C.red; ctx.fill(); ctx.lineWidth = 8; ctx.strokeStyle = '#fff'; ctx.stroke();
+      text('1971', 0, 6, 150, '#ffffff', { weight: 900 });
+      ctx.restore();
+    });
+    tag('CONFIANÇA', nx, ny - 120, pop(ct, 2.3, 0.3), C.noteDark);
+    badge('MOEDA FIDUCIÁRIA', W / 2, 1375, pop(ct, 2.7, 0.4), { size: 58 });
+  }
+}
+
+// 4. Conta (fundo escuro): quanto do dinheiro é físico
+function scene4(t) {
+  const lt = t - 14;
+  bgDark(t);
+  scaled(W / 2, 250, pop(lt, 0.1, 0.35), () => {
+    text('TODO O DINHEIRO', W / 2, 205, 76, '#ffffff', { weight: 900 });
+    text('DO MUNDO', W / 2, 295, 76, '#ffffff', { weight: 900 });
+  });
+  // grade de 100 quadrados: cada um = 1%
+  const cell = 60, gap = 10, x0 = 342, y0 = 400;
+  for (let i = 0; i < 100; i++) {
+    const col = i % 10, row = 9 - Math.floor(i / 10); // preenche de baixo para cima
+    const k = pop(lt, 0.4 + i * 0.012, 0.25);
+    if (k <= 0) continue;
+    const physical = i < 8;
+    const turn = physical ? easeOut(prog(lt, 2.2 + i * 0.06, 2.6 + i * 0.06)) : 0;
+    const cx = x0 + col * (cell + gap) + cell / 2, cy = y0 + row * (cell + gap) + cell / 2;
+    scaled(cx, cy, k * (1 + turn * 0.12), () => {
+      rr(cx - cell / 2, cy - cell / 2, cell, cell, 12);
+      ctx.fillStyle = turn > 0.5 ? C.note : C.digital;
+      ctx.globalAlpha = physical ? 1 : lerp(1, 0.78 + 0.22 * Math.sin(t * 3 + i), prog(lt, 4.2, 4.8));
+      ctx.fill(); ctx.globalAlpha = 1;
+      if (turn > 0.5) { ctx.lineWidth = 4; ctx.strokeStyle = '#fff'; ctx.stroke(); }
+    });
+  }
+  // rótulos
+  const gy = y0 + 10 * (cell + gap);
+  const k1 = pop(lt, 2.7, 0.35);
+  scaled(690, gy + 60, k1, () => {
+    text('8%', 500, gy + 60, 100, C.note, { weight: 900, stroke: '#fff', strokeWidth: 6 });
+    text('papel e moeda', 620, gy + 66, 50, '#ffffff', { weight: 800, align: 'left' });
+  });
+  const k2 = pop(lt, 4.5, 0.35);
+  scaled(690, gy + 165, k2, () => {
+    text('92%', 480, gy + 165, 100, C.digital, { weight: 900 });
+    text('só números', 620, gy + 171, 50, '#ffffff', { weight: 800, align: 'left' });
+  });
+  badge('MOEDA ESCRITURAL', W / 2, gy + 275, pop(lt, 5.2, 0.4), { size: 54, bg: C.digital });
+  // personagem à esquerda
+  figure(175, 1130, 1.05, C.green, 2, easeOut(prog(lt, 4.6, 5.0)), { t });
+}
+
+// 5. Conta (fundo escuro): o ouro se afasta
+function scene5(t) {
+  const lt = t - 20.5;
+  bgDark(t);
+  const rise = easeInOut(prog(lt, 2.4, 4.4));
+  const groundY = 1330, topY = 590;
+  // personagem com a nota no chão
+  const hand = figure(250, groundY, 1.15, C.yellow, 3, 0, { t, lookUp: rise > 0.1, rightArm: -0.4 });
+  const nx = hand.hx + 60, ny = hand.hy - 60;
+  note(nx, ny, 230, { rot: -0.06 });
+  // barra de ouro subindo
+  const gx = 760, gy = lerp(groundY - 140, topY, rise);
+  // trilho
+  ctx.save(); ctx.strokeStyle = 'rgba(255,255,255,0.18)'; ctx.lineWidth = 6;
+  ctx.beginPath(); ctx.moveTo(gx, topY - 40); ctx.lineTo(gx, groundY); ctx.stroke(); ctx.restore();
+  // laço esticando
+  dashed(nx + 110, ny, gx - 110, gy + 20, `rgba(245,179,1,${lerp(0.95, 0.35, rise)})`, 10, -t * 50);
+  // brilho
+  const glow = ctx.createRadialGradient(gx, gy, 10, gx, gy, 230);
+  glow.addColorStop(0, 'rgba(255,200,60,0.45)'); glow.addColorStop(1, 'rgba(255,200,60,0)');
+  ctx.fillStyle = glow; ctx.fillRect(gx - 240, gy - 240, 480, 480);
+  scaled(gx, gy, pop(lt, 0.2, 0.4), () => goldBar(gx, gy, 250));
+  // preço: cresce de forma exponencial de 35 até 3.000
+  const price = Math.round(35 * Math.pow(3000 / 35, rise));
+  const label = rise >= 1 ? 'US$ 3.000+' : 'US$ ' + price.toLocaleString('pt-BR');
+  scaled(gx, gy - 130, pop(lt, 0.6, 0.35), () => text(label, gx, gy - 130, 80, '#ffffff', { weight: 900, stroke: C.ink, strokeWidth: 12 }));
+  // ano
+  const year = rise < 0.5 ? '1971' : 'HOJE';
+  tag(year, gx, gy + 105, pop(lt, 0.8, 0.3) * (1 + 0.15 * Math.sin(clamp(prog(lt, 3.3, 3.7)) * Math.PI)), C.goldDark);
+  // título
+  scaled(W / 2, 200, pop(lt, 0.1, 0.35), () => text('E O OURO?', W / 2, 200, 110, C.gold, { weight: 900 }));
+  badge('100× MAIS CARO', 300, 820, pop(lt, 4.5, 0.4), { size: 50 });
+}
+
+// 6. Moral e chamada final (cenário claro)
+function scene6(t) {
+  const lt = t - 26;
+  bgLight(t);
+  const k = pop(lt, 0.1, 0.4);
+  scaled(W / 2, 300, k, () => {
+    text('O DINHEIRO', W / 2, 190, 96, C.ink, { weight: 900 });
+    text('NÃO É OURO.', W / 2, 300, 96, C.ink, { weight: 900 });
+    text('É CONFIANÇA.', W / 2, 425, 112, '#ffffff', { weight: 900, stroke: C.ink, strokeWidth: 18 });
+  });
+  const opts = [
+    { x: 210, color: C.blue, label: 'PAPEL' },
+    { x: 540, color: C.green, label: 'NÚMEROS' },
+    { x: 870, color: C.yellow, label: 'OURO' },
+  ];
+  opts.forEach((o, i) => {
+    const at = 2.1 + i * 0.4;
+    const up = easeOut(prog(lt, at, at + 0.3));
+    const fy = GROUND + 40;
+    figure(o.x, fy, 1.05, o.color, i + 1, up, { t: t + i * 0.3 });
+    // objeto de cada opção
+    const oy = fy - 520;
+    const ok = pop(lt, 0.6 + i * 0.2, 0.35);
+    scaled(o.x, oy, ok, () => {
+      if (i === 0) note(o.x, oy, 200, { rot: -0.08 });
+      if (i === 1) { rr(o.x - 62, oy - 100, 124, 200, 20); ctx.fillStyle = C.ink; ctx.fill(); ctx.lineWidth = 6; ctx.strokeStyle = '#fff'; ctx.stroke(); text('R$', o.x, oy - 22, 44, C.digital, { weight: 900 }); text('0101', o.x, oy + 30, 34, C.digital, { weight: 900 }); }
+      if (i === 2) goldBar(o.x, oy, 200);
+    });
+    // círculo numerado
+    const ck = pop(lt, at, 0.3);
+    scaled(o.x, oy - 190, ck, () => {
+      ctx.beginPath(); ctx.arc(o.x, oy - 190, 62, 0, 7); ctx.fillStyle = o.color; ctx.fill();
+      ctx.lineWidth = 8; ctx.strokeStyle = '#fff'; ctx.stroke();
+      text(String(i + 1), o.x, oy - 186, 76, '#ffffff', { weight: 900 });
+    });
+    tag(o.label, o.x, fy + 62, ck, 'rgba(11,16,32,0.9)');
+  });
+}
+
+// ---------- linha do tempo ----------
+const CUTS = [3.5, 9, 14, 20.5, 26];
+function render(t) {
+  t = clamp(t, 0, DURATION - 0.001);
+  ctx.clearRect(0, 0, W, H);
+  if (t < 3.5) scene1(t);
+  else if (t < 14) sceneStory(t);
+  else if (t < 20.5) scene4(t);
+  else if (t < 26) scene5(t);
+  else scene6(t);
+  captions(t);
+  // clarão rápido em cada corte
+  for (const c of CUTS) {
+    const d = Math.abs(t - c);
+    if (d < 0.14 && c !== 9) { ctx.fillStyle = `rgba(255,255,255,${(1 - d / 0.14) * 0.75})`; ctx.fillRect(0, 0, W, H); }
+  }
+  // barra de progresso
+  ctx.fillStyle = 'rgba(255,255,255,0.25)'; ctx.fillRect(0, H - 10, W, 10);
+  ctx.fillStyle = C.gold; ctx.fillRect(0, H - 10, W * t / DURATION, 10);
+}
+window.render = render;
+window.DURATION = DURATION;
+
+// Reprodução ao vivo (desligada com ?render=1, usado pela exportação).
+if (!new URLSearchParams(location.search).has('render')) {
+  const start = performance.now();
+  const loop = now => { render(((now - start) / 1000) % DURATION); requestAnimationFrame(loop); };
+  document.fonts.ready.then(() => requestAnimationFrame(loop));
+}
+</script>
+</body>
+</html>
