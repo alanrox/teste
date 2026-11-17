@@ -1,0 +1,60 @@
+{
+  "titulo": "Sem juros",
+  "proximo": "Para onde vai o seu salário?",
+  "falas": [
+    {"cena": 0, "fala": "Parcelar em dez vezes sem juros é mesmo de graça?", "legendas": ["Parcelar em 10x sem juros é mesmo de graça?"]},
+    {"cena": 1, "fala": "Uma tevê custa dois mil reais em dez vezes sem juros. Ou mil e oitocentos à vista.", "legendas": ["Uma TV custa R$ 2.000 em 10x sem juros…", "…ou R$ 1.800 à vista."]},
+    {"cena": 1, "fala": "Três irmãos compraram a mesma tevê.", "legendas": ["Três irmãos compraram a mesma TV."]},
+    {"cena": 2, "fala": "O primeiro parcelou e gastou o resto do dinheiro. Pagou dois mil.", "legendas": ["O primeiro parcelou e gastou o resto do dinheiro.", "Pagou R$ 2.000."]},
+    {"cena": 2, "fala": "O segundo parcelou, mas deixou o dinheiro rendendo um por cento ao mês. Ganhou uns cento e dezessete reais.", "legendas": ["O segundo parcelou, mas deixou o dinheiro rendendo 1% ao mês.", "Ganhou uns R$ 117."]},
+    {"cena": 2, "fala": "E o terceiro pagou à vista: mil e oitocentos. Foi quem gastou menos.", "legendas": ["E o terceiro pagou à vista: R$ 1.800.", "Foi quem gastou menos."]},
+    {"cena": 3, "fala": "Se existe desconto à vista, o parcelado tem juros escondidos. Aqui, quase dois por cento ao mês.", "legendas": ["Se existe desconto à vista, o parcelado tem juros escondidos.", "Aqui, quase 2% ao mês."]},
+    {"cena": 3, "fala": "Isso se chama juro embutido.", "legendas": ["Isso se chama juro embutido."]},
+    {"cena": 4, "fala": "Antes de parcelar, pergunte sempre o preço à vista.", "legendas": ["Antes de parcelar, pergunte sempre o preço à vista."]},
+    {"cena": 4, "fala": "E você, faria como qual irmão? Um, dois ou três?", "legendas": ["E você, faria como qual irmão? 1, 2 ou 3?"]}
+  ],
+  "cenas": [
+    {"fundo": "escuro", "els": [
+      {"tipo": "texto", "txt": "SEM JUROS\nÉ DE GRAÇA?", "cores": ["branco", "ouro"], "tam": 110, "y": 280, "t": 0.1},
+      {"tipo": "emoji", "e": "📺", "x": 560, "y": 760, "tam": 260, "t": 0.3},
+      {"tipo": "selo", "txt": "10x SEM JUROS", "tam": 56, "cor": "verde", "x": 600, "y": 990, "t": 0.8, "balanca": true},
+      {"tipo": "boneco", "cor": "cinza", "x": 220, "y": 1420, "s": 0.95, "olhar": true, "t": 0.2},
+      {"tipo": "emoji", "e": "🤔", "x": 330, "y": 1030, "tam": 110, "t": "1:0.6", "flutua": true}
+    ]},
+    {"fundo": "cidade", "els": [
+      {"tipo": "emoji", "e": "📺", "x": 540, "y": 560, "tam": 220, "t": 0.1},
+      {"tipo": "selo", "txt": "10x DE R$ 200", "tam": 52, "cor": "verde", "x": 300, "y": 800, "t": "2:0.2"},
+      {"tipo": "selo", "txt": "À VISTA: R$ 1.800", "tam": 52, "x": 760, "y": 800, "t": "2:0.7", "brilho": true},
+      {"tipo": "boneco", "cor": "azul", "num": 1, "x": 240, "y": 1410, "s": 0.95, "t": "3:0.0"},
+      {"tipo": "boneco", "cor": "verde", "num": 2, "x": 540, "y": 1410, "s": 0.95, "t": "3:0.1"},
+      {"tipo": "boneco", "cor": "laranja", "num": 3, "x": 840, "y": 1410, "s": 0.95, "t": "3:0.2"}
+    ]},
+    {"fundo": "escuro", "els": [
+      {"tipo": "texto", "txt": "QUANTO CUSTOU DE VERDADE", "tam": 70, "y": 210, "t": 0.1},
+      {"tipo": "barras", "x": 540, "y": 1300, "w": 900, "h": 760, "valores": [2000, 1883, 1800], "min": 1500, "max": 2000,
+       "cores": ["azul", "verde", "laranja"], "rotulos": ["parcelou", "parcelou + rendeu", "à vista"], "tamRotulo": 34,
+       "ts": ["4:0.5", "5:0.75", "6:0.4"], "pre": "R$ ", "textos": ["R$ 2.000", "R$ 1.883", "R$ 1.800"], "tamValor": 50},
+      {"tipo": "etiqueta", "txt": "+R$ 117 rendendo", "tam": 30, "cor": "verde", "x": 540, "y": 1430, "t": "5:0.85"},
+      {"tipo": "boneco", "cor": "laranja", "num": 3, "x": 840, "y": 870, "s": 0.5, "festa": "6:0.75", "t": "6:0.7"}
+    ]},
+    {"fundo": "escuro", "els": [
+      {"tipo": "emoji", "e": "🕵️", "x": 540, "y": 380, "tam": 200, "t": "7:0.1"},
+      {"tipo": "texto", "txt": "tem desconto à vista?", "tam": 60, "peso": 800, "y": 590, "t": "7:0.15"},
+      {"tipo": "texto", "txt": "então tem juro escondido", "tam": 66, "cor": "ouro", "y": 700, "t": "7:0.45"},
+      {"tipo": "contador", "de": 0, "para": 1.96, "casas": 1, "pre": "≈ ", "suf": "% ao mês", "tam": 100, "cor": "vermelho", "y": 880, "t": "7:0.75", "dur": 1.0},
+      {"tipo": "selo", "txt": "JURO EMBUTIDO", "tam": 80, "cor": "vermelho", "y": 1120, "t": "8:0.3", "brilho": true}
+    ]},
+    {"fundo": "claro", "els": [
+      {"tipo": "texto", "txt": "PERGUNTE SEMPRE\nO PREÇO À VISTA.", "tam": 82, "cor": "tinta", "y": 250, "t": "9:0.05"},
+      {"tipo": "boneco", "cor": "azul", "num": 1, "x": 220, "y": 1330, "s": 1.0, "festa": "10:0.4", "t": 0.2},
+      {"tipo": "boneco", "cor": "verde", "num": 2, "x": 540, "y": 1330, "s": 1.0, "festa": "10:0.4+0.32", "t": 0.3},
+      {"tipo": "boneco", "cor": "laranja", "num": 3, "x": 860, "y": 1330, "s": 1.0, "festa": "10:0.4+0.64", "t": 0.4},
+      {"tipo": "circulo", "num": 1, "cor": "azul", "x": 220, "y": 920, "t": "10:0.4"},
+      {"tipo": "circulo", "num": 2, "cor": "verde", "x": 540, "y": 920, "t": "10:0.4+0.32"},
+      {"tipo": "circulo", "num": 3, "cor": "laranja", "x": 860, "y": 920, "t": "10:0.4+0.64"},
+      {"tipo": "etiqueta", "txt": "PARCELOU", "x": 220, "y": 1395, "t": 0.6},
+      {"tipo": "etiqueta", "txt": "PARCELOU + RENDEU", "tam": 28, "x": 540, "y": 1395, "t": 0.7},
+      {"tipo": "etiqueta", "txt": "À VISTA", "x": 860, "y": 1395, "t": 0.8}
+    ]}
+  ]
+}

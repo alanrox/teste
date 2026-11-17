@@ -1,0 +1,73 @@
+{
+  "titulo": "Regra 50-30-20",
+  "proximo": "Como alguém perde dinheiro no Tesouro?",
+  "falas": [
+    {"cena": 0, "fala": "Para onde vai o seu salário todo mês?", "legendas": ["Para onde vai o seu salário todo mês?"]},
+    {"cena": 1, "fala": "Quatro irmãos ganham três mil reais por mês.", "legendas": ["Quatro irmãos ganham R$ 3 mil por mês."]},
+    {"cena": 1, "fala": "O primeiro gasta tudo, e nem sabe com o quê.", "legendas": ["O primeiro gasta tudo, e nem sabe com o quê."]},
+    {"cena": 1, "fala": "O segundo paga as contas e guarda o que sobra, quando sobra.", "legendas": ["O segundo paga as contas e guarda o que sobra…", "…quando sobra."]},
+    {"cena": 1, "fala": "O terceiro guarda um pouco assim que o salário cai.", "legendas": ["O terceiro guarda um pouco assim que o salário cai."]},
+    {"cena": 1, "fala": "E o quarto divide o salário em três potes.", "legendas": ["E o quarto divide o salário em três potes."]},
+    {"cena": 2, "fala": "Metade, mil e quinhentos, para o essencial: casa, comida e contas.", "legendas": ["Metade, R$ 1.500, para o essencial:", "casa, comida e contas."]},
+    {"cena": 2, "fala": "Trinta por cento, novecentos, para os desejos: lazer e compras.", "legendas": ["30%, R$ 900, para os desejos:", "lazer e compras."]},
+    {"cena": 2, "fala": "E vinte por cento, seiscentos, para o futuro: reserva e investimentos.", "legendas": ["E 20%, R$ 600, para o futuro:", "reserva e investimentos."]},
+    {"cena": 3, "fala": "Isso se chama regra cinquenta, trinta, vinte. Não é lei: é um ponto de partida.", "legendas": ["Isso se chama regra 50-30-20.", "Não é lei: é um ponto de partida."]},
+    {"cena": 4, "fala": "E você, qual irmão é? Um, dois, três ou quatro?", "legendas": ["E você, qual irmão é? 1, 2, 3 ou 4?"]}
+  ],
+  "cenas": [
+    {"fundo": "escuro", "els": [
+      {"tipo": "texto", "txt": "PARA ONDE VAI\nSEU SALÁRIO?", "cores": ["branco", "ouro"], "tam": 104, "y": 280, "t": 0.1},
+      {"tipo": "nota", "w": 300, "x": 540, "y": 720, "t": 0.3, "txt": "SALÁRIO", "move": [{"t": "1:0.4", "x": 860, "y": 520, "s": 0.4, "rot": 0.6, "arco": 120, "dur": 1.2}]},
+      {"tipo": "emoji", "e": "💸", "x": 760, "y": 780, "tam": 150, "t": "1:0.5", "flutua": true},
+      {"tipo": "boneco", "cor": "cinza", "x": 220, "y": 1420, "s": 0.95, "olhar": true, "boca": "triste", "t": 0.2},
+      {"tipo": "emoji", "e": "❓", "x": 330, "y": 1030, "tam": 110, "t": "1:0.6", "flutua": true}
+    ]},
+    {"fundo": "cidade", "els": [
+      {"tipo": "selo", "txt": "SALÁRIO: R$ 3 MIL", "tam": 66, "y": 290, "t": "2:0.3"},
+      {"tipo": "boneco", "cor": "azul", "num": 1, "x": 165, "y": 1410, "s": 0.95, "t": 0.05},
+      {"tipo": "boneco", "cor": "verde", "num": 2, "x": 415, "y": 1410, "s": 0.95, "t": 0.12},
+      {"tipo": "boneco", "cor": "amarelo", "num": 3, "x": 665, "y": 1410, "s": 0.95, "t": 0.19},
+      {"tipo": "boneco", "cor": "laranja", "num": 4, "x": 915, "y": 1410, "s": 0.95, "t": 0.26},
+      {"tipo": "emoji", "e": "💸", "x": 165, "y": 900, "tam": 120, "t": "3:0.15", "flutua": true},
+      {"tipo": "etiqueta", "txt": "GASTA TUDO", "tam": 28, "x": 165, "y": 1060, "t": "3:0.15"},
+      {"tipo": "emoji", "e": "🤷", "x": 415, "y": 900, "tam": 120, "t": "4:0.15"},
+      {"tipo": "etiqueta", "txt": "SE SOBRAR", "tam": 28, "x": 415, "y": 1060, "t": "4:0.15"},
+      {"tipo": "emoji", "e": "🐷", "x": 665, "y": 900, "tam": 120, "t": "5:0.15"},
+      {"tipo": "etiqueta", "txt": "GUARDA ANTES", "tam": 28, "x": 665, "y": 1060, "t": "5:0.15"},
+      {"tipo": "emoji", "e": "🫙", "x": 915, "y": 900, "tam": 120, "t": "6:0.15"},
+      {"tipo": "etiqueta", "txt": "3 POTES", "tam": 28, "x": 915, "y": 1060, "t": "6:0.15"},
+      {"tipo": "selo", "txt": "?", "tam": 70, "cor": "vermelho", "x": 165, "y": 760, "t": "3:0.5"}
+    ]},
+    {"fundo": "escuro", "els": [
+      {"tipo": "circulo", "num": 4, "cor": "laranja", "x": 140, "y": 240, "t": 0.1},
+      {"tipo": "texto", "txt": "OS 3 POTES", "tam": 90, "x": 570, "y": 240, "t": 0.1},
+      {"tipo": "pizza", "fatias": [50, 30, 20], "cores": ["azul", "rosa", "verde"], "rotulos": ["50%", "30%", "20%"], "r": 270, "x": 540, "y": 680, "ts": ["7:0.05", "8:0.05", "9:0.05"], "t": "7:0.05", "passo": 0.01, "tamRotulo": 64},
+      {"tipo": "caixa", "w": 980, "h": 110, "y": 1050, "t": "7:0.3", "som": false},
+      {"tipo": "texto", "txt": "🏠 essencial: R$ 1.500", "alinha": "left", "tam": 50, "x": 110, "y": 1050, "t": "7:0.3", "som": false},
+      {"tipo": "caixa", "w": 980, "h": 110, "y": 1180, "t": "8:0.3", "som": false},
+      {"tipo": "texto", "txt": "🎉 desejos: R$ 900", "alinha": "left", "tam": 50, "x": 110, "y": 1180, "t": "8:0.3", "som": false},
+      {"tipo": "caixa", "w": 980, "h": 110, "y": 1310, "t": "9:0.3", "som": false},
+      {"tipo": "texto", "txt": "🌱 futuro: R$ 600", "alinha": "left", "tam": 50, "x": 110, "y": 1310, "t": "9:0.3", "som": false}
+    ]},
+    {"fundo": "escuro", "els": [
+      {"tipo": "selo", "txt": "REGRA 50-30-20", "tam": 90, "y": 360, "t": "10:0.3", "brilho": true},
+      {"tipo": "pizza", "fatias": [50, 30, 20], "cores": ["azul", "rosa", "verde"], "rotulos": ["50", "30", "20"], "r": 220, "x": 540, "y": 800, "t": "10:0.2", "passo": 0.15, "tamRotulo": 60},
+      {"tipo": "etiqueta", "txt": "um ponto de partida", "tam": 42, "y": 1120, "t": "10:0.7"}
+    ]},
+    {"fundo": "claro", "els": [
+      {"tipo": "texto", "txt": "TODO SALÁRIO\nPRECISA DE UM PLANO.", "tam": 78, "cor": "tinta", "y": 250, "t": 0.1},
+      {"tipo": "boneco", "cor": "azul", "num": 1, "x": 150, "y": 1330, "s": 0.92, "festa": "11:0.3", "t": 0.2},
+      {"tipo": "boneco", "cor": "verde", "num": 2, "x": 410, "y": 1330, "s": 0.92, "festa": "11:0.3+0.32", "t": 0.3},
+      {"tipo": "boneco", "cor": "amarelo", "num": 3, "x": 670, "y": 1330, "s": 0.92, "festa": "11:0.3+0.64", "t": 0.4},
+      {"tipo": "boneco", "cor": "laranja", "num": 4, "x": 930, "y": 1330, "s": 0.92, "festa": "11:0.3+0.96", "t": 0.5},
+      {"tipo": "circulo", "num": 1, "cor": "azul", "x": 150, "y": 950, "t": "11:0.3"},
+      {"tipo": "circulo", "num": 2, "cor": "verde", "x": 410, "y": 950, "t": "11:0.3+0.32"},
+      {"tipo": "circulo", "num": 3, "cor": "amarelo", "x": 670, "y": 950, "t": "11:0.3+0.64"},
+      {"tipo": "circulo", "num": 4, "cor": "laranja", "x": 930, "y": 950, "t": "11:0.3+0.96"},
+      {"tipo": "etiqueta", "txt": "GASTA TUDO", "tam": 30, "x": 150, "y": 1395, "t": 0.6},
+      {"tipo": "etiqueta", "txt": "SE SOBRAR", "tam": 30, "x": 410, "y": 1395, "t": 0.7},
+      {"tipo": "etiqueta", "txt": "GUARDA ANTES", "tam": 28, "x": 670, "y": 1395, "t": 0.8},
+      {"tipo": "etiqueta", "txt": "3 POTES", "tam": 30, "x": 930, "y": 1395, "t": 0.9}
+    ]}
+  ]
+}

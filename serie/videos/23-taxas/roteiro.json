@@ -1,0 +1,65 @@
+{
+  "titulo": "Taxas",
+  "proximo": "O jeito mais barato de ter um carro",
+  "falas": [
+    {"cena": 0, "fala": "Quem está comendo o seu rendimento, sem você ver?", "legendas": ["Quem está comendo o seu rendimento, sem você ver?"]},
+    {"cena": 1, "fala": "Quatro irmãos colocaram dez mil reais em fundos que renderam dez por cento ao ano, durante dez anos.", "legendas": ["Quatro irmãos colocaram R$ 10 mil em fundos…", "…que renderam 10% ao ano, durante 10 anos."]},
+    {"cena": 1, "fala": "A única diferença era a taxa que cada fundo cobrava por ano.", "legendas": ["A única diferença era a taxa que cada fundo cobrava por ano."]},
+    {"cena": 2, "fala": "Com taxa de três por cento, o primeiro terminou com dezenove mil e setecentos.", "legendas": ["Com taxa de 3%, o primeiro terminou com R$ 19.700."]},
+    {"cena": 2, "fala": "Com dois por cento, vinte e um mil e seiscentos. Com um por cento, vinte e três mil e setecentos.", "legendas": ["Com 2%, R$ 21.600.", "Com 1%, R$ 23.700."]},
+    {"cena": 2, "fala": "E, pagando só zero vírgula dois por cento, o quarto terminou com vinte e cinco mil e quinhentos.", "legendas": ["E, pagando só 0,2%…", "…o quarto terminou com R$ 25.500."]},
+    {"cena": 3, "fala": "Isso se chama taxa de administração: uma mordida pequena todo ano, que vira uma diferença enorme no final.", "legendas": ["Isso se chama taxa de administração:", "uma mordida pequena todo ano, que vira uma diferença enorme no final."]},
+    {"cena": 4, "fala": "E você, sabe quanto paga de taxa? Um, dois, três ou quatro?", "legendas": ["E você, sabe quanto paga de taxa? 1, 2, 3 ou 4?"]}
+  ],
+  "cenas": [
+    {"fundo": "escuro", "els": [
+      {"tipo": "texto", "txt": "QUEM COME SEU\nRENDIMENTO?", "cores": ["branco", "ouro"], "tam": 104, "y": 280, "t": 0.1},
+      {"tipo": "nota", "w": 360, "x": 560, "y": 760, "t": 0.3},
+      {"tipo": "emoji", "e": "🐛", "x": 760, "y": 700, "tam": 160, "t": "1:0.5", "move": [{"t": "1:0.6", "x": 640, "dur": 1.2, "som": false}]},
+      {"tipo": "boneco", "cor": "cinza", "x": 200, "y": 1420, "s": 0.95, "olhar": true, "boca": "triste", "t": 0.2},
+      {"tipo": "emoji", "e": "❓", "x": 310, "y": 1030, "tam": 110, "t": "1:0.75", "flutua": true}
+    ]},
+    {"fundo": "cidade", "els": [
+      {"tipo": "selo", "txt": "R$ 10 MIL POR 10 ANOS", "tam": 56, "y": 290, "t": "2:0.15"},
+      {"tipo": "selo", "txt": "RENDENDO 10% AO ANO", "tam": 50, "cor": "verde", "y": 420, "t": "2:0.6"},
+      {"tipo": "boneco", "cor": "azul", "num": 1, "x": 165, "y": 1410, "s": 0.95, "t": 0.05},
+      {"tipo": "boneco", "cor": "verde", "num": 2, "x": 415, "y": 1410, "s": 0.95, "t": 0.12},
+      {"tipo": "boneco", "cor": "amarelo", "num": 3, "x": 665, "y": 1410, "s": 0.95, "t": 0.19},
+      {"tipo": "boneco", "cor": "laranja", "num": 4, "x": 915, "y": 1410, "s": 0.95, "t": 0.26},
+      {"tipo": "etiqueta", "txt": "TAXA 3%", "tam": 32, "x": 165, "y": 1060, "t": "3:0.5"},
+      {"tipo": "etiqueta", "txt": "2%", "tam": 32, "x": 415, "y": 1060, "t": "3:0.5+0.15"},
+      {"tipo": "etiqueta", "txt": "1%", "tam": 32, "x": 665, "y": 1060, "t": "3:0.5+0.3"},
+      {"tipo": "etiqueta", "txt": "0,2%", "tam": 32, "x": 915, "y": 1060, "t": "3:0.5+0.45"},
+      {"tipo": "emoji", "e": "🐛", "x": 540, "y": 720, "tam": 150, "t": "3:0.3", "flutua": true}
+    ]},
+    {"fundo": "escuro", "els": [
+      {"tipo": "texto", "txt": "QUANTO SOBROU EM 10 ANOS", "tam": 66, "y": 210, "t": 0.1},
+      {"tipo": "barras", "x": 540, "y": 1310, "w": 960, "h": 720, "valores": [19672, 21589, 23674, 25470], "min": 15000, "max": 26000,
+       "cores": ["azul", "verde", "amarelo", "laranja"], "rotulos": ["taxa 3%", "2%", "1%", "0,2%"], "tamRotulo": 38,
+       "ts": ["4:0.45", "5:0.25", "5:0.8", "6:0.65"], "pre": "R$ ", "textos": ["R$ 19,7 mil", "R$ 21,6 mil", "R$ 23,7 mil", "R$ 25,5 mil"], "tamValor": 40},
+      {"tipo": "boneco", "cor": "laranja", "num": 4, "x": 900, "y": 540, "s": 0.5, "festa": "6:0.9", "t": "6:0.85"},
+      {"tipo": "etiqueta", "txt": "diferença: R$ 5.800", "tam": 36, "cor": "vermelho", "x": 360, "y": 470, "t": "6:0.9"}
+    ]},
+    {"fundo": "escuro", "els": [
+      {"tipo": "selo", "txt": "TAXA DE ADMINISTRAÇÃO", "tam": 62, "y": 300, "t": "7:0.25", "brilho": true},
+      {"tipo": "emoji", "e": "🐛", "x": 540, "y": 600, "tam": 220, "t": "7:0.45"},
+      {"tipo": "texto", "txt": "mordida pequena todo ano", "tam": 60, "peso": 800, "y": 840, "t": "7:0.5"},
+      {"tipo": "texto", "txt": "diferença enorme no final", "tam": 66, "cor": "ouro", "y": 960, "t": "7:0.75"}
+    ]},
+    {"fundo": "claro", "els": [
+      {"tipo": "texto", "txt": "OLHE A TAXA\nANTES DE INVESTIR.", "tam": 82, "cor": "tinta", "y": 250, "t": 0.1},
+      {"tipo": "boneco", "cor": "azul", "num": 1, "x": 150, "y": 1330, "s": 0.92, "festa": "8:0.4", "t": 0.2},
+      {"tipo": "boneco", "cor": "verde", "num": 2, "x": 410, "y": 1330, "s": 0.92, "festa": "8:0.4+0.32", "t": 0.3},
+      {"tipo": "boneco", "cor": "amarelo", "num": 3, "x": 670, "y": 1330, "s": 0.92, "festa": "8:0.4+0.64", "t": 0.4},
+      {"tipo": "boneco", "cor": "laranja", "num": 4, "x": 930, "y": 1330, "s": 0.92, "festa": "8:0.4+0.96", "t": 0.5},
+      {"tipo": "circulo", "num": 1, "cor": "azul", "x": 150, "y": 950, "t": "8:0.4"},
+      {"tipo": "circulo", "num": 2, "cor": "verde", "x": 410, "y": 950, "t": "8:0.4+0.32"},
+      {"tipo": "circulo", "num": 3, "cor": "amarelo", "x": 670, "y": 950, "t": "8:0.4+0.64"},
+      {"tipo": "circulo", "num": 4, "cor": "laranja", "x": 930, "y": 950, "t": "8:0.4+0.96"},
+      {"tipo": "etiqueta", "txt": "3%", "x": 150, "y": 1395, "t": 0.6},
+      {"tipo": "etiqueta", "txt": "2%", "x": 410, "y": 1395, "t": 0.7},
+      {"tipo": "etiqueta", "txt": "1%", "x": 670, "y": 1395, "t": 0.8},
+      {"tipo": "etiqueta", "txt": "0,2%", "x": 930, "y": 1395, "t": 0.9}
+    ]}
+  ]
+}

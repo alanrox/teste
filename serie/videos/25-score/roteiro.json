@@ -1,0 +1,71 @@
+{
+  "titulo": "Score de crédito",
+  "proximo": "Começar com muito ou investir todo mês?",
+  "falas": [
+    {"cena": 0, "fala": "Por que o banco nega crédito para uns e aprova para outros?", "legendas": ["Por que o banco nega crédito para uns…", "…e aprova para outros?"]},
+    {"cena": 1, "fala": "Quatro irmãos pediram o mesmo empréstimo, no mesmo banco.", "legendas": ["Quatro irmãos pediram o mesmo empréstimo, no mesmo banco."]},
+    {"cena": 2, "fala": "O primeiro estava com o nome sujo, por uma dívida atrasada. Nota: duzentos.", "legendas": ["O primeiro estava com o nome sujo, por uma dívida atrasada.", "Nota: 200."]},
+    {"cena": 2, "fala": "O segundo pagava as contas, mas sempre atrasado: quatrocentos e cinquenta.", "legendas": ["O segundo pagava as contas, mas sempre atrasado: 450."]},
+    {"cena": 2, "fala": "O terceiro pagava em dia, mas quase nunca tinha usado crédito: seiscentos.", "legendas": ["O terceiro pagava em dia, mas quase nunca tinha usado crédito: 600."]},
+    {"cena": 2, "fala": "E o quarto pagava tudo em dia, havia anos: oitocentos e cinquenta. Aprovado, e com juros menores.", "legendas": ["E o quarto pagava tudo em dia, havia anos: 850.", "Aprovado, e com juros menores."]},
+    {"cena": 3, "fala": "Isso se chama score de crédito: uma nota de zero a mil que mostra se você costuma pagar em dia.", "legendas": ["Isso se chama score de crédito:", "uma nota de 0 a 1.000 que mostra se você costuma pagar em dia."]},
+    {"cena": 3, "fala": "Para subir a nota: pague em dia, negocie as dívidas atrasadas e mantenha o cadastro positivo ativo.", "legendas": ["Para subir a nota: pague em dia, negocie as dívidas atrasadas…", "…e mantenha o cadastro positivo ativo."]},
+    {"cena": 4, "fala": "E você, qual irmão é? Um, dois, três ou quatro?", "legendas": ["E você, qual irmão é? 1, 2, 3 ou 4?"]}
+  ],
+  "cenas": [
+    {"fundo": "escuro", "els": [
+      {"tipo": "texto", "txt": "POR QUE O BANCO\nNEGOU?", "cores": ["branco", "vermelho"], "tam": 108, "y": 280, "t": 0.1},
+      {"tipo": "emoji", "e": "🏦", "x": 580, "y": 760, "tam": 260, "t": 0.3},
+      {"tipo": "xis", "r": 70, "x": 760, "y": 950, "t": "1:0.5"},
+      {"tipo": "boneco", "cor": "cinza", "x": 200, "y": 1420, "s": 0.95, "olhar": true, "boca": "triste", "t": 0.2},
+      {"tipo": "emoji", "e": "❓", "x": 310, "y": 1030, "tam": 110, "t": "1:0.75", "flutua": true}
+    ]},
+    {"fundo": "cidade", "els": [
+      {"tipo": "predio", "txt": "BANCO", "x": 540, "y": 1050, "s": 0.8, "t": 0.1},
+      {"tipo": "selo", "txt": "MESMO EMPRÉSTIMO", "tam": 58, "y": 290, "t": "2:0.3"},
+      {"tipo": "boneco", "cor": "azul", "num": 1, "x": 165, "y": 1410, "s": 0.95, "t": 0.05},
+      {"tipo": "boneco", "cor": "verde", "num": 2, "x": 415, "y": 1410, "s": 0.95, "t": 0.12},
+      {"tipo": "boneco", "cor": "amarelo", "num": 3, "x": 665, "y": 1410, "s": 0.95, "t": 0.19},
+      {"tipo": "boneco", "cor": "laranja", "num": 4, "x": 915, "y": 1410, "s": 0.95, "t": 0.26}
+    ]},
+    {"fundo": "escuro", "els": [
+      {"tipo": "texto", "txt": "A NOTA DE CADA UM", "tam": 80, "y": 210, "t": 0.1},
+      {"tipo": "barras", "x": 540, "y": 1290, "w": 960, "h": 760, "valores": [200, 450, 600, 850], "max": 1000,
+       "cores": ["vermelho", "laranja", "amarelo", "verde"], "rotulos": ["nome sujo", "atrasa", "sem histórico", "em dia"], "tamRotulo": 34,
+       "ts": ["3:0.75", "4:0.75", "5:0.8", "6:0.4"], "textos": ["200", "450", "600", "850"], "tamValor": 54},
+      {"tipo": "circulo", "num": 1, "cor": "azul", "r": 34, "x": 180, "y": 1420, "t": "3:0.1"},
+      {"tipo": "circulo", "num": 2, "cor": "verde", "r": 34, "x": 420, "y": 1420, "t": "4:0.1"},
+      {"tipo": "circulo", "num": 3, "cor": "amarelo", "r": 34, "x": 660, "y": 1420, "t": "5:0.1"},
+      {"tipo": "circulo", "num": 4, "cor": "laranja", "r": 34, "x": 900, "y": 1420, "t": "6:0.1"},
+      {"tipo": "ok", "r": 40, "x": 900, "y": 470, "t": "6:0.7"}
+    ]},
+    {"fundo": "escuro", "els": [
+      {"tipo": "selo", "txt": "SCORE DE CRÉDITO", "tam": 80, "y": 300, "t": "7:0.25", "brilho": true},
+      {"tipo": "contador", "de": 0, "para": 1000, "tam": 110, "cor": "verde", "y": 470, "t": "7:0.45", "dur": 1.2, "pre": "0 a "},
+      {"tipo": "caixa", "w": 960, "h": 130, "y": 760, "t": "8:0.15", "som": false},
+      {"tipo": "ok", "r": 32, "x": 170, "y": 760, "t": "8:0.15"},
+      {"tipo": "texto", "txt": "pague em dia", "alinha": "left", "tam": 54, "x": 240, "y": 760, "t": "8:0.15", "som": false},
+      {"tipo": "caixa", "w": 960, "h": 130, "y": 920, "t": "8:0.4", "som": false},
+      {"tipo": "ok", "r": 32, "x": 170, "y": 920, "t": "8:0.4"},
+      {"tipo": "texto", "txt": "negocie dívidas atrasadas", "alinha": "left", "tam": 54, "x": 240, "y": 920, "t": "8:0.4", "som": false},
+      {"tipo": "caixa", "w": 960, "h": 130, "y": 1080, "t": "8:0.75", "som": false},
+      {"tipo": "ok", "r": 32, "x": 170, "y": 1080, "t": "8:0.75"},
+      {"tipo": "texto", "txt": "cadastro positivo ativo", "alinha": "left", "tam": 54, "x": 240, "y": 1080, "t": "8:0.75", "som": false}
+    ]},
+    {"fundo": "claro", "els": [
+      {"tipo": "texto", "txt": "PAGAR EM DIA\nABRE PORTAS.", "tam": 88, "cor": "tinta", "y": 250, "t": 0.1},
+      {"tipo": "boneco", "cor": "azul", "num": 1, "x": 150, "y": 1330, "s": 0.92, "festa": "9:0.4", "t": 0.2},
+      {"tipo": "boneco", "cor": "verde", "num": 2, "x": 410, "y": 1330, "s": 0.92, "festa": "9:0.4+0.32", "t": 0.3},
+      {"tipo": "boneco", "cor": "amarelo", "num": 3, "x": 670, "y": 1330, "s": 0.92, "festa": "9:0.4+0.64", "t": 0.4},
+      {"tipo": "boneco", "cor": "laranja", "num": 4, "x": 930, "y": 1330, "s": 0.92, "festa": "9:0.4+0.96", "t": 0.5},
+      {"tipo": "circulo", "num": 1, "cor": "azul", "x": 150, "y": 950, "t": "9:0.4"},
+      {"tipo": "circulo", "num": 2, "cor": "verde", "x": 410, "y": 950, "t": "9:0.4+0.32"},
+      {"tipo": "circulo", "num": 3, "cor": "amarelo", "x": 670, "y": 950, "t": "9:0.4+0.64"},
+      {"tipo": "circulo", "num": 4, "cor": "laranja", "x": 930, "y": 950, "t": "9:0.4+0.96"},
+      {"tipo": "etiqueta", "txt": "200", "x": 150, "y": 1395, "t": 0.6},
+      {"tipo": "etiqueta", "txt": "450", "x": 410, "y": 1395, "t": 0.7},
+      {"tipo": "etiqueta", "txt": "600", "x": 670, "y": 1395, "t": 0.8},
+      {"tipo": "etiqueta", "txt": "850", "x": 930, "y": 1395, "t": 0.9}
+    ]}
+  ]
+}

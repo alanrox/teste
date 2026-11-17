@@ -1,0 +1,71 @@
+{
+  "titulo": "Pirâmide financeira",
+  "proximo": "Dá para emprestar direto para empresas?",
+  "falas": [
+    {"cena": 0, "fala": "Rende dez por cento ao mês, garantido. Onde está o problema?", "legendas": ["Rende 10% ao mês, garantido.", "Onde está o problema?"]},
+    {"cena": 1, "fala": "Um esperto prometeu dez por cento ao mês. Isso dá mais de duzentos por cento ao ano.", "legendas": ["Um esperto prometeu 10% ao mês.", "Isso dá mais de 200% ao ano."]},
+    {"cena": 2, "fala": "O primeiro irmão entrou cedo, e recebeu os rendimentos certinho.", "legendas": ["O primeiro irmão entrou cedo…", "…e recebeu os rendimentos certinho."]},
+    {"cena": 2, "fala": "Só que o dinheiro não vinha de nenhum negócio. Vinha de quem entrava depois.", "legendas": ["Só que o dinheiro não vinha de nenhum negócio.", "Vinha de quem entrava depois."]},
+    {"cena": 2, "fala": "O segundo trouxe os amigos. O terceiro entrou quando todo mundo já falava disso.", "legendas": ["O segundo trouxe os amigos.", "O terceiro entrou quando todo mundo já falava disso."]},
+    {"cena": 3, "fala": "Até que pararam de entrar pessoas novas, e tudo desabou.", "legendas": ["Até que pararam de entrar pessoas novas…", "…e tudo desabou."]},
+    {"cena": 3, "fala": "O segundo e o terceiro perderam o que puseram. E o quarto, que desconfiou, não perdeu nada.", "legendas": ["O segundo e o terceiro perderam o que puseram.", "E o quarto, que desconfiou, não perdeu nada."]},
+    {"cena": 4, "fala": "Isso se chama pirâmide financeira. Desconfie de rendimento alto e garantido.", "legendas": ["Isso se chama pirâmide financeira.", "Desconfie de rendimento alto e garantido."]},
+    {"cena": 5, "fala": "E você, seria qual irmão? Um, dois, três ou quatro?", "legendas": ["E você, seria qual irmão? 1, 2, 3 ou 4?"]}
+  ],
+  "cenas": [
+    {"fundo": "escuro", "els": [
+      {"tipo": "texto", "txt": "10% AO MÊS,\nGARANTIDO?", "cores": ["ouro", "branco"], "tam": 110, "y": 280, "t": 0.1},
+      {"tipo": "emoji", "e": "🤑", "x": 580, "y": 760, "tam": 260, "t": 0.3},
+      {"tipo": "emoji", "e": "🚩", "x": 830, "y": 1060, "tam": 150, "t": "1:0.6", "balanca": true},
+      {"tipo": "boneco", "cor": "cinza", "x": 200, "y": 1420, "s": 0.95, "olhar": true, "t": 0.2},
+      {"tipo": "emoji", "e": "🤔", "x": 310, "y": 1030, "tam": 110, "t": "1:0.75", "flutua": true}
+    ]},
+    {"fundo": "cidade", "els": [
+      {"tipo": "boneco", "cor": "#111827", "x": 300, "y": 1410, "s": 1.15, "boca": "feliz", "t": 0.1},
+      {"tipo": "emoji", "e": "🎩", "x": 300, "y": 1030, "tam": 120, "t": 0.15},
+      {"tipo": "balao", "txt": "10% ao mês, garantido!", "w": 480, "lado": "esquerda", "x": 640, "y": 880, "t": "2:0.15"},
+      {"tipo": "selo", "txt": "= MAIS DE 200% AO ANO", "tam": 56, "cor": "vermelho", "y": 330, "t": "2:0.6"}
+    ]},
+    {"fundo": "escuro", "els": [
+      {"tipo": "texto", "txt": "DE ONDE VEM O DINHEIRO?", "tam": 70, "y": 200, "t": "4:0.05"},
+      {"tipo": "multidao", "linhas": [1, 3, 5, 7], "cores": ["azul", "cinza", "verde", "amarelo"], "s": 0.34, "dx": 120, "dy": 160, "x": 540, "y": 760, "t": "3:0.05", "passo": 1.6},
+      {"tipo": "moedas", "n": 3, "r": 30, "x": 540, "y": 1120, "t": "4:0.3", "move": [{"t": "4:0.4", "y": 470, "dur": 1.0, "som": "subida"}], "sai": "4:0.4+1.05"},
+      {"tipo": "etiqueta", "txt": "dinheiro de quem entrou depois", "tam": 34, "y": 1300, "t": "4:0.6"}
+    ]},
+    {"fundo": "escuro", "els": [
+      {"tipo": "multidao", "linhas": [1, 3, 5, 7], "cores": ["azul", "cinza", "verde", "amarelo"], "s": 0.28, "dx": 100, "dy": 130, "x": 540, "y": 500, "anim": "nenhum",
+       "move": [{"t": "6:0.45", "y": 980, "rot": 0.5, "a": 0, "dur": 1.0, "som": "descida"}]},
+      {"tipo": "emoji", "e": "💥", "x": 540, "y": 640, "tam": 220, "t": "6:0.65", "sai": "6:0.95", "som": "baque", "g": 0.9},
+      {"tipo": "caixa", "w": 980, "h": 140, "y": 900, "t": "7:0.05", "som": false},
+      {"tipo": "circulo", "num": 2, "cor": "verde", "x": 120, "y": 900, "r": 48, "t": "7:0.05"},
+      {"tipo": "texto", "txt": "perdeu o que pôs", "alinha": "left", "tam": 50, "cor": "vermelho", "x": 200, "y": 900, "t": "7:0.15", "som": false},
+      {"tipo": "caixa", "w": 980, "h": 140, "y": 1060, "t": "7:0.2", "som": false},
+      {"tipo": "circulo", "num": 3, "cor": "amarelo", "x": 120, "y": 1060, "r": 48, "t": "7:0.2"},
+      {"tipo": "texto", "txt": "perdeu o que pôs", "alinha": "left", "tam": 50, "cor": "vermelho", "x": 200, "y": 1060, "t": "7:0.3", "som": false},
+      {"tipo": "caixa", "w": 980, "h": 140, "y": 1220, "t": "7:0.6", "som": false},
+      {"tipo": "circulo", "num": 4, "cor": "laranja", "x": 120, "y": 1220, "r": 48, "t": "7:0.6"},
+      {"tipo": "texto", "txt": "desconfiou: não perdeu nada", "alinha": "left", "tam": 50, "cor": "verde", "x": 200, "y": 1220, "t": "7:0.7", "som": false}
+    ]},
+    {"fundo": "escuro", "els": [
+      {"tipo": "selo", "txt": "PIRÂMIDE FINANCEIRA", "tam": 70, "cor": "vermelho", "y": 300, "t": "8:0.25", "brilho": true},
+      {"tipo": "emoji", "e": "🚩", "x": 540, "y": 620, "tam": 240, "t": "8:0.45", "balanca": true},
+      {"tipo": "texto", "txt": "rendimento alto + garantido", "tam": 58, "peso": 800, "y": 900, "t": "8:0.6"},
+      {"tipo": "texto", "txt": "= DESCONFIE", "tam": 96, "cor": "vermelho", "y": 1030, "t": "8:0.75"}
+    ]},
+    {"fundo": "claro", "els": [
+      {"tipo": "texto", "txt": "SE É BOM DEMAIS,\nDESCONFIE.", "tam": 84, "cor": "tinta", "y": 250, "t": 0.1},
+      {"tipo": "boneco", "cor": "azul", "num": 1, "x": 150, "y": 1330, "s": 0.92, "festa": "9:0.4", "t": 0.2},
+      {"tipo": "boneco", "cor": "verde", "num": 2, "x": 410, "y": 1330, "s": 0.92, "festa": "9:0.4+0.32", "t": 0.3},
+      {"tipo": "boneco", "cor": "amarelo", "num": 3, "x": 670, "y": 1330, "s": 0.92, "festa": "9:0.4+0.64", "t": 0.4},
+      {"tipo": "boneco", "cor": "laranja", "num": 4, "x": 930, "y": 1330, "s": 0.92, "festa": "9:0.4+0.96", "t": 0.5},
+      {"tipo": "circulo", "num": 1, "cor": "azul", "x": 150, "y": 950, "t": "9:0.4"},
+      {"tipo": "circulo", "num": 2, "cor": "verde", "x": 410, "y": 950, "t": "9:0.4+0.32"},
+      {"tipo": "circulo", "num": 3, "cor": "amarelo", "x": 670, "y": 950, "t": "9:0.4+0.64"},
+      {"tipo": "circulo", "num": 4, "cor": "laranja", "x": 930, "y": 950, "t": "9:0.4+0.96"},
+      {"tipo": "etiqueta", "txt": "ENTROU CEDO", "tam": 28, "x": 150, "y": 1395, "t": 0.6},
+      {"tipo": "etiqueta", "txt": "CHAMOU AMIGOS", "tam": 26, "x": 410, "y": 1395, "t": 0.7},
+      {"tipo": "etiqueta", "txt": "ENTROU TARDE", "tam": 28, "x": 670, "y": 1395, "t": 0.8},
+      {"tipo": "etiqueta", "txt": "DESCONFIOU", "tam": 28, "x": 930, "y": 1395, "t": 0.9}
+    ]}
+  ]
+}

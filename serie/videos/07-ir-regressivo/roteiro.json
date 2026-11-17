@@ -1,0 +1,72 @@
+{
+  "titulo": "IR regressivo",
+  "proximo": "Rendeu 10% e você ficou mais pobre?",
+  "falas": [
+    {"cena": 0, "fala": "Quanto tempo esperar para pagar menos imposto nos investimentos?", "legendas": ["Quanto tempo esperar para pagar menos imposto nos investimentos?"]},
+    {"cena": 1, "fala": "Quatro irmãos investiram num cê dê bê e tiveram o mesmo lucro: mil reais.", "legendas": ["Quatro irmãos investiram num CDB…", "…e tiveram o mesmo lucro: R$ 1.000."]},
+    {"cena": 1, "fala": "A diferença foi quanto tempo cada um esperou para resgatar.", "legendas": ["A diferença foi quanto tempo cada um esperou para resgatar."]},
+    {"cena": 2, "fala": "Quem resgatou antes de seis meses pagou vinte e dois e meio por cento: duzentos e vinte e cinco reais.", "legendas": ["Quem resgatou antes de 6 meses pagou 22,5%:", "R$ 225."]},
+    {"cena": 2, "fala": "Até um ano, vinte por cento. Até dois anos, dezessete e meio.", "legendas": ["Até 1 ano, 20%.", "Até 2 anos, 17,5%."]},
+    {"cena": 2, "fala": "Depois de dois anos, só quinze por cento: cento e cinquenta reais.", "legendas": ["Depois de 2 anos, só 15%:", "R$ 150."]},
+    {"cena": 3, "fala": "Isso se chama tabela regressiva do imposto de renda: quanto mais tempo, menor a mordida.", "legendas": ["Isso se chama tabela regressiva do Imposto de Renda:", "quanto mais tempo, menor a mordida."]},
+    {"cena": 3, "fala": "Vale para o Tesouro Direto, o cê dê bê e boa parte da renda fixa.", "legendas": ["Vale para o Tesouro Direto, o CDB e boa parte da renda fixa."]},
+    {"cena": 4, "fala": "Antes de investir, pense em quando vai precisar do dinheiro.", "legendas": ["Antes de investir, pense em quando vai precisar do dinheiro."]},
+    {"cena": 4, "fala": "E você, resgataria quando? Um, dois, três ou quatro?", "legendas": ["E você, resgataria quando? 1, 2, 3 ou 4?"]}
+  ],
+  "cenas": [
+    {"fundo": "escuro", "els": [
+      {"tipo": "texto", "txt": "QUANTO TEMPO PARA\nPAGAR MENOS IMPOSTO?", "cores": ["branco", "ouro"], "tam": 88, "y": 290, "t": 0.1},
+      {"tipo": "emoji", "e": "🦁", "x": 560, "y": 790, "tam": 280, "t": 0.4, "balanca": true},
+      {"tipo": "emoji", "e": "⏳", "x": 860, "y": 1110, "tam": 150, "t": "1:0.55", "balanca": true},
+      {"tipo": "boneco", "cor": "cinza", "x": 220, "y": 1420, "s": 0.95, "olhar": true, "t": 0.2},
+      {"tipo": "emoji", "e": "❓", "x": 330, "y": 1030, "tam": 110, "t": "1:0.75", "flutua": true}
+    ]},
+    {"fundo": "claro", "els": [
+      {"tipo": "selo", "txt": "CDB", "tam": 64, "cor": "verde", "y": 290, "t": "2:0.35"},
+      {"tipo": "selo", "txt": "LUCRO: R$ 1.000", "tam": 66, "y": 430, "t": "2:0.8"},
+      {"tipo": "emoji", "e": "⏳", "x": 540, "y": 730, "tam": 170, "t": "3:0.15", "balanca": true},
+      {"tipo": "boneco", "cor": "azul", "num": 1, "x": 165, "y": 1410, "s": 0.95, "t": 0.05},
+      {"tipo": "boneco", "cor": "verde", "num": 2, "x": 415, "y": 1410, "s": 0.95, "t": 0.12},
+      {"tipo": "boneco", "cor": "amarelo", "num": 3, "x": 665, "y": 1410, "s": 0.95, "t": 0.19},
+      {"tipo": "boneco", "cor": "laranja", "num": 4, "x": 915, "y": 1410, "s": 0.95, "t": 0.26},
+      {"tipo": "etiqueta", "txt": "6 MESES", "tam": 32, "x": 165, "y": 1060, "t": "3:0.55"},
+      {"tipo": "etiqueta", "txt": "1 ANO", "tam": 32, "x": 415, "y": 1060, "t": "3:0.55+0.15"},
+      {"tipo": "etiqueta", "txt": "2 ANOS", "tam": 32, "x": 665, "y": 1060, "t": "3:0.55+0.3"},
+      {"tipo": "etiqueta", "txt": "3 ANOS", "tam": 32, "x": 915, "y": 1060, "t": "3:0.55+0.45"}
+    ]},
+    {"fundo": "escuro", "els": [
+      {"tipo": "texto", "txt": "QUANTO O LEÃO LEVOU", "tam": 76, "y": 210, "t": 0.1},
+      {"tipo": "emoji", "e": "🦁", "x": 540, "y": 360, "tam": 130, "t": 0.3},
+      {"tipo": "barras", "x": 540, "y": 1310, "w": 960, "h": 680, "valores": [225, 200, 175, 150], "max": 225,
+       "cores": ["azul", "verde", "amarelo", "laranja"], "rotulos": ["até 6 meses", "até 1 ano", "até 2 anos", "+ de 2 anos"], "tamRotulo": 32,
+       "ts": ["4:0.15", "5:0.1", "5:0.6", "6:0.3"], "pre": "R$ ", "textos": ["R$ 225", "R$ 200", "R$ 175", "R$ 150"], "tamValor": 46},
+      {"tipo": "etiqueta", "txt": "22,5%", "tam": 30, "cor": "vermelho", "x": 180, "y": 1425, "t": "4:0.6"},
+      {"tipo": "etiqueta", "txt": "20%", "tam": 30, "cor": "vermelho", "x": 420, "y": 1425, "t": "5:0.2"},
+      {"tipo": "etiqueta", "txt": "17,5%", "tam": 30, "cor": "vermelho", "x": 660, "y": 1425, "t": "5:0.75"},
+      {"tipo": "etiqueta", "txt": "15%", "tam": 30, "cor": "verde", "x": 900, "y": 1425, "t": "6:0.45"}
+    ]},
+    {"fundo": "escuro", "els": [
+      {"tipo": "selo", "txt": "TABELA REGRESSIVA", "tam": 70, "y": 300, "t": "7:0.3", "brilho": true},
+      {"tipo": "texto", "txt": "mais tempo, menor a mordida", "tam": 60, "peso": 800, "y": 450, "t": "7:0.65"},
+      {"tipo": "emoji", "e": "🦁", "x": 540, "y": 770, "tam": 240, "t": "7:0.45", "move": [{"t": "7:0.75", "s": 0.55, "dur": 1.0, "som": "descida"}]},
+      {"tipo": "selo", "txt": "TESOURO", "tam": 48, "cor": "azul", "x": 230, "y": 1110, "t": "8:0.35"},
+      {"tipo": "selo", "txt": "CDB", "tam": 48, "cor": "verde", "x": 520, "y": 1110, "t": "8:0.5"},
+      {"tipo": "selo", "txt": "E OUTROS", "tam": 48, "cor": "cinza", "x": 820, "y": 1110, "t": "8:0.7"}
+    ]},
+    {"fundo": "claro", "els": [
+      {"tipo": "texto", "txt": "PENSE EM QUANDO\nVAI PRECISAR.", "tam": 84, "cor": "tinta", "y": 250, "t": "9:0.05"},
+      {"tipo": "boneco", "cor": "azul", "num": 1, "x": 150, "y": 1330, "s": 0.92, "festa": "10:0.35", "t": 0.2},
+      {"tipo": "boneco", "cor": "verde", "num": 2, "x": 410, "y": 1330, "s": 0.92, "festa": "10:0.35+0.32", "t": 0.3},
+      {"tipo": "boneco", "cor": "amarelo", "num": 3, "x": 670, "y": 1330, "s": 0.92, "festa": "10:0.35+0.64", "t": 0.4},
+      {"tipo": "boneco", "cor": "laranja", "num": 4, "x": 930, "y": 1330, "s": 0.92, "festa": "10:0.35+0.96", "t": 0.5},
+      {"tipo": "circulo", "num": 1, "cor": "azul", "x": 150, "y": 950, "t": "10:0.35"},
+      {"tipo": "circulo", "num": 2, "cor": "verde", "x": 410, "y": 950, "t": "10:0.35+0.32"},
+      {"tipo": "circulo", "num": 3, "cor": "amarelo", "x": 670, "y": 950, "t": "10:0.35+0.64"},
+      {"tipo": "circulo", "num": 4, "cor": "laranja", "x": 930, "y": 950, "t": "10:0.35+0.96"},
+      {"tipo": "etiqueta", "txt": "6 MESES", "x": 150, "y": 1395, "t": 0.6},
+      {"tipo": "etiqueta", "txt": "1 ANO", "x": 410, "y": 1395, "t": 0.7},
+      {"tipo": "etiqueta", "txt": "2 ANOS", "x": 670, "y": 1395, "t": 0.8},
+      {"tipo": "etiqueta", "txt": "3 ANOS", "x": 930, "y": 1395, "t": 0.9}
+    ]}
+  ]
+}

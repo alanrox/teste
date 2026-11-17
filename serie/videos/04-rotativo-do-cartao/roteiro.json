@@ -1,0 +1,76 @@
+{
+  "titulo": "Rotativo do cartão",
+  "proximo": "Quem decide os juros do país?",
+  "falas": [
+    {"cena": 0, "fala": "Como uma fatura de mil reais vira quase dois mil?", "legendas": ["Como uma fatura de R$ 1.000 vira quase R$ 2.000?"]},
+    {"cena": 1, "fala": "Quatro irmãos receberam a mesma fatura do cartão: mil reais.", "legendas": ["Quatro irmãos receberam a mesma fatura do cartão:", "R$ 1.000."]},
+    {"cena": 2, "fala": "O primeiro pagou só o mínimo. O resto caiu no rotativo, com juros de mais de dez por cento ao mês.", "legendas": ["O primeiro pagou só o mínimo.", "O resto caiu no rotativo, com juros de mais de 10% ao mês."]},
+    {"cena": 2, "fala": "Em seis meses, a dívida quase dobrou.", "legendas": ["Em 6 meses, a dívida quase dobrou."]},
+    {"cena": 3, "fala": "O segundo parcelou a fatura, e pagou cerca de mil trezentos e quarenta.", "legendas": ["O segundo parcelou a fatura…", "…e pagou cerca de R$ 1.340."]},
+    {"cena": 3, "fala": "O terceiro trocou por um empréstimo mais barato: mil cento e quarenta e cinco.", "legendas": ["O terceiro trocou por um empréstimo mais barato:", "R$ 1.145."]},
+    {"cena": 3, "fala": "E o quarto pagou a fatura inteira: mil reais, sem nenhum juro.", "legendas": ["E o quarto pagou a fatura inteira:", "R$ 1.000, sem nenhum juro."]},
+    {"cena": 4, "fala": "Isso se chama juros do rotativo: juros sobre juros, só que contra você.", "legendas": ["Isso se chama juros do rotativo:", "juros sobre juros, só que contra você."]},
+    {"cena": 4, "fala": "A lei limita esses juros ao valor da dívida. Mesmo assim, ela pode dobrar.", "legendas": ["A lei limita esses juros ao valor da dívida.", "Mesmo assim, ela pode dobrar."]},
+    {"cena": 5, "fala": "Cartão bom é cartão pago inteiro.", "legendas": ["Cartão bom é cartão pago inteiro."]},
+    {"cena": 5, "fala": "E você, qual irmão é? Um, dois, três ou quatro?", "legendas": ["E você, qual irmão é? 1, 2, 3 ou 4?"]}
+  ],
+  "cenas": [
+    {"fundo": "escuro", "els": [
+      {"tipo": "texto", "txt": "R$ 1.000 VIRANDO\nR$ 2.000?", "cores": ["branco", "vermelho"], "tam": 100, "y": 290, "t": 0.1},
+      {"tipo": "emoji", "e": "💳", "x": 300, "y": 640, "tam": 200, "t": 0.3, "balanca": true},
+      {"tipo": "forma", "forma": "circulo", "w": 150, "cor": "#f1f5f9", "borda": "#cbd5e1", "x": 640, "y": 940, "t": 0.4,
+       "move": [{"t": "1:0.15", "s": 2.4, "dur": 2.4, "som": "subida"}]},
+      {"tipo": "contador", "de": 1000, "para": 1974, "exp": true, "pre": "R$ ", "tam": 70, "cor": "tinta", "x": 640, "y": 940, "s": 0.45, "t": "1:0.15", "dur": 2.4,
+       "move": [{"t": "1:0.15", "s": 1, "dur": 2.4, "som": false}]},
+      {"tipo": "boneco", "cor": "cinza", "x": 180, "y": 1420, "s": 0.95, "olhar": true, "boca": "triste", "t": 0.2}
+    ]},
+    {"fundo": "cidade", "els": [
+      {"tipo": "selo", "txt": "FATURA: R$ 1.000", "tam": 72, "y": 300, "t": "2:0.55"},
+      {"tipo": "emoji", "e": "🧾", "x": 540, "y": 640, "tam": 220, "t": "2:0.3", "flutua": 8},
+      {"tipo": "boneco", "cor": "azul", "num": 1, "x": 165, "y": 1410, "s": 0.95, "t": 0.05},
+      {"tipo": "boneco", "cor": "verde", "num": 2, "x": 415, "y": 1410, "s": 0.95, "t": 0.12},
+      {"tipo": "boneco", "cor": "amarelo", "num": 3, "x": 665, "y": 1410, "s": 0.95, "t": 0.19},
+      {"tipo": "boneco", "cor": "laranja", "num": 4, "x": 915, "y": 1410, "s": 0.95, "t": 0.26}
+    ]},
+    {"fundo": "cidade", "els": [
+      {"tipo": "selo", "txt": "SÓ O MÍNIMO", "tam": 64, "cor": "vermelho", "y": 290, "t": "3:0.12"},
+      {"tipo": "selo", "txt": "ROTATIVO", "tam": 56, "cor": "vermelho", "y": 420, "t": "3:0.42"},
+      {"tipo": "etiqueta", "txt": "+10% AO MÊS", "tam": 40, "y": 530, "t": "3:0.78"},
+      {"tipo": "boneco", "cor": "azul", "num": 1, "x": 200, "y": 1410, "s": 1.15, "boca": "triste", "segura": "💳", "t": 0.05},
+      {"tipo": "forma", "forma": "circulo", "w": 150, "cor": "#f1f5f9", "borda": "#cbd5e1", "x": 690, "y": 1030, "t": "4:0.05",
+       "move": [{"t": "4:0.1", "s": 2.3, "dur": 2.0, "som": "subida"}]},
+      {"tipo": "contador", "de": 1000, "para": 1974, "exp": true, "pre": "R$ ", "tam": 66, "cor": "tinta", "x": 690, "y": 1030, "s": 0.45, "t": "4:0.1", "dur": 2.0,
+       "move": [{"t": "4:0.1", "s": 1, "dur": 2.0, "som": false}]},
+      {"tipo": "etiqueta", "txt": "EM 6 MESES", "tam": 36, "x": 690, "y": 1290, "t": "4:0.3"}
+    ]},
+    {"fundo": "escuro", "els": [
+      {"tipo": "texto", "txt": "QUANTO CADA UM PAGOU", "tam": 76, "y": 210, "t": 0.1},
+      {"tipo": "barras", "x": 540, "y": 1330, "w": 960, "h": 760, "valores": [1974, 1338, 1145, 1000], "max": 2000,
+       "cores": ["azul", "verde", "amarelo", "laranja"], "rotulos": ["rotativo", "parcelou", "empréstimo", "pagou tudo"], "tamRotulo": 34,
+       "ts": [0.35, "5:0.55", "6:0.6", "7:0.55"], "pre": "R$ ", "textos": ["R$ 1.974", "R$ 1.338", "R$ 1.145", "R$ 1.000"], "tamValor": 44},
+      {"tipo": "boneco", "cor": "laranja", "num": 4, "x": 900, "y": 840, "s": 0.5, "festa": "7:0.85", "t": "7:0.8"}
+    ]},
+    {"fundo": "escuro", "els": [
+      {"tipo": "selo", "txt": "JUROS DO ROTATIVO", "tam": 66, "cor": "vermelho", "y": 300, "t": "8:0.3", "brilho": true},
+      {"tipo": "texto", "txt": "juros sobre juros,\ncontra você", "tam": 66, "y": 500, "t": "8:0.6"},
+      {"tipo": "emoji", "e": "⚖️", "x": 540, "y": 800, "tam": 200, "t": "9:0.05"},
+      {"tipo": "texto", "txt": "limite da lei: o valor da dívida", "tam": 50, "peso": 800, "y": 1010, "t": "9:0.25"},
+      {"tipo": "texto", "txt": "R$ 1.000 → até R$ 2.000", "tam": 76, "cor": "ouro", "y": 1150, "t": "9:0.7"}
+    ]},
+    {"fundo": "claro", "els": [
+      {"tipo": "texto", "txt": "CARTÃO BOM É\nCARTÃO PAGO INTEIRO.", "tam": 76, "cor": "tinta", "y": 250, "t": "10:0.05"},
+      {"tipo": "boneco", "cor": "azul", "num": 1, "x": 150, "y": 1330, "s": 0.92, "festa": "11:0.3", "t": 0.2},
+      {"tipo": "boneco", "cor": "verde", "num": 2, "x": 410, "y": 1330, "s": 0.92, "festa": "11:0.3+0.32", "t": 0.3},
+      {"tipo": "boneco", "cor": "amarelo", "num": 3, "x": 670, "y": 1330, "s": 0.92, "festa": "11:0.3+0.64", "t": 0.4},
+      {"tipo": "boneco", "cor": "laranja", "num": 4, "x": 930, "y": 1330, "s": 0.92, "festa": "11:0.3+0.96", "t": 0.5},
+      {"tipo": "circulo", "num": 1, "cor": "azul", "x": 150, "y": 950, "t": "11:0.3"},
+      {"tipo": "circulo", "num": 2, "cor": "verde", "x": 410, "y": 950, "t": "11:0.3+0.32"},
+      {"tipo": "circulo", "num": 3, "cor": "amarelo", "x": 670, "y": 950, "t": "11:0.3+0.64"},
+      {"tipo": "circulo", "num": 4, "cor": "laranja", "x": 930, "y": 950, "t": "11:0.3+0.96"},
+      {"tipo": "etiqueta", "txt": "MÍNIMO", "x": 150, "y": 1395, "t": 0.6},
+      {"tipo": "etiqueta", "txt": "PARCELOU", "x": 410, "y": 1395, "t": 0.7},
+      {"tipo": "etiqueta", "txt": "EMPRÉSTIMO", "tam": 30, "x": 670, "y": 1395, "t": 0.8},
+      {"tipo": "etiqueta", "txt": "PAGOU TUDO", "tam": 30, "x": 930, "y": 1395, "t": 0.9}
+    ]}
+  ]
+}

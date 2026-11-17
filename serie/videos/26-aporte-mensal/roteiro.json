@@ -1,0 +1,65 @@
+{
+  "titulo": "Aporte mensal",
+  "proximo": "Ganhou aumento e continua sem dinheiro?",
+  "falas": [
+    {"cena": 0, "fala": "Vale mais começar com muito dinheiro, ou investir um pouco todo mês?", "legendas": ["Vale mais começar com muito dinheiro…", "…ou investir um pouco todo mês?"]},
+    {"cena": 1, "fala": "Quatro irmãos investiram durante dez anos, rendendo cerca de dez por cento ao ano.", "legendas": ["Quatro irmãos investiram durante 10 anos…", "…rendendo cerca de 10% ao ano."]},
+    {"cena": 2, "fala": "O primeiro começou do zero, e colocou cem reais todo mês. Terminou com vinte mil.", "legendas": ["O primeiro começou do zero, e colocou R$ 100 todo mês.", "Terminou com R$ 20 mil."]},
+    {"cena": 2, "fala": "O segundo colocou dez mil de uma vez, e nunca mais nada. Terminou com vinte e seis mil.", "legendas": ["O segundo colocou R$ 10 mil de uma vez, e nunca mais nada.", "Terminou com R$ 26 mil."]},
+    {"cena": 2, "fala": "O terceiro começou do zero, com trezentos por mês: sessenta mil.", "legendas": ["O terceiro começou do zero, com R$ 300 por mês:", "R$ 60 mil."]},
+    {"cena": 2, "fala": "E o quarto fez os dois: dez mil no começo, mais trezentos por mês. Oitenta e seis mil.", "legendas": ["E o quarto fez os dois: R$ 10 mil no começo, mais R$ 300 por mês.", "R$ 86 mil."]},
+    {"cena": 3, "fala": "Isso se chama aporte: o dinheiro que você coloca todo mês. Com o tempo, ele pesa mais do que o valor inicial.", "legendas": ["Isso se chama aporte: o dinheiro que você coloca todo mês.", "Com o tempo, ele pesa mais do que o valor inicial."]},
+    {"cena": 4, "fala": "E você, qual irmão é? Um, dois, três ou quatro?", "legendas": ["E você, qual irmão é? 1, 2, 3 ou 4?"]}
+  ],
+  "cenas": [
+    {"fundo": "escuro", "els": [
+      {"tipo": "texto", "txt": "MUITO DE UMA VEZ\nOU POUCO TODO MÊS?", "cores": ["ouro", "branco"], "tam": 90, "y": 280, "t": 0.1},
+      {"tipo": "emoji", "e": "💰", "x": 340, "y": 780, "tam": 240, "t": 0.3},
+      {"tipo": "texto", "txt": "ou", "tam": 80, "x": 540, "y": 780, "t": 0.6},
+      {"tipo": "emoji", "e": "🪙", "x": 680, "y": 830, "tam": 100, "t": 0.8},
+      {"tipo": "emoji", "e": "🪙", "x": 760, "y": 780, "tam": 100, "t": 1.0},
+      {"tipo": "emoji", "e": "🪙", "x": 840, "y": 730, "tam": 100, "t": 1.2},
+      {"tipo": "boneco", "cor": "cinza", "x": 200, "y": 1420, "s": 0.95, "olhar": true, "t": 0.2},
+      {"tipo": "emoji", "e": "🤔", "x": 310, "y": 1030, "tam": 110, "t": "1:0.75", "flutua": true}
+    ]},
+    {"fundo": "claro", "els": [
+      {"tipo": "selo", "txt": "10 ANOS INVESTINDO", "tam": 60, "y": 290, "t": "2:0.2"},
+      {"tipo": "selo", "txt": "≈ 10% AO ANO", "tam": 52, "cor": "verde", "y": 420, "t": "2:0.65"},
+      {"tipo": "boneco", "cor": "azul", "num": 1, "x": 165, "y": 1410, "s": 0.95, "t": 0.05},
+      {"tipo": "boneco", "cor": "verde", "num": 2, "x": 415, "y": 1410, "s": 0.95, "t": 0.12},
+      {"tipo": "boneco", "cor": "amarelo", "num": 3, "x": 665, "y": 1410, "s": 0.95, "t": 0.19},
+      {"tipo": "boneco", "cor": "laranja", "num": 4, "x": 915, "y": 1410, "s": 0.95, "t": 0.26}
+    ]},
+    {"fundo": "escuro", "els": [
+      {"tipo": "texto", "txt": "DEPOIS DE 10 ANOS", "tam": 80, "y": 210, "t": 0.1},
+      {"tipo": "barras", "x": 540, "y": 1290, "w": 960, "h": 760, "valores": [20022, 26017, 60065, 86083],
+       "cores": ["azul", "verde", "amarelo", "laranja"], "rotulos": ["R$ 100/mês", "R$ 10 mil", "R$ 300/mês", "os dois"], "tamRotulo": 34,
+       "ts": ["3:0.8", "4:0.8", "5:0.8", "6:0.85"], "pre": "R$ ", "suf": " mil", "div": 1000, "textos": ["R$ 20 mil", "R$ 26 mil", "R$ 60 mil", "R$ 86 mil"], "tamValor": 46},
+      {"tipo": "boneco", "cor": "laranja", "num": 4, "x": 900, "y": 445, "s": 0.5, "festa": "6:0.95", "t": "6:0.9"}
+    ]},
+    {"fundo": "escuro", "els": [
+      {"tipo": "selo", "txt": "APORTE", "tam": 110, "y": 300, "t": "7:0.2", "brilho": true},
+      {"tipo": "texto", "txt": "o dinheiro que você\ncoloca todo mês", "tam": 62, "peso": 800, "y": 500, "t": "7:0.35"},
+      {"tipo": "emoji", "e": "🪙", "x": 360, "y": 820, "tam": 120, "t": "7:0.5"},
+      {"tipo": "emoji", "e": "🪙", "x": 480, "y": 820, "tam": 120, "t": "7:0.55"},
+      {"tipo": "emoji", "e": "🪙", "x": 600, "y": 820, "tam": 120, "t": "7:0.6"},
+      {"tipo": "emoji", "e": "🪙", "x": 720, "y": 820, "tam": 120, "t": "7:0.65"},
+      {"tipo": "texto", "txt": "com o tempo, pesa mais\nque o valor inicial", "tam": 58, "cor": "ouro", "y": 1060, "t": "7:0.75"}
+    ]},
+    {"fundo": "claro", "els": [
+      {"tipo": "texto", "txt": "CONSTÂNCIA\nVENCE.", "tam": 96, "cor": "tinta", "y": 250, "t": 0.1},
+      {"tipo": "boneco", "cor": "azul", "num": 1, "x": 150, "y": 1330, "s": 0.92, "festa": "8:0.4", "t": 0.2},
+      {"tipo": "boneco", "cor": "verde", "num": 2, "x": 410, "y": 1330, "s": 0.92, "festa": "8:0.4+0.32", "t": 0.3},
+      {"tipo": "boneco", "cor": "amarelo", "num": 3, "x": 670, "y": 1330, "s": 0.92, "festa": "8:0.4+0.64", "t": 0.4},
+      {"tipo": "boneco", "cor": "laranja", "num": 4, "x": 930, "y": 1330, "s": 0.92, "festa": "8:0.4+0.96", "t": 0.5},
+      {"tipo": "circulo", "num": 1, "cor": "azul", "x": 150, "y": 950, "t": "8:0.4"},
+      {"tipo": "circulo", "num": 2, "cor": "verde", "x": 410, "y": 950, "t": "8:0.4+0.32"},
+      {"tipo": "circulo", "num": 3, "cor": "amarelo", "x": 670, "y": 950, "t": "8:0.4+0.64"},
+      {"tipo": "circulo", "num": 4, "cor": "laranja", "x": 930, "y": 950, "t": "8:0.4+0.96"},
+      {"tipo": "etiqueta", "txt": "R$ 100/MÊS", "tam": 28, "x": 150, "y": 1395, "t": 0.6},
+      {"tipo": "etiqueta", "txt": "R$ 10 MIL", "tam": 30, "x": 410, "y": 1395, "t": 0.7},
+      {"tipo": "etiqueta", "txt": "R$ 300/MÊS", "tam": 28, "x": 670, "y": 1395, "t": 0.8},
+      {"tipo": "etiqueta", "txt": "OS DOIS", "x": 930, "y": 1395, "t": 0.9}
+    ]}
+  ]
+}

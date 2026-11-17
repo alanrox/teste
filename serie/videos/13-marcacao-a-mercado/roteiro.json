@@ -1,0 +1,82 @@
+{
+  "titulo": "Marcação a mercado",
+  "proximo": "Por que sacar em 10 dias custa caro?",
+  "falas": [
+    {"cena": 0, "fala": "Como alguém perde dinheiro no Tesouro Direto?", "legendas": ["Como alguém perde dinheiro no Tesouro Direto?"]},
+    {"cena": 1, "fala": "Três irmãos compraram o mesmo Tesouro Prefixado, por setecentos e cinquenta e um reais.", "legendas": ["Três irmãos compraram o mesmo Tesouro Prefixado…", "…por R$ 751."]},
+    {"cena": 1, "fala": "O combinado: receber mil reais daqui a três anos.", "legendas": ["O combinado: receber R$ 1.000 daqui a 3 anos."]},
+    {"cena": 2, "fala": "Mas o preço desse título muda todo dia.", "legendas": ["Mas o preço desse título muda todo dia."]},
+    {"cena": 2, "fala": "Quando os juros do país sobem, o preço cai. Quando os juros caem, o preço sobe.", "legendas": ["Quando os juros do país sobem, o preço cai.", "Quando os juros caem, o preço sobe."]},
+    {"cena": 3, "fala": "Os juros subiram, e o primeiro precisou vender. Recebeu seiscentos e setenta e cinco: prejuízo.", "legendas": ["Os juros subiram, e o primeiro precisou vender.", "Recebeu R$ 675: prejuízo."]},
+    {"cena": 3, "fala": "O segundo vendeu quando os juros caíram: setecentos e noventa e quatro. Lucrou antes do prazo.", "legendas": ["O segundo vendeu quando os juros caíram: R$ 794.", "Lucrou antes do prazo."]},
+    {"cena": 3, "fala": "E o terceiro esperou até o vencimento. Recebeu os mil reais combinados.", "legendas": ["E o terceiro esperou até o vencimento.", "Recebeu os R$ 1.000 combinados."]},
+    {"cena": 4, "fala": "Isso se chama marcação a mercado: o preço muda no caminho, mas o combinado vale no final.", "legendas": ["Isso se chama marcação a mercado:", "o preço muda no caminho, mas o combinado vale no final."]},
+    {"cena": 5, "fala": "E você, faria como qual irmão? Um, dois ou três?", "legendas": ["E você, faria como qual irmão? 1, 2 ou 3?"]}
+  ],
+  "cenas": [
+    {"fundo": "escuro", "els": [
+      {"tipo": "texto", "txt": "PERDER DINHEIRO\nNO TESOURO?", "cores": ["branco", "vermelho"], "tam": 104, "y": 280, "t": 0.1},
+      {"tipo": "selo", "txt": "TESOURO", "tam": 70, "cor": "azul", "x": 560, "y": 680, "t": 0.4},
+      {"tipo": "emoji", "e": "📉", "x": 560, "y": 900, "tam": 200, "t": "1:0.5"},
+      {"tipo": "boneco", "cor": "cinza", "x": 220, "y": 1420, "s": 0.95, "olhar": true, "boca": "triste", "t": 0.2},
+      {"tipo": "emoji", "e": "❓", "x": 330, "y": 1030, "tam": 110, "t": "1:0.7", "flutua": true}
+    ]},
+    {"fundo": "claro", "els": [
+      {"tipo": "predio", "txt": "GOVERNO", "governo": true, "x": 770, "y": 1320, "s": 0.95, "t": 0.1},
+      {"tipo": "boneco", "cor": "azul", "num": 1, "x": 120, "y": 1410, "s": 0.85, "t": 0.15},
+      {"tipo": "boneco", "cor": "verde", "num": 2, "x": 290, "y": 1410, "s": 0.85, "t": 0.22},
+      {"tipo": "boneco", "cor": "laranja", "num": 3, "x": 460, "y": 1410, "s": 0.85, "t": 0.29},
+      {"tipo": "selo", "txt": "TESOURO PREFIXADO", "tam": 54, "cor": "verde", "y": 290, "t": "2:0.35"},
+      {"tipo": "selo", "txt": "PAGOU R$ 751", "tam": 60, "y": 420, "t": "2:0.8"},
+      {"tipo": "selo", "txt": "RECEBE R$ 1.000 EM 3 ANOS", "tam": 44, "cor": "branco", "y": 540, "t": "3:0.35"}
+    ]},
+    {"fundo": "escuro", "els": [
+      {"tipo": "texto", "txt": "O PREÇO MUDA\nTODO DIA", "tam": 96, "y": 260, "t": "4:0.1"},
+      {"tipo": "texto", "txt": "JUROS", "tam": 72, "x": 300, "y": 560, "t": "5:0.05"},
+      {"tipo": "texto", "txt": "PREÇO", "tam": 72, "x": 780, "y": 560, "t": "5:0.05"},
+      {"tipo": "emoji", "e": "⬆️", "x": 300, "y": 740, "tam": 150, "t": "5:0.25"},
+      {"tipo": "emoji", "e": "⬇️", "x": 780, "y": 740, "tam": 150, "t": "5:0.38"},
+      {"tipo": "emoji", "e": "⬇️", "x": 300, "y": 1010, "tam": 150, "t": "5:0.65"},
+      {"tipo": "emoji", "e": "⬆️", "x": 780, "y": 1010, "tam": 150, "t": "5:0.8"},
+      {"tipo": "emoji", "e": "↔️", "x": 540, "y": 875, "tam": 110, "t": "5:0.3"}
+    ]},
+    {"fundo": "escuro", "els": [
+      {"tipo": "texto", "txt": "PAGOU R$ 751", "tam": 76, "y": 210, "t": 0.1},
+      {"tipo": "caixa", "w": 980, "h": 170, "y": 430, "t": "6:0.0", "som": false},
+      {"tipo": "circulo", "num": 1, "cor": "azul", "x": 120, "y": 430, "t": "6:0.0"},
+      {"tipo": "texto", "txt": "juros subiram, vendeu", "alinha": "left", "tam": 48, "x": 210, "y": 430, "t": "6:0.1", "som": false},
+      {"tipo": "texto", "txt": "R$ 675", "tam": 62, "cor": "vermelho", "x": 890, "y": 430, "t": "6:0.6"},
+      {"tipo": "caixa", "w": 980, "h": 170, "y": 650, "t": "7:0.0", "som": false},
+      {"tipo": "circulo", "num": 2, "cor": "verde", "x": 120, "y": 650, "t": "7:0.0"},
+      {"tipo": "texto", "txt": "juros caíram, vendeu", "alinha": "left", "tam": 48, "x": 210, "y": 650, "t": "7:0.1", "som": false},
+      {"tipo": "texto", "txt": "R$ 794", "tam": 62, "cor": "verde", "x": 890, "y": 650, "t": "7:0.5"},
+      {"tipo": "caixa", "w": 980, "h": 170, "y": 870, "t": "8:0.0", "som": false},
+      {"tipo": "circulo", "num": 3, "cor": "laranja", "x": 120, "y": 870, "t": "8:0.0"},
+      {"tipo": "texto", "txt": "esperou o vencimento", "alinha": "left", "tam": 48, "x": 210, "y": 870, "t": "8:0.1", "som": false},
+      {"tipo": "texto", "txt": "R$ 1.000", "tam": 62, "cor": "ouro", "x": 880, "y": 870, "t": "8:0.6"},
+      {"tipo": "boneco", "cor": "laranja", "num": 3, "x": 540, "y": 1390, "s": 0.8, "festa": "8:0.7", "t": "8:0.5"}
+    ]},
+    {"fundo": "escuro", "els": [
+      {"tipo": "selo", "txt": "MARCAÇÃO A MERCADO", "tam": 64, "y": 300, "t": "9:0.25", "brilho": true},
+      {"tipo": "texto", "txt": "o preço muda no caminho", "tam": 58, "peso": 800, "y": 460, "t": "9:0.55"},
+      {"tipo": "texto", "txt": "o combinado vale no final", "tam": 62, "cor": "ouro", "y": 570, "t": "9:0.78"},
+      {"tipo": "seta", "de": [150, 900], "para": [900, 900], "cor": "ouro", "larg": 12, "tracejada": true, "t": "9:0.55", "dur": 1.2},
+      {"tipo": "emoji", "e": "🏁", "x": 960, "y": 850, "tam": 110, "t": "9:0.8"},
+      {"tipo": "etiqueta", "txt": "R$ 751", "tam": 36, "x": 170, "y": 1000, "t": "9:0.55"},
+      {"tipo": "etiqueta", "txt": "R$ 675… R$ 794…", "tam": 32, "cor": "cinza", "x": 520, "y": 1000, "t": "9:0.68"},
+      {"tipo": "etiqueta", "txt": "R$ 1.000", "tam": 36, "cor": "verde", "x": 900, "y": 1000, "t": "9:0.85"}
+    ]},
+    {"fundo": "claro", "els": [
+      {"tipo": "texto", "txt": "SAIBA QUANDO VAI\nPRECISAR DO DINHEIRO.", "tam": 74, "cor": "tinta", "y": 250, "t": 0.1},
+      {"tipo": "boneco", "cor": "azul", "num": 1, "x": 220, "y": 1330, "s": 1.0, "festa": "10:0.4", "t": 0.2},
+      {"tipo": "boneco", "cor": "verde", "num": 2, "x": 540, "y": 1330, "s": 1.0, "festa": "10:0.4+0.32", "t": 0.3},
+      {"tipo": "boneco", "cor": "laranja", "num": 3, "x": 860, "y": 1330, "s": 1.0, "festa": "10:0.4+0.64", "t": 0.4},
+      {"tipo": "circulo", "num": 1, "cor": "azul", "x": 220, "y": 920, "t": "10:0.4"},
+      {"tipo": "circulo", "num": 2, "cor": "verde", "x": 540, "y": 920, "t": "10:0.4+0.32"},
+      {"tipo": "circulo", "num": 3, "cor": "laranja", "x": 860, "y": 920, "t": "10:0.4+0.64"},
+      {"tipo": "etiqueta", "txt": "VENDEU NA BAIXA", "tam": 28, "x": 220, "y": 1395, "t": 0.6},
+      {"tipo": "etiqueta", "txt": "VENDEU NA ALTA", "tam": 28, "x": 540, "y": 1395, "t": 0.7},
+      {"tipo": "etiqueta", "txt": "ESPEROU", "x": 860, "y": 1395, "t": 0.8}
+    ]}
+  ]
+}

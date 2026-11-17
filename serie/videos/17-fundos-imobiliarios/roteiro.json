@@ -1,0 +1,64 @@
+{
+  "titulo": "Fundos imobiliários",
+  "proximo": "Como comprar dezenas de empresas de uma vez?",
+  "falas": [
+    {"cena": 0, "fala": "Dá para receber aluguel de um shopping, sem ter um shopping?", "legendas": ["Dá para receber aluguel de um shopping…", "…sem ter um shopping?"]},
+    {"cena": 1, "fala": "Um fundo comprou um shopping inteiro, e dividiu em cotas de cem reais.", "legendas": ["Um fundo comprou um shopping inteiro…", "…e dividiu em cotas de R$ 100."]},
+    {"cena": 1, "fala": "Todo mês, o aluguel das lojas é dividido entre quem tem cotas.", "legendas": ["Todo mês, o aluguel das lojas é dividido entre quem tem cotas."]},
+    {"cena": 2, "fala": "Aqui, cada cota pagou uns oitenta centavos por mês.", "legendas": ["Aqui, cada cota pagou uns R$ 0,80 por mês."]},
+    {"cena": 2, "fala": "O primeiro irmão, com dez cotas, recebe oito reais por mês. O segundo, com cem, oitenta.", "legendas": ["O primeiro irmão, com 10 cotas, recebe R$ 8 por mês.", "O segundo, com 100, R$ 80."]},
+    {"cena": 2, "fala": "O terceiro, com quinhentas, quatrocentos. E o quarto, com mil cotas, oitocentos reais por mês.", "legendas": ["O terceiro, com 500, R$ 400.", "E o quarto, com mil cotas, R$ 800 por mês."]},
+    {"cena": 3, "fala": "Isso se chama fundo imobiliário: você vira dono de um pedaço de imóveis, e recebe parte do aluguel.", "legendas": ["Isso se chama fundo imobiliário:", "você vira dono de um pedaço de imóveis, e recebe parte do aluguel."]},
+    {"cena": 3, "fala": "Mas o aluguel pode variar, e o preço das cotas também.", "legendas": ["Mas o aluguel pode variar, e o preço das cotas também."]},
+    {"cena": 4, "fala": "E você, quantas cotas teria? Um, dois, três ou quatro?", "legendas": ["E você, quantas cotas teria? 1, 2, 3 ou 4?"]}
+  ],
+  "cenas": [
+    {"fundo": "escuro", "els": [
+      {"tipo": "texto", "txt": "ALUGUEL DE\nUM SHOPPING?", "cores": ["branco", "ouro"], "tam": 110, "y": 280, "t": 0.1},
+      {"tipo": "emoji", "e": "🏬", "x": 580, "y": 770, "tam": 280, "t": 0.3},
+      {"tipo": "moedas", "n": 3, "r": 36, "x": 820, "y": 1040, "t": "1:0.6"},
+      {"tipo": "boneco", "cor": "cinza", "x": 220, "y": 1420, "s": 0.95, "olhar": true, "t": 0.2},
+      {"tipo": "emoji", "e": "🤔", "x": 330, "y": 1030, "tam": 110, "t": "1:0.75", "flutua": true}
+    ]},
+    {"fundo": "cidade", "els": [
+      {"tipo": "selo", "txt": "FUNDO DONO DO SHOPPING", "tam": 50, "y": 290, "t": "2:0.15"},
+      {"tipo": "emoji", "e": "🏬", "x": 540, "y": 560, "tam": 220, "t": 0.2},
+      {"tipo": "grade", "n": 40, "cols": 10, "cel": 54, "gap": 10, "corA": "verde", "x": 540, "y": 860, "t": "2:0.5", "passo": 0.02},
+      {"tipo": "etiqueta", "txt": "cotas de R$ 100", "tam": 40, "y": 1030, "t": "2:0.8"},
+      {"tipo": "moedas", "n": 4, "r": 34, "x": 540, "y": 1180, "t": "3:0.5"},
+      {"tipo": "etiqueta", "txt": "aluguel todo mês", "tam": 36, "y": 1280, "t": "3:0.6"}
+    ]},
+    {"fundo": "escuro", "els": [
+      {"tipo": "texto", "txt": "ALUGUEL POR MÊS", "tam": 84, "y": 210, "t": 0.1},
+      {"tipo": "selo", "txt": "R$ 0,80 POR COTA", "tam": 46, "cor": "verde", "y": 330, "t": "4:0.4"},
+      {"tipo": "barras", "x": 540, "y": 1310, "w": 960, "h": 720, "valores": [8, 80, 400, 800], "escala": "log",
+       "cores": ["azul", "verde", "amarelo", "laranja"], "rotulos": ["10 cotas", "100", "500", "1.000"], "tamRotulo": 38,
+       "ts": ["5:0.4", "5:0.85", "6:0.25", "6:0.8"], "pre": "R$ ", "textos": ["R$ 8", "R$ 80", "R$ 400", "R$ 800"], "tamValor": 50},
+      {"tipo": "boneco", "cor": "laranja", "num": 4, "x": 900, "y": 505, "s": 0.5, "festa": "6:0.95", "t": "6:0.9"}
+    ]},
+    {"fundo": "escuro", "els": [
+      {"tipo": "selo", "txt": "FUNDO IMOBILIÁRIO", "tam": 76, "y": 300, "t": "7:0.25", "brilho": true},
+      {"tipo": "texto", "txt": "um pedaço de imóveis\n+ parte do aluguel", "tam": 62, "peso": 800, "y": 500, "t": "7:0.5"},
+      {"tipo": "emoji", "e": "🏢", "x": 330, "y": 820, "tam": 170, "t": "7:0.55"},
+      {"tipo": "emoji", "e": "🏬", "x": 540, "y": 820, "tam": 170, "t": "7:0.62"},
+      {"tipo": "emoji", "e": "🏭", "x": 750, "y": 820, "tam": 170, "t": "7:0.69"},
+      {"tipo": "emoji", "e": "🎢", "x": 540, "y": 1100, "tam": 150, "t": "8:0.3"},
+      {"tipo": "etiqueta", "txt": "aluguel e preço variam", "tam": 40, "cor": "vermelho", "y": 1240, "t": "8:0.4"}
+    ]},
+    {"fundo": "claro", "els": [
+      {"tipo": "texto", "txt": "VOCÊ PODE SER\nO DONO DO IMÓVEL.", "tam": 80, "cor": "tinta", "y": 250, "t": 0.1},
+      {"tipo": "boneco", "cor": "azul", "num": 1, "x": 150, "y": 1330, "s": 0.92, "festa": "9:0.4", "t": 0.2},
+      {"tipo": "boneco", "cor": "verde", "num": 2, "x": 410, "y": 1330, "s": 0.92, "festa": "9:0.4+0.32", "t": 0.3},
+      {"tipo": "boneco", "cor": "amarelo", "num": 3, "x": 670, "y": 1330, "s": 0.92, "festa": "9:0.4+0.64", "t": 0.4},
+      {"tipo": "boneco", "cor": "laranja", "num": 4, "x": 930, "y": 1330, "s": 0.92, "festa": "9:0.4+0.96", "t": 0.5},
+      {"tipo": "circulo", "num": 1, "cor": "azul", "x": 150, "y": 950, "t": "9:0.4"},
+      {"tipo": "circulo", "num": 2, "cor": "verde", "x": 410, "y": 950, "t": "9:0.4+0.32"},
+      {"tipo": "circulo", "num": 3, "cor": "amarelo", "x": 670, "y": 950, "t": "9:0.4+0.64"},
+      {"tipo": "circulo", "num": 4, "cor": "laranja", "x": 930, "y": 950, "t": "9:0.4+0.96"},
+      {"tipo": "etiqueta", "txt": "10 COTAS", "x": 150, "y": 1395, "t": 0.6},
+      {"tipo": "etiqueta", "txt": "100", "x": 410, "y": 1395, "t": 0.7},
+      {"tipo": "etiqueta", "txt": "500", "x": 670, "y": 1395, "t": 0.8},
+      {"tipo": "etiqueta", "txt": "1.000", "x": 930, "y": 1395, "t": 0.9}
+    ]}
+  ]
+}

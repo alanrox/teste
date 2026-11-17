@@ -1,0 +1,62 @@
+{
+  "titulo": "Inflação do estilo de vida",
+  "proximo": "Quanto custa seu café em 20 anos?",
+  "falas": [
+    {"cena": 0, "fala": "Ganhou aumento, e continua sem dinheiro no fim do mês?", "legendas": ["Ganhou aumento…", "…e continua sem dinheiro no fim do mês?"]},
+    {"cena": 1, "fala": "Quatro irmãos ganhavam três mil reais. Em cinco anos, o salário de todos chegou a cinco mil e quatrocentos.", "legendas": ["Quatro irmãos ganhavam R$ 3 mil.", "Em 5 anos, o salário de todos chegou a R$ 5.400."]},
+    {"cena": 2, "fala": "O primeiro aumentou os gastos junto com o salário: carro novo, apartamento maior. Guardou zero.", "legendas": ["O primeiro aumentou os gastos junto com o salário:", "carro novo, apartamento maior. Guardou zero."]},
+    {"cena": 2, "fala": "O segundo guardou só dez por cento de cada aumento: sete mil e duzentos.", "legendas": ["O segundo guardou só 10% de cada aumento:", "R$ 7.200."]},
+    {"cena": 2, "fala": "O terceiro guardou metade de cada aumento: trinta e seis mil.", "legendas": ["O terceiro guardou metade de cada aumento:", "R$ 36 mil."]},
+    {"cena": 2, "fala": "E o quarto manteve o mesmo padrão de vida, e guardou todos os aumentos: setenta e dois mil.", "legendas": ["E o quarto manteve o mesmo padrão de vida…", "…e guardou todos os aumentos: R$ 72 mil."]},
+    {"cena": 3, "fala": "Isso se chama inflação do estilo de vida: quando o gasto cresce na mesma velocidade que o salário.", "legendas": ["Isso se chama inflação do estilo de vida:", "quando o gasto cresce na mesma velocidade que o salário."]},
+    {"cena": 3, "fala": "A dica: a cada aumento, guarde pelo menos uma parte antes de gastar.", "legendas": ["A dica: a cada aumento, guarde pelo menos uma parte antes de gastar."]},
+    {"cena": 4, "fala": "E você, qual irmão é? Um, dois, três ou quatro?", "legendas": ["E você, qual irmão é? 1, 2, 3 ou 4?"]}
+  ],
+  "cenas": [
+    {"fundo": "escuro", "els": [
+      {"tipo": "texto", "txt": "GANHOU AUMENTO\nE CONTINUA SEM DINHEIRO?", "cores": ["verde", "branco"], "tam": 80, "y": 280, "t": 0.1},
+      {"tipo": "emoji", "e": "📈", "x": 380, "y": 780, "tam": 220, "t": 0.3},
+      {"tipo": "emoji", "e": "🛍️", "x": 760, "y": 790, "tam": 220, "t": "1:0.4", "move": [{"t": "1:0.5", "s": 1.4, "dur": 1.0, "som": "subida"}]},
+      {"tipo": "boneco", "cor": "cinza", "x": 200, "y": 1420, "s": 0.95, "olhar": true, "boca": "triste", "t": 0.2},
+      {"tipo": "emoji", "e": "❓", "x": 310, "y": 1030, "tam": 110, "t": "1:0.75", "flutua": true}
+    ]},
+    {"fundo": "cidade", "els": [
+      {"tipo": "contador", "de": 3000, "para": 5400, "pre": "R$ ", "tam": 100, "cor": "verde", "contorno": true, "y": 330, "t": "2:0.4", "dur": 1.8},
+      {"tipo": "etiqueta", "txt": "salário em 5 anos", "tam": 40, "y": 450, "t": "2:0.5"},
+      {"tipo": "boneco", "cor": "azul", "num": 1, "x": 165, "y": 1410, "s": 0.95, "t": 0.05},
+      {"tipo": "boneco", "cor": "verde", "num": 2, "x": 415, "y": 1410, "s": 0.95, "t": 0.12},
+      {"tipo": "boneco", "cor": "amarelo", "num": 3, "x": 665, "y": 1410, "s": 0.95, "t": 0.19},
+      {"tipo": "boneco", "cor": "laranja", "num": 4, "x": 915, "y": 1410, "s": 0.95, "t": 0.26}
+    ]},
+    {"fundo": "escuro", "els": [
+      {"tipo": "texto", "txt": "QUANTO GUARDARAM EM 5 ANOS", "tam": 62, "y": 210, "t": 0.1},
+      {"tipo": "barras", "x": 540, "y": 1290, "w": 960, "h": 760, "valores": [0, 7200, 36000, 72000],
+       "cores": ["azul", "verde", "amarelo", "laranja"], "rotulos": ["gastou tudo", "10%", "metade", "tudo"], "tamRotulo": 36,
+       "ts": ["3:0.8", "4:0.75", "5:0.75", "6:0.85"], "pre": "R$ ", "textos": ["R$ 0", "R$ 7.200", "R$ 36 mil", "R$ 72 mil"], "tamValor": 46},
+      {"tipo": "emoji", "e": "🚗", "x": 180, "y": 1100, "tam": 110, "t": "3:0.35"},
+      {"tipo": "emoji", "e": "🏢", "x": 180, "y": 960, "tam": 100, "t": "3:0.55"},
+      {"tipo": "boneco", "cor": "laranja", "num": 4, "x": 900, "y": 445, "s": 0.5, "festa": "6:0.95", "t": "6:0.9"}
+    ]},
+    {"fundo": "escuro", "els": [
+      {"tipo": "selo", "txt": "INFLAÇÃO DO ESTILO DE VIDA", "tam": 54, "cor": "vermelho", "y": 300, "t": "7:0.25", "brilho": true},
+      {"tipo": "texto", "txt": "o gasto cresce junto\ncom o salário", "tam": 62, "peso": 800, "y": 500, "t": "7:0.5"},
+      {"tipo": "emoji", "e": "🐷", "x": 540, "y": 830, "tam": 220, "t": "8:0.2"},
+      {"tipo": "texto", "txt": "a cada aumento,\nguarde uma parte antes", "tam": 62, "cor": "ouro", "y": 1100, "t": "8:0.4"}
+    ]},
+    {"fundo": "claro", "els": [
+      {"tipo": "texto", "txt": "AUMENTO BOM É\nAUMENTO GUARDADO.", "tam": 80, "cor": "tinta", "y": 250, "t": 0.1},
+      {"tipo": "boneco", "cor": "azul", "num": 1, "x": 150, "y": 1330, "s": 0.92, "festa": "9:0.4", "t": 0.2},
+      {"tipo": "boneco", "cor": "verde", "num": 2, "x": 410, "y": 1330, "s": 0.92, "festa": "9:0.4+0.32", "t": 0.3},
+      {"tipo": "boneco", "cor": "amarelo", "num": 3, "x": 670, "y": 1330, "s": 0.92, "festa": "9:0.4+0.64", "t": 0.4},
+      {"tipo": "boneco", "cor": "laranja", "num": 4, "x": 930, "y": 1330, "s": 0.92, "festa": "9:0.4+0.96", "t": 0.5},
+      {"tipo": "circulo", "num": 1, "cor": "azul", "x": 150, "y": 950, "t": "9:0.4"},
+      {"tipo": "circulo", "num": 2, "cor": "verde", "x": 410, "y": 950, "t": "9:0.4+0.32"},
+      {"tipo": "circulo", "num": 3, "cor": "amarelo", "x": 670, "y": 950, "t": "9:0.4+0.64"},
+      {"tipo": "circulo", "num": 4, "cor": "laranja", "x": 930, "y": 950, "t": "9:0.4+0.96"},
+      {"tipo": "etiqueta", "txt": "GASTOU TUDO", "tam": 28, "x": 150, "y": 1395, "t": 0.6},
+      {"tipo": "etiqueta", "txt": "10%", "x": 410, "y": 1395, "t": 0.7},
+      {"tipo": "etiqueta", "txt": "METADE", "x": 670, "y": 1395, "t": 0.8},
+      {"tipo": "etiqueta", "txt": "TUDO", "x": 930, "y": 1395, "t": 0.9}
+    ]}
+  ]
+}

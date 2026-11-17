@@ -1,0 +1,71 @@
+{
+  "titulo": "Inflação",
+  "proximo": "Quanto guardar antes de investir?",
+  "falas": [
+    {"cena": 0, "fala": "Por que os seus cem reais compram cada vez menos?", "legendas": ["Por que os seus R$ 100 compram cada vez menos?"]},
+    {"cena": 1, "fala": "Quatro irmãos tinham cem reais cada.", "legendas": ["Quatro irmãos tinham R$ 100 cada."]},
+    {"cena": 1, "fala": "O primeiro gastou hoje. Os outros guardaram no colchão por cinco, dez e vinte anos.", "legendas": ["O primeiro gastou hoje.", "Os outros guardaram no colchão por 5, 10 e 20 anos."]},
+    {"cena": 2, "fala": "Com os preços subindo cinco por cento ao ano, veja o que cada um conseguiu comprar.", "legendas": ["Com os preços subindo 5% ao ano…", "…veja o que cada um conseguiu comprar."]},
+    {"cena": 2, "fala": "Hoje: cem reais em compras. Em cinco anos: setenta e oito.", "legendas": ["Hoje: R$ 100 em compras.", "Em 5 anos: R$ 78."]},
+    {"cena": 2, "fala": "Em dez: sessenta e um. Em vinte: só trinta e oito.", "legendas": ["Em 10: R$ 61.", "Em 20: só R$ 38."]},
+    {"cena": 3, "fala": "A nota continua dizendo cem. O que encolheu foi o que ela compra.", "legendas": ["A nota continua dizendo 100.", "O que encolheu foi o que ela compra."]},
+    {"cena": 3, "fala": "Isso se chama inflação: a perda do poder de compra.", "legendas": ["Isso se chama inflação:", "a perda do poder de compra."]},
+    {"cena": 4, "fala": "Dinheiro guardado precisa render, pelo menos, a inflação.", "legendas": ["Dinheiro guardado precisa render, pelo menos, a inflação."]},
+    {"cena": 4, "fala": "E você, deixaria o dinheiro parado por quanto tempo? Um, dois, três ou quatro?", "legendas": ["E você, deixaria o dinheiro parado por quanto tempo?", "1, 2, 3 ou 4?"]}
+  ],
+  "cenas": [
+    {"fundo": "escuro", "els": [
+      {"tipo": "texto", "txt": "SEUS R$ 100\nCOMPRAM MENOS?", "cores": ["branco", "ouro"], "tam": 100, "y": 290, "t": 0.1},
+      {"tipo": "nota", "w": 420, "x": 560, "y": 700, "t": 0.3, "balanca": true},
+      {"tipo": "emoji", "e": "🧺", "x": 620, "y": 1170, "tam": 270, "t": 0.5, "move": [{"t": "1:0.45", "s": 0.5, "dur": 1.4, "som": "descida"}]},
+      {"tipo": "emoji", "e": "🍞", "x": 520, "y": 1010, "tam": 100, "t": 0.6, "sai": "1:0.45"},
+      {"tipo": "emoji", "e": "🥛", "x": 620, "y": 990, "tam": 100, "t": 0.65, "sai": "1:0.6"},
+      {"tipo": "emoji", "e": "🍎", "x": 720, "y": 1010, "tam": 100, "t": 0.7, "sai": "1:0.75"},
+      {"tipo": "boneco", "cor": "cinza", "x": 190, "y": 1420, "s": 0.95, "olhar": true, "boca": "triste", "t": 0.2},
+      {"tipo": "emoji", "e": "❓", "x": 300, "y": 1020, "tam": 110, "t": "1:0.8", "flutua": true}
+    ]},
+    {"fundo": "cidade", "els": [
+      {"tipo": "selo", "txt": "R$ 100 CADA", "tam": 76, "y": 300, "t": "2:0.15"},
+      {"tipo": "emoji", "e": "🛒", "x": 260, "y": 700, "tam": 180, "t": "3:0.1"},
+      {"tipo": "emoji", "e": "🛏️", "x": 720, "y": 700, "tam": 200, "t": "3:0.4"},
+      {"tipo": "boneco", "cor": "azul", "num": 1, "x": 165, "y": 1410, "s": 0.95, "t": 0.05},
+      {"tipo": "boneco", "cor": "verde", "num": 2, "x": 415, "y": 1410, "s": 0.95, "t": 0.12},
+      {"tipo": "boneco", "cor": "amarelo", "num": 3, "x": 665, "y": 1410, "s": 0.95, "t": 0.19},
+      {"tipo": "boneco", "cor": "laranja", "num": 4, "x": 915, "y": 1410, "s": 0.95, "t": 0.26},
+      {"tipo": "etiqueta", "txt": "GASTOU HOJE", "tam": 30, "x": 165, "y": 1060, "t": "3:0.1"},
+      {"tipo": "etiqueta", "txt": "5 ANOS", "tam": 32, "x": 415, "y": 1060, "t": "3:0.62"},
+      {"tipo": "etiqueta", "txt": "10 ANOS", "tam": 32, "x": 665, "y": 1060, "t": "3:0.74"},
+      {"tipo": "etiqueta", "txt": "20 ANOS", "tam": 32, "x": 915, "y": 1060, "t": "3:0.86"}
+    ]},
+    {"fundo": "escuro", "els": [
+      {"tipo": "texto", "txt": "O QUE OS R$ 100 COMPRAM", "tam": 76, "y": 220, "t": 0.1},
+      {"tipo": "selo", "txt": "PREÇOS +5% AO ANO", "tam": 44, "cor": "vermelho", "y": 340, "t": "4:0.3"},
+      {"tipo": "barras", "x": 540, "y": 1330, "w": 960, "h": 760, "valores": [100, 78.4, 61.4, 37.7],
+       "cores": ["azul", "verde", "amarelo", "laranja"], "rotulos": ["hoje", "5 anos", "10 anos", "20 anos"],
+       "ts": ["5:0.1", "5:0.6", "6:0.05", "6:0.55"], "pre": "R$ ", "textos": ["R$ 100", "R$ 78", "R$ 61", "R$ 38"], "tamValor": 50}
+    ]},
+    {"fundo": "escuro", "els": [
+      {"tipo": "nota", "w": 420, "x": 540, "y": 430, "t": 0.1},
+      {"tipo": "etiqueta", "txt": "a nota não muda", "tam": 40, "y": 620, "t": "7:0.15"},
+      {"tipo": "emoji", "e": "🧺", "x": 540, "y": 880, "tam": 300, "t": "7:0.4", "move": [{"t": "7:0.6", "s": 0.45, "dur": 1.2, "som": "descida"}]},
+      {"tipo": "etiqueta", "txt": "o que ela compra encolhe", "tam": 40, "y": 1060, "t": "7:0.75"},
+      {"tipo": "selo", "txt": "INFLAÇÃO", "tam": 84, "cor": "vermelho", "y": 1200, "t": "8:0.3", "brilho": true},
+      {"tipo": "texto", "txt": "perda do poder de compra", "tam": 54, "peso": 800, "y": 1340, "t": "8:0.65"}
+    ]},
+    {"fundo": "claro", "els": [
+      {"tipo": "texto", "txt": "DINHEIRO PARADO\nPERDE VALOR.", "tam": 84, "cor": "tinta", "y": 250, "t": "9:0.05"},
+      {"tipo": "boneco", "cor": "azul", "num": 1, "x": 150, "y": 1330, "s": 0.92, "festa": "10:0.6", "t": 0.2},
+      {"tipo": "boneco", "cor": "verde", "num": 2, "x": 410, "y": 1330, "s": 0.92, "festa": "10:0.6+0.32", "t": 0.3},
+      {"tipo": "boneco", "cor": "amarelo", "num": 3, "x": 670, "y": 1330, "s": 0.92, "festa": "10:0.6+0.64", "t": 0.4},
+      {"tipo": "boneco", "cor": "laranja", "num": 4, "x": 930, "y": 1330, "s": 0.92, "festa": "10:0.6+0.96", "t": 0.5},
+      {"tipo": "circulo", "num": 1, "cor": "azul", "x": 150, "y": 950, "t": "10:0.6"},
+      {"tipo": "circulo", "num": 2, "cor": "verde", "x": 410, "y": 950, "t": "10:0.6+0.32"},
+      {"tipo": "circulo", "num": 3, "cor": "amarelo", "x": 670, "y": 950, "t": "10:0.6+0.64"},
+      {"tipo": "circulo", "num": 4, "cor": "laranja", "x": 930, "y": 950, "t": "10:0.6+0.96"},
+      {"tipo": "etiqueta", "txt": "HOJE", "x": 150, "y": 1395, "t": 0.6},
+      {"tipo": "etiqueta", "txt": "5 ANOS", "x": 410, "y": 1395, "t": 0.7},
+      {"tipo": "etiqueta", "txt": "10 ANOS", "x": 670, "y": 1395, "t": 0.8},
+      {"tipo": "etiqueta", "txt": "20 ANOS", "x": 930, "y": 1395, "t": 0.9}
+    ]}
+  ]
+}

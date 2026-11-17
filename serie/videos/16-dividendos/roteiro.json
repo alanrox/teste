@@ -1,0 +1,62 @@
+{
+  "titulo": "Dividendos",
+  "proximo": "Dá para receber aluguel de um shopping?",
+  "falas": [
+    {"cena": 0, "fala": "Como receber parte do lucro de uma empresa, sem trabalhar nela?", "legendas": ["Como receber parte do lucro de uma empresa…", "…sem trabalhar nela?"]},
+    {"cena": 1, "fala": "Lembra da rede de padarias dividida em cem mil pedaços? Este ano, ela lucrou.", "legendas": ["Lembra da rede de padarias dividida em 100 mil pedaços?", "Este ano, ela lucrou."]},
+    {"cena": 1, "fala": "E decidiu dividir cinquenta mil reais com os sócios: cinquenta centavos por pedaço.", "legendas": ["E decidiu dividir R$ 50 mil com os sócios:", "R$ 0,50 por pedaço."]},
+    {"cena": 2, "fala": "O primeiro irmão, com cinco pedaços, recebeu dois reais e cinquenta.", "legendas": ["O primeiro irmão, com 5 pedaços, recebeu R$ 2,50."]},
+    {"cena": 2, "fala": "O segundo, com cinquenta, recebeu vinte e cinco. O terceiro, com quinhentos, duzentos e cinquenta.", "legendas": ["O segundo, com 50, recebeu R$ 25.", "O terceiro, com 500, R$ 250."]},
+    {"cena": 2, "fala": "E o quarto, com cinco mil pedaços, recebeu dois mil e quinhentos reais.", "legendas": ["E o quarto, com 5 mil pedaços, recebeu R$ 2.500."]},
+    {"cena": 3, "fala": "Isso se chama dividendos: a parte do lucro que a empresa divide com os sócios.", "legendas": ["Isso se chama dividendos:", "a parte do lucro que a empresa divide com os sócios."]},
+    {"cena": 3, "fala": "E quem usa os dividendos para comprar mais pedaços, recebe ainda mais no ano seguinte.", "legendas": ["E quem usa os dividendos para comprar mais pedaços…", "…recebe ainda mais no ano seguinte."]},
+    {"cena": 4, "fala": "E você, faria como qual irmão? Um, dois, três ou quatro?", "legendas": ["E você, faria como qual irmão? 1, 2, 3 ou 4?"]}
+  ],
+  "cenas": [
+    {"fundo": "escuro", "els": [
+      {"tipo": "texto", "txt": "LUCRO SEM\nTRABALHAR LÁ?", "cores": ["branco", "ouro"], "tam": 110, "y": 280, "t": 0.1},
+      {"tipo": "emoji", "e": "🥖", "x": 560, "y": 760, "tam": 240, "t": 0.3},
+      {"tipo": "moedas", "n": 3, "r": 40, "x": 560, "y": 1000, "t": "1:0.5"},
+      {"tipo": "boneco", "cor": "cinza", "x": 220, "y": 1420, "s": 0.95, "olhar": true, "t": 0.2},
+      {"tipo": "emoji", "e": "🤔", "x": 330, "y": 1030, "tam": 110, "t": "1:0.75", "flutua": true}
+    ]},
+    {"fundo": "cidade", "els": [
+      {"tipo": "emoji", "e": "🥖", "x": 540, "y": 480, "tam": 170, "t": 0.2},
+      {"tipo": "selo", "txt": "LUCRO DIVIDIDO: R$ 50 MIL", "tam": 50, "y": 290, "t": "3:0.35"},
+      {"tipo": "grade", "n": 100, "cols": 10, "cel": 46, "gap": 8, "corA": "ouro", "x": 540, "y": 860, "t": 0.3, "passo": 0.008},
+      {"tipo": "moedas", "n": 5, "r": 34, "x": 540, "y": 1210, "t": "3:0.7"},
+      {"tipo": "etiqueta", "txt": "R$ 0,50 por pedaço", "tam": 40, "y": 1320, "t": "3:0.75"}
+    ]},
+    {"fundo": "escuro", "els": [
+      {"tipo": "texto", "txt": "QUANTO CADA UM RECEBEU", "tam": 70, "y": 210, "t": 0.1},
+      {"tipo": "barras", "x": 540, "y": 1310, "w": 960, "h": 760, "valores": [2.5, 25, 250, 2500], "escala": "log",
+       "cores": ["azul", "verde", "amarelo", "laranja"], "rotulos": ["5 pedaços", "50", "500", "5 mil"], "tamRotulo": 38,
+       "ts": ["4:0.55", "5:0.3", "5:0.85", "6:0.6"], "pre": "R$ ", "casas": 0, "textos": ["R$ 2,50", "R$ 25", "R$ 250", "R$ 2.500"], "tamValor": 48},
+      {"tipo": "boneco", "cor": "laranja", "num": 4, "x": 900, "y": 500, "s": 0.5, "festa": "6:0.85", "t": "6:0.8"}
+    ]},
+    {"fundo": "escuro", "els": [
+      {"tipo": "selo", "txt": "DIVIDENDOS", "tam": 100, "y": 300, "t": "7:0.25", "brilho": true},
+      {"tipo": "texto", "txt": "a parte do lucro dividida\ncom os sócios", "tam": 58, "peso": 800, "y": 490, "t": "7:0.5"},
+      {"tipo": "moedas", "n": 3, "r": 40, "x": 300, "y": 850, "t": "8:0.3"},
+      {"tipo": "emoji", "e": "➡️", "x": 540, "y": 850, "tam": 100, "t": "8:0.4"},
+      {"tipo": "grade", "n": 6, "cols": 3, "cel": 60, "gap": 10, "corA": "ouro", "x": 780, "y": 850, "t": "8:0.45", "passo": 0.06},
+      {"tipo": "etiqueta", "txt": "mais pedaços", "tam": 34, "x": 780, "y": 980, "t": "8:0.5"},
+      {"tipo": "texto", "txt": "mais dividendos no ano seguinte", "tam": 52, "cor": "ouro", "y": 1150, "t": "8:0.8"}
+    ]},
+    {"fundo": "claro", "els": [
+      {"tipo": "texto", "txt": "SÓCIO TAMBÉM\nRECEBE LUCRO.", "tam": 84, "cor": "tinta", "y": 250, "t": 0.1},
+      {"tipo": "boneco", "cor": "azul", "num": 1, "x": 150, "y": 1330, "s": 0.92, "festa": "9:0.4", "t": 0.2},
+      {"tipo": "boneco", "cor": "verde", "num": 2, "x": 410, "y": 1330, "s": 0.92, "festa": "9:0.4+0.32", "t": 0.3},
+      {"tipo": "boneco", "cor": "amarelo", "num": 3, "x": 670, "y": 1330, "s": 0.92, "festa": "9:0.4+0.64", "t": 0.4},
+      {"tipo": "boneco", "cor": "laranja", "num": 4, "x": 930, "y": 1330, "s": 0.92, "festa": "9:0.4+0.96", "t": 0.5},
+      {"tipo": "circulo", "num": 1, "cor": "azul", "x": 150, "y": 950, "t": "9:0.4"},
+      {"tipo": "circulo", "num": 2, "cor": "verde", "x": 410, "y": 950, "t": "9:0.4+0.32"},
+      {"tipo": "circulo", "num": 3, "cor": "amarelo", "x": 670, "y": 950, "t": "9:0.4+0.64"},
+      {"tipo": "circulo", "num": 4, "cor": "laranja", "x": 930, "y": 950, "t": "9:0.4+0.96"},
+      {"tipo": "etiqueta", "txt": "R$ 2,50", "x": 150, "y": 1395, "t": 0.6},
+      {"tipo": "etiqueta", "txt": "R$ 25", "x": 410, "y": 1395, "t": 0.7},
+      {"tipo": "etiqueta", "txt": "R$ 250", "x": 670, "y": 1395, "t": 0.8},
+      {"tipo": "etiqueta", "txt": "R$ 2.500", "x": 930, "y": 1395, "t": 0.9}
+    ]}
+  ]
+}

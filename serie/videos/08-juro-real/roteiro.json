@@ -1,0 +1,77 @@
+{
+  "titulo": "Juro real",
+  "proximo": "E se você precisar do dinheiro amanhã?",
+  "falas": [
+    {"cena": 0, "fala": "Seu investimento rendeu dez por cento, e você ficou mais pobre?", "legendas": ["Seu investimento rendeu 10%…", "…e você ficou mais pobre?"]},
+    {"cena": 1, "fala": "Quatro irmãos investiram dez mil reais por um ano, num ano em que a inflação foi de doze por cento.", "legendas": ["Quatro irmãos investiram R$ 10 mil por um ano…", "…num ano em que a inflação foi de 12%."]},
+    {"cena": 2, "fala": "O primeiro rendeu seis por cento, e perdeu cerca de quinhentos reais em poder de compra.", "legendas": ["O primeiro rendeu 6%…", "…e perdeu cerca de R$ 500 em poder de compra."]},
+    {"cena": 2, "fala": "O segundo rendeu dez. Parece bom, mas também ficou mais pobre.", "legendas": ["O segundo rendeu 10%.", "Parece bom, mas também ficou mais pobre."]},
+    {"cena": 2, "fala": "O terceiro rendeu doze: só empatou com a inflação.", "legendas": ["O terceiro rendeu 12%: só empatou com a inflação."]},
+    {"cena": 2, "fala": "E o quarto rendeu quinze. Só ele ganhou de verdade.", "legendas": ["E o quarto rendeu 15%.", "Só ele ganhou de verdade."]},
+    {"cena": 3, "fala": "Isso se chama juro real: quanto o investimento rende acima da inflação.", "legendas": ["Isso se chama juro real:", "quanto o investimento rende acima da inflação."]},
+    {"cena": 3, "fala": "A conta rápida é: rendimento menos inflação.", "legendas": ["A conta rápida é: rendimento menos inflação."]},
+    {"cena": 4, "fala": "O que importa não é quanto rende. É quanto rende acima da inflação.", "legendas": ["O que importa não é quanto rende.", "É quanto rende acima da inflação."]},
+    {"cena": 4, "fala": "E você, qual irmão foi no último ano? Um, dois, três ou quatro?", "legendas": ["E você, qual irmão foi no último ano? 1, 2, 3 ou 4?"]}
+  ],
+  "cenas": [
+    {"fundo": "escuro", "els": [
+      {"tipo": "texto", "txt": "RENDEU 10% E\nFICOU MAIS POBRE?", "cores": ["branco", "vermelho"], "tam": 96, "y": 290, "t": 0.1},
+      {"tipo": "emoji", "e": "📈", "x": 360, "y": 780, "tam": 220, "t": 0.3},
+      {"tipo": "emoji", "e": "🎈", "x": 770, "y": 800, "tam": 200, "t": "1:0.5", "move": [{"t": "1:0.6", "s": 1.5, "dur": 1.2, "som": "subida"}]},
+      {"tipo": "boneco", "cor": "cinza", "x": 220, "y": 1420, "s": 0.95, "olhar": true, "boca": "triste", "t": 0.2},
+      {"tipo": "emoji", "e": "❓", "x": 330, "y": 1030, "tam": 110, "t": "1:0.8", "flutua": true}
+    ]},
+    {"fundo": "claro", "els": [
+      {"tipo": "selo", "txt": "R$ 10 MIL POR 1 ANO", "tam": 60, "y": 290, "t": "2:0.15"},
+      {"tipo": "selo", "txt": "INFLAÇÃO: 12%", "tam": 66, "cor": "vermelho", "y": 430, "t": "2:0.8"},
+      {"tipo": "emoji", "e": "🎈", "x": 540, "y": 730, "tam": 180, "t": "2:0.8", "flutua": true},
+      {"tipo": "boneco", "cor": "azul", "num": 1, "x": 165, "y": 1410, "s": 0.95, "t": 0.05},
+      {"tipo": "boneco", "cor": "verde", "num": 2, "x": 415, "y": 1410, "s": 0.95, "t": 0.12},
+      {"tipo": "boneco", "cor": "amarelo", "num": 3, "x": 665, "y": 1410, "s": 0.95, "t": 0.19},
+      {"tipo": "boneco", "cor": "laranja", "num": 4, "x": 915, "y": 1410, "s": 0.95, "t": 0.26}
+    ]},
+    {"fundo": "escuro", "els": [
+      {"tipo": "texto", "txt": "INFLAÇÃO DE 12%", "tam": 80, "cor": "vermelho", "y": 210, "t": 0.1},
+      {"tipo": "caixa", "w": 980, "h": 170, "y": 420, "t": "3:0.0", "som": false},
+      {"tipo": "circulo", "num": 1, "cor": "azul", "x": 120, "y": 420, "t": "3:0.0"},
+      {"tipo": "texto", "txt": "rendeu 6%", "alinha": "left", "tam": 58, "x": 210, "y": 420, "t": "3:0.15", "som": false},
+      {"tipo": "texto", "txt": "−5,4%", "tam": 66, "cor": "vermelho", "x": 830, "y": 420, "t": "3:0.55"},
+      {"tipo": "xis", "r": 24, "x": 990, "y": 420, "t": "3:0.6"},
+      {"tipo": "caixa", "w": 980, "h": 170, "y": 620, "t": "4:0.0", "som": false},
+      {"tipo": "circulo", "num": 2, "cor": "verde", "x": 120, "y": 620, "t": "4:0.0"},
+      {"tipo": "texto", "txt": "rendeu 10%", "alinha": "left", "tam": 58, "x": 210, "y": 620, "t": "4:0.1", "som": false},
+      {"tipo": "texto", "txt": "−1,8%", "tam": 66, "cor": "vermelho", "x": 830, "y": 620, "t": "4:0.6"},
+      {"tipo": "xis", "r": 24, "x": 990, "y": 620, "t": "4:0.65"},
+      {"tipo": "caixa", "w": 980, "h": 170, "y": 820, "t": "5:0.0", "som": false},
+      {"tipo": "circulo", "num": 3, "cor": "amarelo", "x": 120, "y": 820, "t": "5:0.0"},
+      {"tipo": "texto", "txt": "rendeu 12%", "alinha": "left", "tam": 58, "x": 210, "y": 820, "t": "5:0.1", "som": false},
+      {"tipo": "texto", "txt": "0%", "tam": 66, "x": 830, "y": 820, "t": "5:0.55"},
+      {"tipo": "caixa", "w": 980, "h": 170, "y": 1020, "t": "6:0.0", "som": false},
+      {"tipo": "circulo", "num": 4, "cor": "laranja", "x": 120, "y": 1020, "t": "6:0.0"},
+      {"tipo": "texto", "txt": "rendeu 15%", "alinha": "left", "tam": 58, "x": 210, "y": 1020, "t": "6:0.1", "som": false},
+      {"tipo": "texto", "txt": "+2,7%", "tam": 66, "cor": "verde", "x": 830, "y": 1020, "t": "6:0.55"},
+      {"tipo": "ok", "r": 26, "x": 990, "y": 1020, "t": "6:0.6"},
+      {"tipo": "etiqueta", "txt": "ganho real", "tam": 34, "x": 830, "y": 1200, "t": "4:0.8"}
+    ]},
+    {"fundo": "escuro", "els": [
+      {"tipo": "selo", "txt": "JURO REAL", "tam": 90, "y": 300, "t": "7:0.3", "brilho": true},
+      {"tipo": "texto", "txt": "o que rende acima da inflação", "tam": 56, "peso": 800, "y": 450, "t": "7:0.6"},
+      {"tipo": "conta", "linhas": ["rendimento: 15%", "inflação: 12%", "= cerca de 3% real"], "ts": ["8:0.3", "8:0.6", "8:0.85"], "tam": 66, "y": 820}
+    ]},
+    {"fundo": "claro", "els": [
+      {"tipo": "texto", "txt": "RENDER ACIMA DA\nINFLAÇÃO É O QUE\nIMPORTA.", "tam": 70, "cor": "tinta", "y": 270, "t": "9:0.05"},
+      {"tipo": "boneco", "cor": "azul", "num": 1, "x": 150, "y": 1330, "s": 0.92, "festa": "10:0.4", "t": 0.2},
+      {"tipo": "boneco", "cor": "verde", "num": 2, "x": 410, "y": 1330, "s": 0.92, "festa": "10:0.4+0.32", "t": 0.3},
+      {"tipo": "boneco", "cor": "amarelo", "num": 3, "x": 670, "y": 1330, "s": 0.92, "festa": "10:0.4+0.64", "t": 0.4},
+      {"tipo": "boneco", "cor": "laranja", "num": 4, "x": 930, "y": 1330, "s": 0.92, "festa": "10:0.4+0.96", "t": 0.5},
+      {"tipo": "circulo", "num": 1, "cor": "azul", "x": 150, "y": 950, "t": "10:0.4"},
+      {"tipo": "circulo", "num": 2, "cor": "verde", "x": 410, "y": 950, "t": "10:0.4+0.32"},
+      {"tipo": "circulo", "num": 3, "cor": "amarelo", "x": 670, "y": 950, "t": "10:0.4+0.64"},
+      {"tipo": "circulo", "num": 4, "cor": "laranja", "x": 930, "y": 950, "t": "10:0.4+0.96"},
+      {"tipo": "etiqueta", "txt": "RENDEU 6%", "tam": 30, "x": 150, "y": 1395, "t": 0.6},
+      {"tipo": "etiqueta", "txt": "10%", "x": 410, "y": 1395, "t": 0.7},
+      {"tipo": "etiqueta", "txt": "12%", "x": 670, "y": 1395, "t": 0.8},
+      {"tipo": "etiqueta", "txt": "15%", "x": 930, "y": 1395, "t": 0.9}
+    ]}
+  ]
+}

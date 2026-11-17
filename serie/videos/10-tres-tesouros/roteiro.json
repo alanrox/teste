@@ -1,0 +1,90 @@
+{
+  "titulo": "Os três Tesouros",
+  "proximo": "Parcelar sem juros é grátis?",
+  "falas": [
+    {"cena": 0, "fala": "Tesouro Selic, Prefixado ou i pê cê á mais: qual a diferença?", "legendas": ["Tesouro Selic, Prefixado ou IPCA+:", "qual a diferença?"]},
+    {"cena": 1, "fala": "Três irmãos emprestaram dinheiro para o governo. O que mudou foi o combinado dos juros.", "legendas": ["Três irmãos emprestaram dinheiro para o governo.", "O que mudou foi o combinado dos juros."]},
+    {"cena": 2, "fala": "O primeiro combinou: me paga a Selic, seja ela qual for.", "legendas": ["O primeiro combinou:", "“me paga a Selic, seja ela qual for”."]},
+    {"cena": 2, "fala": "Se a Selic sobe, ele ganha mais. Se cai, ganha menos.", "legendas": ["Se a Selic sobe, ele ganha mais. Se cai, ganha menos."]},
+    {"cena": 3, "fala": "O segundo travou uma taxa: doze por cento ao ano, aconteça o que acontecer.", "legendas": ["O segundo travou uma taxa:", "12% ao ano, aconteça o que acontecer."]},
+    {"cena": 4, "fala": "O terceiro pediu a inflação, mais um extra: i pê cê á mais seis por cento.", "legendas": ["O terceiro pediu a inflação, mais um extra:", "IPCA + 6%."]},
+    {"cena": 4, "fala": "Assim, o dinheiro dele nunca perde para a inflação, se ficar até o vencimento.", "legendas": ["Assim, o dinheiro dele nunca perde para a inflação…", "…se ficar até o vencimento."]},
+    {"cena": 5, "fala": "Isso se chama pós-fixado, prefixado e híbrido.", "legendas": ["Isso se chama pós-fixado, prefixado e híbrido."]},
+    {"cena": 5, "fala": "Os três são Tesouro Direto. O que muda é a regra dos juros.", "legendas": ["Os três são Tesouro Direto.", "O que muda é a regra dos juros."]},
+    {"cena": 6, "fala": "E você, faria qual combinado? Um, dois ou três?", "legendas": ["E você, faria qual combinado? 1, 2 ou 3?"]}
+  ],
+  "cenas": [
+    {"fundo": "escuro", "els": [
+      {"tipo": "texto", "txt": "QUAL TESOURO\nESCOLHER?", "cores": ["branco", "ouro"], "tam": 104, "y": 280, "t": 0.1},
+      {"tipo": "selo", "txt": "SELIC", "tam": 60, "cor": "azul", "x": 300, "y": 620, "t": 0.5, "flutua": true},
+      {"tipo": "selo", "txt": "PREFIXADO", "tam": 60, "cor": "verde", "x": 700, "y": 760, "t": 1.0, "flutua": true},
+      {"tipo": "selo", "txt": "IPCA+", "tam": 60, "cor": "laranja", "x": 380, "y": 900, "t": 1.6, "flutua": true},
+      {"tipo": "boneco", "cor": "cinza", "x": 760, "y": 1420, "s": 0.95, "olhar": true, "t": 0.2},
+      {"tipo": "emoji", "e": "❓", "x": 870, "y": 1030, "tam": 110, "t": "1:0.75", "flutua": true}
+    ]},
+    {"fundo": "claro", "els": [
+      {"tipo": "predio", "txt": "GOVERNO", "governo": true, "x": 760, "y": 1320, "s": 1.0, "t": 0.1},
+      {"tipo": "boneco", "cor": "azul", "num": 1, "x": 120, "y": 1410, "s": 0.85, "segura": "nota", "t": 0.15},
+      {"tipo": "boneco", "cor": "verde", "num": 2, "x": 290, "y": 1410, "s": 0.85, "t": 0.22},
+      {"tipo": "boneco", "cor": "laranja", "num": 3, "x": 460, "y": 1410, "s": 0.85, "t": 0.29},
+      {"tipo": "selo", "txt": "EMPRÉSTIMO AO GOVERNO", "tam": 50, "cor": "azul", "y": 300, "t": "2:0.3"},
+      {"tipo": "etiqueta", "txt": "qual o combinado?", "tam": 40, "y": 430, "t": "2:0.75"}
+    ]},
+    {"fundo": "escuro", "els": [
+      {"tipo": "circulo", "num": 1, "cor": "azul", "x": 160, "y": 260, "t": 0.1},
+      {"tipo": "selo", "txt": "TESOURO SELIC", "tam": 64, "cor": "azul", "x": 590, "y": 260, "t": "3:0.1"},
+      {"tipo": "balao", "txt": "Me paga a Selic, seja ela qual for.", "w": 560, "x": 600, "y": 520, "t": "3:0.2"},
+      {"tipo": "boneco", "cor": "azul", "num": 1, "x": 260, "y": 1300, "s": 1.05, "t": 0.1, "festa": "4:0.25", "festaAte": "4:0.62"},
+      {"tipo": "termometro", "x": 760, "y": 960, "h": 440, "v": 0.5, "t": "4:0.0", "niveis": [{"t": "4:0.1", "v": 0.85, "dur": 0.7}, {"t": "4:0.55", "v": 0.25, "dur": 0.7}]},
+      {"tipo": "etiqueta", "txt": "sobe: ganha mais", "tam": 32, "cor": "verde", "x": 760, "y": 680, "t": "4:0.15"},
+      {"tipo": "etiqueta", "txt": "cai: ganha menos", "tam": 32, "cor": "vermelho", "x": 760, "y": 1340, "t": "4:0.6"}
+    ]},
+    {"fundo": "escuro", "els": [
+      {"tipo": "circulo", "num": 2, "cor": "verde", "x": 160, "y": 260, "t": 0.1},
+      {"tipo": "selo", "txt": "TESOURO PREFIXADO", "tam": 58, "cor": "verde", "x": 600, "y": 260, "t": "5:0.05"},
+      {"tipo": "emoji", "e": "🔒", "x": 540, "y": 640, "tam": 240, "t": "5:0.3"},
+      {"tipo": "contador", "de": 0, "para": 12, "suf": "% ao ano", "tam": 110, "y": 900, "t": "5:0.45", "dur": 1.0},
+      {"tipo": "etiqueta", "txt": "aconteça o que acontecer", "tam": 40, "y": 1060, "t": "5:0.75"},
+      {"tipo": "boneco", "cor": "verde", "num": 2, "x": 540, "y": 1440, "s": 0.8, "boca": "feliz", "t": 0.2}
+    ]},
+    {"fundo": "escuro", "els": [
+      {"tipo": "circulo", "num": 3, "cor": "laranja", "x": 160, "y": 260, "t": 0.1},
+      {"tipo": "selo", "txt": "TESOURO IPCA+", "tam": 64, "cor": "laranja", "x": 590, "y": 260, "t": "6:0.05"},
+      {"tipo": "emoji", "e": "🎈", "x": 300, "y": 650, "tam": 200, "t": "6:0.3"},
+      {"tipo": "etiqueta", "txt": "inflação", "tam": 40, "x": 300, "y": 800, "t": "6:0.35"},
+      {"tipo": "texto", "txt": "+", "tam": 140, "x": 540, "y": 650, "t": "6:0.5"},
+      {"tipo": "emoji", "e": "🎁", "x": 780, "y": 650, "tam": 200, "t": "6:0.55"},
+      {"tipo": "etiqueta", "txt": "extra de 6%", "tam": 40, "x": 780, "y": 800, "t": "6:0.65"},
+      {"tipo": "selo", "txt": "NUNCA PERDE PARA A INFLAÇÃO", "tam": 40, "cor": "verde", "y": 1000, "t": "7:0.3"},
+      {"tipo": "etiqueta", "txt": "se ficar até o vencimento", "tam": 36, "y": 1120, "t": "7:0.7"}
+    ]},
+    {"fundo": "escuro", "els": [
+      {"tipo": "texto", "txt": "TRÊS REGRAS DE JUROS", "tam": 76, "y": 230, "t": 0.1},
+      {"tipo": "caixa", "w": 980, "h": 170, "y": 470, "t": "8:0.05", "som": false},
+      {"tipo": "circulo", "num": 1, "cor": "azul", "x": 120, "y": 470, "t": "8:0.05"},
+      {"tipo": "texto", "txt": "Selic", "alinha": "left", "tam": 56, "x": 210, "y": 470, "t": "8:0.05", "som": false},
+      {"tipo": "selo", "txt": "PÓS-FIXADO", "tam": 44, "cor": "azul", "x": 790, "y": 470, "t": "8:0.3"},
+      {"tipo": "caixa", "w": 980, "h": 170, "y": 670, "t": "8:0.45", "som": false},
+      {"tipo": "circulo", "num": 2, "cor": "verde", "x": 120, "y": 670, "t": "8:0.45"},
+      {"tipo": "texto", "txt": "taxa travada", "alinha": "left", "tam": 56, "x": 210, "y": 670, "t": "8:0.45", "som": false},
+      {"tipo": "selo", "txt": "PREFIXADO", "tam": 44, "cor": "verde", "x": 790, "y": 670, "t": "8:0.55"},
+      {"tipo": "caixa", "w": 980, "h": 170, "y": 870, "t": "8:0.7", "som": false},
+      {"tipo": "circulo", "num": 3, "cor": "laranja", "x": 120, "y": 870, "t": "8:0.7"},
+      {"tipo": "texto", "txt": "inflação + extra", "alinha": "left", "tam": 56, "x": 210, "y": 870, "t": "8:0.7", "som": false},
+      {"tipo": "selo", "txt": "HÍBRIDO", "tam": 44, "cor": "laranja", "x": 820, "y": 870, "t": "8:0.8"},
+      {"tipo": "selo", "txt": "TODOS SÃO TESOURO DIRETO", "tam": 46, "y": 1130, "t": "9:0.2", "brilho": true}
+    ]},
+    {"fundo": "claro", "els": [
+      {"tipo": "texto", "txt": "MESMO GOVERNO,\nREGRAS DIFERENTES.", "tam": 80, "cor": "tinta", "y": 250, "t": 0.1},
+      {"tipo": "boneco", "cor": "azul", "num": 1, "x": 220, "y": 1330, "s": 1.0, "festa": "10:0.35", "t": 0.2},
+      {"tipo": "boneco", "cor": "verde", "num": 2, "x": 540, "y": 1330, "s": 1.0, "festa": "10:0.35+0.32", "t": 0.3},
+      {"tipo": "boneco", "cor": "laranja", "num": 3, "x": 860, "y": 1330, "s": 1.0, "festa": "10:0.35+0.64", "t": 0.4},
+      {"tipo": "circulo", "num": 1, "cor": "azul", "x": 220, "y": 920, "t": "10:0.35"},
+      {"tipo": "circulo", "num": 2, "cor": "verde", "x": 540, "y": 920, "t": "10:0.35+0.32"},
+      {"tipo": "circulo", "num": 3, "cor": "laranja", "x": 860, "y": 920, "t": "10:0.35+0.64"},
+      {"tipo": "etiqueta", "txt": "SELIC", "x": 220, "y": 1395, "t": 0.6},
+      {"tipo": "etiqueta", "txt": "PREFIXADO", "x": 540, "y": 1395, "t": 0.7},
+      {"tipo": "etiqueta", "txt": "IPCA+", "x": 860, "y": 1395, "t": 0.8}
+    ]}
+  ]
+}

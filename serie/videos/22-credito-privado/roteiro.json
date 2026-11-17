@@ -1,0 +1,77 @@
+{
+  "titulo": "Crédito privado",
+  "proximo": "Quem come o seu rendimento?",
+  "falas": [
+    {"cena": 0, "fala": "Dá para emprestar dinheiro direto para grandes empresas?", "legendas": ["Dá para emprestar dinheiro direto para grandes empresas?"]},
+    {"cena": 1, "fala": "Quatro irmãos queriam emprestar dinheiro e ganhar juros.", "legendas": ["Quatro irmãos queriam emprestar dinheiro e ganhar juros."]},
+    {"cena": 1, "fala": "O primeiro emprestou para um banco: um cê dê bê, protegido pelo éfe gê cê.", "legendas": ["O primeiro emprestou para um banco:", "um CDB, protegido pelo FGC."]},
+    {"cena": 1, "fala": "O segundo emprestou direto para uma empresa: uma debênture.", "legendas": ["O segundo emprestou direto para uma empresa:", "uma debênture."]},
+    {"cena": 1, "fala": "O terceiro, para o setor de imóveis: um cê erre i. E o quarto, para o agro: um cê erre á.", "legendas": ["O terceiro, para o setor de imóveis: um CRI.", "E o quarto, para o agro: um CRA."]},
+    {"cena": 2, "fala": "Esses três costumam pagar juros maiores que o cê dê bê. E alguns nem pagam imposto de renda.", "legendas": ["Esses três costumam pagar juros maiores que o CDB.", "E alguns nem pagam Imposto de Renda."]},
+    {"cena": 2, "fala": "Mas tem um detalhe: eles não têm a proteção do éfe gê cê. Se a empresa quebrar, você pode perder.", "legendas": ["Mas tem um detalhe: eles não têm a proteção do FGC.", "Se a empresa quebrar, você pode perder."]},
+    {"cena": 3, "fala": "Isso se chama crédito privado: emprestar para empresas, em troca de juros maiores e mais risco.", "legendas": ["Isso se chama crédito privado:", "emprestar para empresas, em troca de juros maiores e mais risco."]},
+    {"cena": 4, "fala": "E você, emprestaria para quem? Um, dois, três ou quatro?", "legendas": ["E você, emprestaria para quem? 1, 2, 3 ou 4?"]}
+  ],
+  "cenas": [
+    {"fundo": "escuro", "els": [
+      {"tipo": "texto", "txt": "EMPRESTAR PARA\nEMPRESAS?", "cores": ["branco", "ouro"], "tam": 104, "y": 280, "t": 0.1},
+      {"tipo": "emoji", "e": "🏭", "x": 580, "y": 770, "tam": 260, "t": 0.3},
+      {"tipo": "nota", "w": 220, "x": 820, "y": 1050, "t": "1:0.5", "balanca": true},
+      {"tipo": "boneco", "cor": "cinza", "x": 200, "y": 1420, "s": 0.95, "olhar": true, "t": 0.2},
+      {"tipo": "emoji", "e": "🤔", "x": 310, "y": 1030, "tam": 110, "t": "1:0.75", "flutua": true}
+    ]},
+    {"fundo": "cidade", "els": [
+      {"tipo": "boneco", "cor": "azul", "num": 1, "x": 165, "y": 1410, "s": 0.95, "t": 0.05},
+      {"tipo": "boneco", "cor": "verde", "num": 2, "x": 415, "y": 1410, "s": 0.95, "t": 0.12},
+      {"tipo": "boneco", "cor": "amarelo", "num": 3, "x": 665, "y": 1410, "s": 0.95, "t": 0.19},
+      {"tipo": "boneco", "cor": "laranja", "num": 4, "x": 915, "y": 1410, "s": 0.95, "t": 0.26},
+      {"tipo": "emoji", "e": "🏦", "x": 165, "y": 900, "tam": 120, "t": "3:0.1"},
+      {"tipo": "selo", "txt": "CDB", "tam": 40, "cor": "azul", "x": 165, "y": 1040, "t": "3:0.3"},
+      {"tipo": "escudo", "txt": "FGC", "s": 0.32, "x": 165, "y": 730, "t": "3:0.75"},
+      {"tipo": "emoji", "e": "⚡", "x": 415, "y": 900, "tam": 120, "t": "4:0.2"},
+      {"tipo": "selo", "txt": "DEBÊNTURE", "tam": 30, "cor": "verde", "x": 415, "y": 1040, "t": "4:0.7"},
+      {"tipo": "emoji", "e": "🏠", "x": 665, "y": 900, "tam": 120, "t": "5:0.15"},
+      {"tipo": "selo", "txt": "CRI", "tam": 40, "cor": "amarelo", "x": 665, "y": 1040, "t": "5:0.38"},
+      {"tipo": "emoji", "e": "🚜", "x": 915, "y": 900, "tam": 120, "t": "5:0.65"},
+      {"tipo": "selo", "txt": "CRA", "tam": 40, "cor": "laranja", "x": 915, "y": 1040, "t": "5:0.88"}
+    ]},
+    {"fundo": "escuro", "els": [
+      {"tipo": "selo", "txt": "DEBÊNTURE", "tam": 44, "cor": "verde", "x": 250, "y": 280, "t": 0.1},
+      {"tipo": "selo", "txt": "CRI", "tam": 44, "cor": "amarelo", "x": 560, "y": 280, "t": 0.15},
+      {"tipo": "selo", "txt": "CRA", "tam": 44, "cor": "laranja", "x": 800, "y": 280, "t": 0.2},
+      {"tipo": "caixa", "w": 960, "h": 130, "y": 520, "t": "6:0.1", "som": false},
+      {"tipo": "ok", "r": 32, "x": 170, "y": 520, "t": "6:0.1"},
+      {"tipo": "texto", "txt": "juros maiores", "alinha": "left", "tam": 54, "x": 240, "y": 520, "t": "6:0.1", "som": false},
+      {"tipo": "caixa", "w": 960, "h": 130, "y": 680, "t": "6:0.6", "som": false},
+      {"tipo": "ok", "r": 32, "x": 170, "y": 680, "t": "6:0.6"},
+      {"tipo": "texto", "txt": "alguns isentos de IR", "alinha": "left", "tam": 54, "x": 240, "y": 680, "t": "6:0.6", "som": false},
+      {"tipo": "caixa", "w": 960, "h": 130, "y": 840, "t": "7:0.3", "som": false},
+      {"tipo": "xis", "r": 30, "x": 170, "y": 840, "t": "7:0.3"},
+      {"tipo": "texto", "txt": "sem proteção do FGC", "alinha": "left", "tam": 54, "cor": "vermelho", "x": 240, "y": 840, "t": "7:0.3", "som": false},
+      {"tipo": "escudo", "txt": "FGC", "s": 0.6, "x": 540, "y": 1140, "t": "7:0.25"},
+      {"tipo": "xis", "r": 90, "x": 540, "y": 1140, "t": "7:0.45"}
+    ]},
+    {"fundo": "escuro", "els": [
+      {"tipo": "selo", "txt": "CRÉDITO PRIVADO", "tam": 80, "y": 300, "t": "8:0.25", "brilho": true},
+      {"tipo": "texto", "txt": "emprestar para empresas", "tam": 62, "peso": 800, "y": 470, "t": "8:0.45"},
+      {"tipo": "emoji", "e": "⚖️", "x": 540, "y": 760, "tam": 220, "t": "8:0.6"},
+      {"tipo": "etiqueta", "txt": "juros maiores", "tam": 40, "cor": "verde", "x": 300, "y": 960, "t": "8:0.7"},
+      {"tipo": "etiqueta", "txt": "mais risco", "tam": 40, "cor": "vermelho", "x": 780, "y": 960, "t": "8:0.85"}
+    ]},
+    {"fundo": "claro", "els": [
+      {"tipo": "texto", "txt": "MAIS JUROS,\nMAIS RISCO.", "tam": 90, "cor": "tinta", "y": 250, "t": 0.1},
+      {"tipo": "boneco", "cor": "azul", "num": 1, "x": 150, "y": 1330, "s": 0.92, "festa": "9:0.45", "t": 0.2},
+      {"tipo": "boneco", "cor": "verde", "num": 2, "x": 410, "y": 1330, "s": 0.92, "festa": "9:0.45+0.32", "t": 0.3},
+      {"tipo": "boneco", "cor": "amarelo", "num": 3, "x": 670, "y": 1330, "s": 0.92, "festa": "9:0.45+0.64", "t": 0.4},
+      {"tipo": "boneco", "cor": "laranja", "num": 4, "x": 930, "y": 1330, "s": 0.92, "festa": "9:0.45+0.96", "t": 0.5},
+      {"tipo": "circulo", "num": 1, "cor": "azul", "x": 150, "y": 950, "t": "9:0.45"},
+      {"tipo": "circulo", "num": 2, "cor": "verde", "x": 410, "y": 950, "t": "9:0.45+0.32"},
+      {"tipo": "circulo", "num": 3, "cor": "amarelo", "x": 670, "y": 950, "t": "9:0.45+0.64"},
+      {"tipo": "circulo", "num": 4, "cor": "laranja", "x": 930, "y": 950, "t": "9:0.45+0.96"},
+      {"tipo": "etiqueta", "txt": "CDB", "x": 150, "y": 1395, "t": 0.6},
+      {"tipo": "etiqueta", "txt": "DEBÊNTURE", "tam": 30, "x": 410, "y": 1395, "t": 0.7},
+      {"tipo": "etiqueta", "txt": "CRI", "x": 670, "y": 1395, "t": 0.8},
+      {"tipo": "etiqueta", "txt": "CRA", "x": 930, "y": 1395, "t": 0.9}
+    ]}
+  ]
+}

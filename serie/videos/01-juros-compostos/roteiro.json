@@ -1,0 +1,82 @@
+{
+  "titulo": "Juros compostos",
+  "proximo": "Por que seus R$ 100 compram menos?",
+  "falas": [
+    {"cena": 0, "fala": "Por que quem começa cedo fica rico guardando menos?", "legendas": ["Por que quem começa cedo fica rico guardando menos?"]},
+    {"cena": 1, "fala": "Quatro irmãos guardaram trezentos reais por mês, rendendo um por cento ao mês.", "legendas": ["Quatro irmãos guardaram R$ 300 por mês…", "…rendendo 1% ao mês."]},
+    {"cena": 1, "fala": "A única diferença foi a idade em que cada um começou.", "legendas": ["A única diferença foi a idade em que cada um começou."]},
+    {"cena": 2, "fala": "O primeiro começou aos cinquenta. Aos sessenta, tinha sessenta e nove mil reais.", "legendas": ["O primeiro começou aos 50.", "Aos 60, tinha R$ 69 mil."]},
+    {"cena": 2, "fala": "O segundo começou aos quarenta: duzentos e noventa e sete mil.", "legendas": ["O segundo começou aos 40: R$ 297 mil."]},
+    {"cena": 2, "fala": "O terceiro, aos trinta: mais de um milhão.", "legendas": ["O terceiro, aos 30: mais de R$ 1 milhão."]},
+    {"cena": 2, "fala": "E o quarto, aos vinte: três milhões e meio.", "legendas": ["E o quarto, aos 20: R$ 3,5 milhões."]},
+    {"cena": 3, "fala": "O quarto guardou só quatro vezes mais. Mas terminou com cinquenta vezes mais.", "legendas": ["O quarto guardou só 4 vezes mais…", "…mas terminou com 50 vezes mais."]},
+    {"cena": 3, "fala": "Isso se chama juros compostos: o rendimento também passa a render.", "legendas": ["Isso se chama juros compostos:", "o rendimento também passa a render."]},
+    {"cena": 4, "fala": "O tempo trabalhou mais que o dinheiro.", "legendas": ["O tempo trabalhou mais que o dinheiro."]},
+    {"cena": 4, "fala": "E você, qual irmão é? Um, dois, três ou quatro?", "legendas": ["E você, qual irmão é? 1, 2, 3 ou 4?"]}
+  ],
+  "cenas": [
+    {"fundo": "escuro", "els": [
+      {"tipo": "texto", "txt": "QUEM COMEÇA CEDO\nFICA RICO?", "cores": ["branco", "ouro"], "tam": 100, "y": 300, "t": 0.1},
+      {"tipo": "forma", "forma": "retangulo", "w": 280, "h": 160, "x": 330, "y": 1310, "cor": "#334155", "t": 0.2},
+      {"tipo": "forma", "forma": "retangulo", "w": 280, "h": 560, "x": 750, "y": 1110, "cor": "ouro", "t": 0.3},
+      {"tipo": "boneco", "cor": "azul", "num": 1, "x": 330, "y": 1230, "s": 1.05, "olhar": true, "boca": "triste", "t": 0.4},
+      {"tipo": "boneco", "cor": "laranja", "num": 4, "x": 750, "y": 830, "s": 1.05, "festa": "1:0.45", "boca": "feliz", "t": 0.5},
+      {"tipo": "emoji", "e": "❓", "x": 450, "y": 860, "tam": 130, "flutua": true, "t": "1:0.6"},
+      {"tipo": "emoji", "e": "💰", "x": 900, "y": 520, "tam": 130, "flutua": true, "t": "1:0.5"}
+    ]},
+    {"fundo": "claro", "els": [
+      {"tipo": "selo", "txt": "R$ 300 POR MÊS", "tam": 70, "y": 300, "t": "2:0.05"},
+      {"tipo": "selo", "txt": "+1% AO MÊS", "tam": 56, "cor": "verde", "y": 450, "t": "2:0.62"},
+      {"tipo": "emoji", "e": "🐷", "x": 540, "y": 760, "tam": 210, "t": "2:0.1", "flutua": 8},
+      {"tipo": "boneco", "cor": "azul", "num": 1, "x": 165, "y": 1410, "s": 0.95, "t": 0.05},
+      {"tipo": "boneco", "cor": "verde", "num": 2, "x": 415, "y": 1410, "s": 0.95, "t": 0.12},
+      {"tipo": "boneco", "cor": "amarelo", "num": 3, "x": 665, "y": 1410, "s": 0.95, "t": 0.19},
+      {"tipo": "boneco", "cor": "laranja", "num": 4, "x": 915, "y": 1410, "s": 0.95, "t": 0.26},
+      {"tipo": "nota", "w": 150, "x": 230, "y": 1180, "t": "2:0.2", "move": [{"t": "2:0.3", "x": 540, "y": 790, "s": 0.3, "arco": 140}], "sai": "2:0.3+0.7"},
+      {"tipo": "nota", "w": 150, "x": 480, "y": 1180, "t": "2:0.2", "move": [{"t": "2:0.3+0.12", "x": 540, "y": 790, "s": 0.3, "arco": 140, "som": false}], "sai": "2:0.3+0.82"},
+      {"tipo": "nota", "w": 150, "x": 730, "y": 1180, "t": "2:0.2", "move": [{"t": "2:0.3+0.24", "x": 540, "y": 790, "s": 0.3, "arco": 140, "som": false}], "sai": "2:0.3+0.94"},
+      {"tipo": "nota", "w": 150, "x": 980, "y": 1180, "t": "2:0.2", "move": [{"t": "2:0.3+0.36", "x": 540, "y": 790, "s": 0.3, "arco": 140, "som": false}], "sai": "2:0.3+1.06"},
+      {"tipo": "etiqueta", "txt": "AOS 50", "tam": 32, "x": 165, "y": 1060, "t": "3:0.5"},
+      {"tipo": "etiqueta", "txt": "AOS 40", "tam": 32, "x": 415, "y": 1060, "t": "3:0.5+0.15"},
+      {"tipo": "etiqueta", "txt": "AOS 30", "tam": 32, "x": 665, "y": 1060, "t": "3:0.5+0.3"},
+      {"tipo": "etiqueta", "txt": "AOS 20", "tam": 32, "x": 915, "y": 1060, "t": "3:0.5+0.45"}
+    ]},
+    {"fundo": "escuro", "els": [
+      {"tipo": "texto", "txt": "AOS 60 ANOS", "tam": 100, "cor": "ouro", "y": 220, "t": 0.1},
+      {"tipo": "barras", "x": 540, "y": 1330, "w": 960, "h": 800, "valores": [69012, 296777, 1048489, 3529431],
+       "cores": ["azul", "verde", "amarelo", "laranja"], "rotulos": ["aos 50", "aos 40", "aos 30", "aos 20"],
+       "ts": ["4:0.55", "5:0.5", "6:0.45", "7:0.4"], "pre": "R$ ", "suf": " mil", "div": 1000, "tamValor": 42,
+       "textos": ["R$ 69 mil", "R$ 297 mil", "R$ 1 mi", "R$ 3,5 mi"]},
+      {"tipo": "boneco", "cor": "laranja", "num": 4, "x": 930, "y": 435, "s": 0.55, "festa": "7:0.75", "t": "7:0.7", "anim": "pop"}
+    ]},
+    {"fundo": "escuro", "els": [
+      {"tipo": "caixa", "w": 980, "h": 190, "y": 400, "t": 0.1},
+      {"tipo": "circulo", "num": 1, "cor": "azul", "x": 130, "y": 400, "t": 0.15},
+      {"tipo": "texto", "txt": "guardou R$ 36 mil", "alinha": "left", "tam": 50, "peso": 800, "x": 220, "y": 370, "t": 0.2, "som": false},
+      {"tipo": "texto", "txt": "terminou com R$ 69 mil", "alinha": "left", "tam": 50, "cor": "ouro", "x": 220, "y": 435, "t": 0.25, "som": false},
+      {"tipo": "caixa", "w": 980, "h": 190, "y": 630, "t": 0.3},
+      {"tipo": "circulo", "num": 4, "cor": "laranja", "x": 130, "y": 630, "t": 0.35},
+      {"tipo": "texto", "txt": "guardou R$ 144 mil", "alinha": "left", "tam": 50, "peso": 800, "x": 220, "y": 600, "t": 0.4, "som": false},
+      {"tipo": "texto", "txt": "terminou com R$ 3,5 milhões", "alinha": "left", "tam": 50, "cor": "ouro", "x": 220, "y": 665, "t": 0.45, "som": false},
+      {"tipo": "texto", "txt": "4× mais guardado", "tam": 66, "y": 870, "t": "8:0.2"},
+      {"tipo": "texto", "txt": "51× mais no final", "tam": 100, "cor": "ouro", "y": 990, "t": "8:0.62"},
+      {"tipo": "selo", "txt": "JUROS COMPOSTOS", "tam": 72, "y": 1200, "t": "9:0.3", "brilho": true},
+      {"tipo": "texto", "txt": "o rendimento também rende", "tam": 50, "peso": 800, "y": 1340, "t": "9:0.65"}
+    ]},
+    {"fundo": "claro", "els": [
+      {"tipo": "texto", "txt": "O TEMPO TRABALHOU\nMAIS QUE O DINHEIRO.", "tam": 74, "cor": "tinta", "y": 250, "t": "10:0.1"},
+      {"tipo": "boneco", "cor": "azul", "num": 1, "x": 150, "y": 1330, "s": 0.92, "festa": "11:0.2", "t": 0.2},
+      {"tipo": "boneco", "cor": "verde", "num": 2, "x": 410, "y": 1330, "s": 0.92, "festa": "11:0.2+0.32", "t": 0.3},
+      {"tipo": "boneco", "cor": "amarelo", "num": 3, "x": 670, "y": 1330, "s": 0.92, "festa": "11:0.2+0.64", "t": 0.4},
+      {"tipo": "boneco", "cor": "laranja", "num": 4, "x": 930, "y": 1330, "s": 0.92, "festa": "11:0.2+0.96", "t": 0.5},
+      {"tipo": "circulo", "num": 1, "cor": "azul", "x": 150, "y": 950, "t": "11:0.2"},
+      {"tipo": "circulo", "num": 2, "cor": "verde", "x": 410, "y": 950, "t": "11:0.2+0.32"},
+      {"tipo": "circulo", "num": 3, "cor": "amarelo", "x": 670, "y": 950, "t": "11:0.2+0.64"},
+      {"tipo": "circulo", "num": 4, "cor": "laranja", "x": 930, "y": 950, "t": "11:0.2+0.96"},
+      {"tipo": "etiqueta", "txt": "AOS 50", "x": 150, "y": 1395, "t": 0.6},
+      {"tipo": "etiqueta", "txt": "AOS 40", "x": 410, "y": 1395, "t": 0.7},
+      {"tipo": "etiqueta", "txt": "AOS 30", "x": 670, "y": 1395, "t": 0.8},
+      {"tipo": "etiqueta", "txt": "AOS 20", "x": 930, "y": 1395, "t": 0.9}
+    ]}
+  ]
+}

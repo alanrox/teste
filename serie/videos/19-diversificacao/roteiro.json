@@ -1,0 +1,77 @@
+{
+  "titulo": "Diversificação",
+  "proximo": "Por que o que rende mais assusta mais?",
+  "falas": [
+    {"cena": 0, "fala": "Por que não colocar todos os ovos na mesma cesta?", "legendas": ["Por que não colocar todos os ovos na mesma cesta?"]},
+    {"cena": 1, "fala": "Quatro irmãos tinham dez mil reais para investir em empresas.", "legendas": ["Quatro irmãos tinham R$ 10 mil para investir em empresas."]},
+    {"cena": 1, "fala": "O primeiro colocou tudo numa empresa só. O segundo dividiu em duas. O terceiro, em quatro. E o quarto, em dez.", "legendas": ["O primeiro colocou tudo numa empresa só. O segundo dividiu em duas.", "O terceiro, em quatro. E o quarto, em dez."]},
+    {"cena": 2, "fala": "Um dia, uma dessas empresas quebrou. E ela estava na carteira de todos.", "legendas": ["Um dia, uma dessas empresas quebrou.", "E ela estava na carteira de todos."]},
+    {"cena": 3, "fala": "O primeiro perdeu os dez mil. O segundo, cinco mil.", "legendas": ["O primeiro perdeu os R$ 10 mil.", "O segundo, R$ 5 mil."]},
+    {"cena": 3, "fala": "O terceiro, dois mil e quinhentos. E o quarto perdeu só mil.", "legendas": ["O terceiro, R$ 2.500.", "E o quarto perdeu só R$ 1.000."]},
+    {"cena": 4, "fala": "Isso se chama diversificação: espalhar o dinheiro, para que um tropeço não derrube tudo.", "legendas": ["Isso se chama diversificação:", "espalhar o dinheiro, para que um tropeço não derrube tudo."]},
+    {"cena": 5, "fala": "E você, em quantas cestas investe? Um, dois, três ou quatro?", "legendas": ["E você, em quantas cestas investe? 1, 2, 3 ou 4?"]}
+  ],
+  "cenas": [
+    {"fundo": "escuro", "els": [
+      {"tipo": "texto", "txt": "TUDO NA\nMESMA CESTA?", "cores": ["branco", "ouro"], "tam": 110, "y": 280, "t": 0.1},
+      {"tipo": "emoji", "e": "🧺", "x": 580, "y": 860, "tam": 300, "t": 0.3, "balanca": true},
+      {"tipo": "emoji", "e": "🥚", "x": 500, "y": 700, "tam": 120, "t": 0.6},
+      {"tipo": "emoji", "e": "🥚", "x": 600, "y": 680, "tam": 120, "t": 0.75},
+      {"tipo": "emoji", "e": "🥚", "x": 680, "y": 710, "tam": 120, "t": 0.9},
+      {"tipo": "boneco", "cor": "cinza", "x": 200, "y": 1420, "s": 0.95, "olhar": true, "t": 0.2},
+      {"tipo": "emoji", "e": "🤔", "x": 310, "y": 1030, "tam": 110, "t": "1:0.75", "flutua": true}
+    ]},
+    {"fundo": "claro", "els": [
+      {"tipo": "selo", "txt": "R$ 10 MIL CADA", "tam": 66, "y": 290, "t": "2:0.3"},
+      {"tipo": "boneco", "cor": "azul", "num": 1, "x": 165, "y": 1410, "s": 0.95, "t": 0.05},
+      {"tipo": "boneco", "cor": "verde", "num": 2, "x": 415, "y": 1410, "s": 0.95, "t": 0.12},
+      {"tipo": "boneco", "cor": "amarelo", "num": 3, "x": 665, "y": 1410, "s": 0.95, "t": 0.19},
+      {"tipo": "boneco", "cor": "laranja", "num": 4, "x": 915, "y": 1410, "s": 0.95, "t": 0.26},
+      {"tipo": "emoji", "e": "🧺", "x": 165, "y": 940, "tam": 150, "t": "3:0.1"},
+      {"tipo": "grade", "n": 2, "cols": 2, "cel": 70, "gap": 12, "corA": "branco", "x": 415, "y": 940, "t": "3:0.32", "passo": 0.08},
+      {"tipo": "grade", "n": 4, "cols": 2, "cel": 56, "gap": 10, "corA": "branco", "x": 665, "y": 930, "t": "3:0.55", "passo": 0.06},
+      {"tipo": "grade", "n": 10, "cols": 5, "cel": 36, "gap": 8, "corA": "branco", "x": 915, "y": 940, "t": "3:0.78", "passo": 0.04},
+      {"tipo": "etiqueta", "txt": "1", "tam": 34, "x": 165, "y": 1060, "t": "3:0.12"},
+      {"tipo": "etiqueta", "txt": "2", "tam": 34, "x": 415, "y": 1060, "t": "3:0.34"},
+      {"tipo": "etiqueta", "txt": "4", "tam": 34, "x": 665, "y": 1060, "t": "3:0.57"},
+      {"tipo": "etiqueta", "txt": "10", "tam": 34, "x": 915, "y": 1060, "t": "3:0.8"}
+    ]},
+    {"fundo": "claro", "els": [
+      {"tipo": "selo", "txt": "UMA EMPRESA QUEBROU!", "tam": 60, "cor": "vermelho", "y": 290, "t": "4:0.2"},
+      {"tipo": "emoji", "e": "🥚", "x": 540, "y": 520, "tam": 200, "t": 0.1, "move": [{"t": "4:0.3", "y": 1150, "rot": 2.5, "dur": 0.6, "som": "sopro"}], "sai": "4:0.3+0.6"},
+      {"tipo": "emoji", "e": "🍳", "x": 540, "y": 1180, "tam": 260, "t": "4:0.3+0.6", "som": "baque", "g": 0.8},
+      {"tipo": "emoji", "e": "💥", "x": 540, "y": 1120, "tam": 200, "t": "4:0.3+0.58", "sai": "4:0.3+1.0", "som": false},
+      {"tipo": "etiqueta", "txt": "estava na carteira de todos", "tam": 40, "y": 420, "t": "4:0.7"}
+    ]},
+    {"fundo": "escuro", "els": [
+      {"tipo": "texto", "txt": "QUANTO CADA UM PERDEU", "tam": 72, "y": 210, "t": 0.1},
+      {"tipo": "barras", "x": 540, "y": 1310, "w": 960, "h": 760, "valores": [10000, 5000, 2500, 1000],
+       "cores": ["vermelho", "vermelho", "vermelho", "vermelho"], "rotulos": ["1 cesta", "2", "4", "10"], "tamRotulo": 40,
+       "ts": ["5:0.2", "5:0.7", "6:0.2", "6:0.7"], "pre": "R$ ", "textos": ["−R$ 10 mil", "−R$ 5 mil", "−R$ 2.500", "−R$ 1.000"], "tamValor": 42},
+      {"tipo": "boneco", "cor": "laranja", "num": 4, "x": 900, "y": 1140, "s": 0.5, "festa": "6:0.9", "boca": "feliz", "t": "6:0.85"}
+    ]},
+    {"fundo": "escuro", "els": [
+      {"tipo": "selo", "txt": "DIVERSIFICAÇÃO", "tam": 84, "y": 300, "t": "7:0.25", "brilho": true},
+      {"tipo": "texto", "txt": "espalhar o dinheiro para que\num tropeço não derrube tudo", "tam": 54, "peso": 800, "y": 500, "t": "7:0.5"},
+      {"tipo": "emoji", "e": "🧺", "x": 270, "y": 860, "tam": 150, "t": "7:0.6"},
+      {"tipo": "emoji", "e": "🧺", "x": 450, "y": 860, "tam": 150, "t": "7:0.65"},
+      {"tipo": "emoji", "e": "🧺", "x": 630, "y": 860, "tam": 150, "t": "7:0.7"},
+      {"tipo": "emoji", "e": "🧺", "x": 810, "y": 860, "tam": 150, "t": "7:0.75"}
+    ]},
+    {"fundo": "claro", "els": [
+      {"tipo": "texto", "txt": "UM TROPEÇO NÃO\nPRECISA DERRUBAR TUDO.", "tam": 74, "cor": "tinta", "y": 250, "t": 0.1},
+      {"tipo": "boneco", "cor": "azul", "num": 1, "x": 150, "y": 1330, "s": 0.92, "festa": "8:0.45", "t": 0.2},
+      {"tipo": "boneco", "cor": "verde", "num": 2, "x": 410, "y": 1330, "s": 0.92, "festa": "8:0.45+0.32", "t": 0.3},
+      {"tipo": "boneco", "cor": "amarelo", "num": 3, "x": 670, "y": 1330, "s": 0.92, "festa": "8:0.45+0.64", "t": 0.4},
+      {"tipo": "boneco", "cor": "laranja", "num": 4, "x": 930, "y": 1330, "s": 0.92, "festa": "8:0.45+0.96", "t": 0.5},
+      {"tipo": "circulo", "num": 1, "cor": "azul", "x": 150, "y": 950, "t": "8:0.45"},
+      {"tipo": "circulo", "num": 2, "cor": "verde", "x": 410, "y": 950, "t": "8:0.45+0.32"},
+      {"tipo": "circulo", "num": 3, "cor": "amarelo", "x": 670, "y": 950, "t": "8:0.45+0.64"},
+      {"tipo": "circulo", "num": 4, "cor": "laranja", "x": 930, "y": 950, "t": "8:0.45+0.96"},
+      {"tipo": "etiqueta", "txt": "1 CESTA", "x": 150, "y": 1395, "t": 0.6},
+      {"tipo": "etiqueta", "txt": "2", "x": 410, "y": 1395, "t": 0.7},
+      {"tipo": "etiqueta", "txt": "4", "x": 670, "y": 1395, "t": 0.8},
+      {"tipo": "etiqueta", "txt": "10", "x": 930, "y": 1395, "t": 0.9}
+    ]}
+  ]
+}

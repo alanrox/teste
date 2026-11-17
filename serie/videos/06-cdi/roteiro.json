@@ -1,0 +1,69 @@
+{
+  "titulo": "CDI",
+  "proximo": "Quanto tempo esperar para pagar menos imposto?",
+  "falas": [
+    {"cena": 0, "fala": "O que significa render cem por cento do cê dê i?", "legendas": ["O que significa render 100% do CDI?"]},
+    {"cena": 1, "fala": "Todo dia, os bancos emprestam dinheiro uns para os outros.", "legendas": ["Todo dia, os bancos emprestam dinheiro uns para os outros."]},
+    {"cena": 1, "fala": "Os juros desses empréstimos ficam sempre colados na Selic.", "legendas": ["Os juros desses empréstimos ficam sempre colados na Selic."]},
+    {"cena": 2, "fala": "Por isso, essa taxa virou uma régua para medir investimentos.", "legendas": ["Por isso, essa taxa virou uma régua para medir investimentos."]},
+    {"cena": 3, "fala": "Com essa régua a dez por cento ao ano, quatro irmãos investiram dez mil reais por um ano.", "legendas": ["Com essa régua a 10% ao ano…", "…quatro irmãos investiram R$ 10 mil por um ano."]},
+    {"cena": 3, "fala": "Oitenta por cento do cê dê i rendeu oitocentos reais. Cem por cento, mil.", "legendas": ["80% do CDI rendeu R$ 800.", "100%, R$ 1.000."]},
+    {"cena": 3, "fala": "Cento e dez por cento, mil e cem. E cento e vinte por cento, mil e duzentos.", "legendas": ["110%, R$ 1.100.", "E 120%, R$ 1.200."]},
+    {"cena": 4, "fala": "Isso se chama cê dê i: a taxa entre os bancos, usada como régua da renda fixa.", "legendas": ["Isso se chama CDI:", "a taxa entre os bancos, usada como régua da renda fixa."]},
+    {"cena": 4, "fala": "Quanto maior a porcentagem do cê dê i, mais o investimento rende.", "legendas": ["Quanto maior a porcentagem do CDI, mais o investimento rende."]},
+    {"cena": 5, "fala": "E você, escolheria qual? Um, dois, três ou quatro?", "legendas": ["E você, escolheria qual? 1, 2, 3 ou 4?"]}
+  ],
+  "cenas": [
+    {"fundo": "escuro", "els": [
+      {"tipo": "texto", "txt": "100% DO CDI?\nO QUE É ISSO?", "cores": ["ouro", "branco"], "tam": 104, "y": 290, "t": 0.1},
+      {"tipo": "emoji", "e": "📏", "x": 560, "y": 820, "tam": 280, "t": 0.4, "balanca": true},
+      {"tipo": "boneco", "cor": "cinza", "x": 220, "y": 1420, "s": 0.95, "olhar": true, "t": 0.2},
+      {"tipo": "emoji", "e": "❓", "x": 330, "y": 1030, "tam": 110, "t": "1:0.6", "flutua": true}
+    ]},
+    {"fundo": "cidade", "els": [
+      {"tipo": "selo", "txt": "EMPRÉSTIMO ENTRE BANCOS", "tam": 50, "y": 290, "t": "2:0.15"},
+      {"tipo": "predio", "txt": "BANCO A", "x": 240, "y": 1300, "s": 0.72, "t": 0.1},
+      {"tipo": "predio", "txt": "BANCO B", "x": 840, "y": 1300, "s": 0.72, "t": 0.2},
+      {"tipo": "nota", "w": 170, "x": 300, "y": 900, "t": "2:0.3", "move": [{"t": "2:0.45", "x": 780, "y": 900, "arco": 180, "dur": 0.9}], "sai": "2:0.45+0.95"},
+      {"tipo": "moedas", "n": 3, "r": 30, "x": 780, "y": 900, "t": "3:0.1", "move": [{"t": "3:0.2", "x": 300, "y": 900, "arco": 180, "dur": 0.9}], "sai": "3:0.2+0.95"},
+      {"tipo": "emoji", "e": "🤝", "x": 540, "y": 640, "tam": 150, "t": "2:0.7"},
+      {"tipo": "etiqueta", "txt": "juros colados na Selic", "tam": 38, "y": 480, "t": "3:0.55"}
+    ]},
+    {"fundo": "escuro", "els": [
+      {"tipo": "texto", "txt": "A RÉGUA DA\nRENDA FIXA", "tam": 100, "y": 300, "t": "4:0.05"},
+      {"tipo": "emoji", "e": "📏", "x": 540, "y": 760, "tam": 300, "t": "4:0.2", "rot": -0.3},
+      {"tipo": "selo", "txt": "CDI", "tam": 110, "y": 1100, "t": "4:0.6", "brilho": true}
+    ]},
+    {"fundo": "escuro", "els": [
+      {"tipo": "texto", "txt": "R$ 10 MIL POR 1 ANO", "tam": 80, "y": 210, "t": 0.1},
+      {"tipo": "selo", "txt": "CDI A 10% AO ANO", "tam": 44, "cor": "ciano", "y": 330, "t": "5:0.25"},
+      {"tipo": "barras", "x": 540, "y": 1330, "w": 960, "h": 700, "valores": [800, 1000, 1100, 1200], "max": 1200,
+       "cores": ["azul", "verde", "amarelo", "laranja"], "rotulos": ["80%", "100%", "110%", "120%"], "tamRotulo": 46,
+       "ts": ["6:0.1", "6:0.72", "7:0.12", "7:0.65"], "pre": "R$ ", "textos": ["R$ 800", "R$ 1.000", "R$ 1.100", "R$ 1.200"], "tamValor": 46},
+      {"tipo": "boneco", "cor": "laranja", "num": 4, "x": 900, "y": 540, "s": 0.5, "festa": "7:0.85", "t": "7:0.8"}
+    ]},
+    {"fundo": "escuro", "els": [
+      {"tipo": "selo", "txt": "CDI", "tam": 110, "y": 290, "t": "8:0.15", "brilho": true},
+      {"tipo": "texto", "txt": "a taxa entre os bancos", "tam": 60, "peso": 800, "y": 470, "t": "8:0.4"},
+      {"tipo": "texto", "txt": "régua da renda fixa", "tam": 76, "cor": "ouro", "y": 590, "t": "8:0.75"},
+      {"tipo": "seta", "de": [220, 1180], "para": [860, 820], "cor": "verde", "larg": 16, "t": "9:0.2", "dur": 0.9},
+      {"tipo": "etiqueta", "txt": "mais % do CDI", "tam": 38, "x": 330, "y": 900, "t": "9:0.3"},
+      {"tipo": "etiqueta", "txt": "mais rendimento", "tam": 38, "cor": "verde", "x": 760, "y": 1180, "t": "9:0.7"}
+    ]},
+    {"fundo": "claro", "els": [
+      {"tipo": "texto", "txt": "OLHE SEMPRE\nO % DO CDI.", "tam": 84, "cor": "tinta", "y": 250, "t": 0.1},
+      {"tipo": "boneco", "cor": "azul", "num": 1, "x": 150, "y": 1330, "s": 0.92, "festa": "10:0.4", "t": 0.2},
+      {"tipo": "boneco", "cor": "verde", "num": 2, "x": 410, "y": 1330, "s": 0.92, "festa": "10:0.4+0.32", "t": 0.3},
+      {"tipo": "boneco", "cor": "amarelo", "num": 3, "x": 670, "y": 1330, "s": 0.92, "festa": "10:0.4+0.64", "t": 0.4},
+      {"tipo": "boneco", "cor": "laranja", "num": 4, "x": 930, "y": 1330, "s": 0.92, "festa": "10:0.4+0.96", "t": 0.5},
+      {"tipo": "circulo", "num": 1, "cor": "azul", "x": 150, "y": 950, "t": "10:0.4"},
+      {"tipo": "circulo", "num": 2, "cor": "verde", "x": 410, "y": 950, "t": "10:0.4+0.32"},
+      {"tipo": "circulo", "num": 3, "cor": "amarelo", "x": 670, "y": 950, "t": "10:0.4+0.64"},
+      {"tipo": "circulo", "num": 4, "cor": "laranja", "x": 930, "y": 950, "t": "10:0.4+0.96"},
+      {"tipo": "etiqueta", "txt": "80%", "x": 150, "y": 1395, "t": 0.6},
+      {"tipo": "etiqueta", "txt": "100%", "x": 410, "y": 1395, "t": 0.7},
+      {"tipo": "etiqueta", "txt": "110%", "x": 670, "y": 1395, "t": 0.8},
+      {"tipo": "etiqueta", "txt": "120%", "x": 930, "y": 1395, "t": 0.9}
+    ]}
+  ]
+}

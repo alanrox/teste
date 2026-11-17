@@ -1,0 +1,84 @@
+{
+  "titulo": "Liquidez",
+  "proximo": "Selic, Prefixado ou IPCA+?",
+  "falas": [
+    {"cena": 0, "fala": "E se você precisar do seu dinheiro amanhã?", "legendas": ["E se você precisar do seu dinheiro amanhã?"]},
+    {"cena": 1, "fala": "Quatro irmãos tinham dez mil reais investidos, cada um num lugar diferente.", "legendas": ["Quatro irmãos tinham R$ 10 mil investidos…", "…cada um num lugar diferente."]},
+    {"cena": 1, "fala": "Um dia, todos precisaram do dinheiro na hora.", "legendas": ["Um dia, todos precisaram do dinheiro na hora."]},
+    {"cena": 2, "fala": "O primeiro tinha um terreno. Levou meses para vender, e aceitou um preço menor.", "legendas": ["O primeiro tinha um terreno.", "Levou meses para vender, e aceitou um preço menor."]},
+    {"cena": 2, "fala": "O segundo tinha uma éle cê i com carência. O dinheiro ficou preso até o fim do prazo.", "legendas": ["O segundo tinha uma LCI com carência.", "O dinheiro ficou preso até o fim do prazo."]},
+    {"cena": 2, "fala": "O terceiro tinha ações. Recebeu em dois dias, mas pelo preço daquele dia.", "legendas": ["O terceiro tinha ações.", "Recebeu em 2 dias, mas pelo preço daquele dia."]},
+    {"cena": 2, "fala": "E o quarto tinha um cê dê bê com liquidez diária. Sacou no mesmo dia.", "legendas": ["E o quarto tinha um CDB com liquidez diária.", "Sacou no mesmo dia."]},
+    {"cena": 3, "fala": "Isso se chama liquidez: a rapidez para transformar um investimento em dinheiro, sem perder valor.", "legendas": ["Isso se chama liquidez:", "a rapidez para transformar um investimento em dinheiro, sem perder valor."]},
+    {"cena": 4, "fala": "Dinheiro de emergência pede liquidez diária.", "legendas": ["Dinheiro de emergência pede liquidez diária."]},
+    {"cena": 4, "fala": "E você, qual irmão é? Um, dois, três ou quatro?", "legendas": ["E você, qual irmão é? 1, 2, 3 ou 4?"]}
+  ],
+  "cenas": [
+    {"fundo": "escuro", "els": [
+      {"tipo": "texto", "txt": "PRECISOU DO\nDINHEIRO AMANHÃ?", "cores": ["branco", "ouro"], "tam": 100, "y": 290, "t": 0.1},
+      {"tipo": "emoji", "e": "💰", "x": 400, "y": 800, "tam": 220, "t": 0.3, "flutua": true},
+      {"tipo": "emoji", "e": "🚨", "x": 780, "y": 790, "tam": 190, "t": "1:0.45", "balanca": true},
+      {"tipo": "boneco", "cor": "cinza", "x": 220, "y": 1420, "s": 0.95, "olhar": true, "t": 0.2},
+      {"tipo": "emoji", "e": "❓", "x": 330, "y": 1030, "tam": 110, "t": "1:0.7", "flutua": true}
+    ]},
+    {"fundo": "cidade", "els": [
+      {"tipo": "selo", "txt": "R$ 10 MIL INVESTIDOS", "tam": 58, "y": 290, "t": "2:0.2"},
+      {"tipo": "selo", "txt": "PRECISAM HOJE!", "tam": 66, "cor": "vermelho", "y": 430, "t": "3:0.45"},
+      {"tipo": "emoji", "e": "🚨", "x": 540, "y": 700, "tam": 170, "t": "3:0.3", "balanca": true},
+      {"tipo": "boneco", "cor": "azul", "num": 1, "x": 165, "y": 1410, "s": 0.95, "t": 0.05},
+      {"tipo": "boneco", "cor": "verde", "num": 2, "x": 415, "y": 1410, "s": 0.95, "t": 0.12},
+      {"tipo": "boneco", "cor": "amarelo", "num": 3, "x": 665, "y": 1410, "s": 0.95, "t": 0.19},
+      {"tipo": "boneco", "cor": "laranja", "num": 4, "x": 915, "y": 1410, "s": 0.95, "t": 0.26}
+    ]},
+    {"fundo": "escuro", "els": [
+      {"tipo": "texto", "txt": "QUANTO DEMOROU", "tam": 84, "y": 200, "t": 0.1},
+      {"tipo": "caixa", "w": 980, "h": 170, "y": 400, "t": "4:0.0", "som": false},
+      {"tipo": "circulo", "num": 1, "cor": "azul", "x": 120, "y": 400, "t": "4:0.0"},
+      {"tipo": "emoji", "e": "🏞️", "x": 240, "y": 400, "tam": 100, "t": "4:0.1"},
+      {"tipo": "texto", "txt": "terreno", "alinha": "left", "tam": 54, "x": 320, "y": 400, "t": "4:0.1", "som": false},
+      {"tipo": "texto", "txt": "meses", "tam": 60, "cor": "vermelho", "x": 860, "y": 400, "t": "4:0.45"},
+      {"tipo": "caixa", "w": 980, "h": 170, "y": 600, "t": "5:0.0", "som": false},
+      {"tipo": "circulo", "num": 2, "cor": "verde", "x": 120, "y": 600, "t": "5:0.0"},
+      {"tipo": "emoji", "e": "🔒", "x": 240, "y": 600, "tam": 100, "t": "5:0.1"},
+      {"tipo": "texto", "txt": "LCI com carência", "alinha": "left", "tam": 50, "maxW": 430, "x": 320, "y": 600, "t": "5:0.1", "som": false},
+      {"tipo": "texto", "txt": "preso", "tam": 60, "cor": "vermelho", "x": 860, "y": 600, "t": "5:0.6"},
+      {"tipo": "caixa", "w": 980, "h": 170, "y": 800, "t": "6:0.0", "som": false},
+      {"tipo": "circulo", "num": 3, "cor": "amarelo", "x": 120, "y": 800, "t": "6:0.0"},
+      {"tipo": "emoji", "e": "📊", "x": 240, "y": 800, "tam": 100, "t": "6:0.1"},
+      {"tipo": "texto", "txt": "ações", "alinha": "left", "tam": 54, "x": 320, "y": 800, "t": "6:0.1", "som": false},
+      {"tipo": "texto", "txt": "2 dias", "tam": 60, "cor": "ouro", "x": 860, "y": 800, "t": "6:0.45"},
+      {"tipo": "caixa", "w": 980, "h": 170, "y": 1000, "t": "7:0.0", "som": false},
+      {"tipo": "circulo", "num": 4, "cor": "laranja", "x": 120, "y": 1000, "t": "7:0.0"},
+      {"tipo": "emoji", "e": "⚡", "x": 240, "y": 1000, "tam": 100, "t": "7:0.1"},
+      {"tipo": "texto", "txt": "CDB diário", "alinha": "left", "tam": 54, "x": 320, "y": 1000, "t": "7:0.1", "som": false},
+      {"tipo": "texto", "txt": "na hora", "tam": 60, "cor": "verde", "x": 860, "y": 1000, "t": "7:0.7"},
+      {"tipo": "etiqueta", "txt": "pelo preço do dia", "tam": 26, "cor": "vermelho", "x": 860, "y": 868, "t": "6:0.75"}
+    ]},
+    {"fundo": "escuro", "els": [
+      {"tipo": "selo", "txt": "LIQUIDEZ", "tam": 100, "y": 300, "t": "8:0.25", "brilho": true},
+      {"tipo": "texto", "txt": "rapidez para virar dinheiro,\nsem perder valor", "tam": 58, "peso": 800, "y": 500, "t": "8:0.5"},
+      {"tipo": "seta", "de": [140, 950], "para": [940, 950], "cor": "verde", "larg": 14, "t": "8:0.6", "dur": 1.0},
+      {"tipo": "texto", "txt": "menos líquido", "tam": 42, "cor": "vermelho", "x": 260, "y": 840, "t": "8:0.6", "som": false},
+      {"tipo": "texto", "txt": "mais líquido", "tam": 42, "cor": "verde", "x": 820, "y": 840, "t": "8:0.8", "som": false},
+      {"tipo": "etiqueta", "txt": "terreno", "tam": 32, "x": 180, "y": 1050, "t": "8:0.65"},
+      {"tipo": "etiqueta", "txt": "LCI", "tam": 32, "x": 420, "y": 1050, "t": "8:0.7"},
+      {"tipo": "etiqueta", "txt": "ações", "tam": 32, "x": 640, "y": 1050, "t": "8:0.75"},
+      {"tipo": "etiqueta", "txt": "CDB diário", "tam": 32, "cor": "verde", "x": 880, "y": 1050, "t": "8:0.8"}
+    ]},
+    {"fundo": "claro", "els": [
+      {"tipo": "texto", "txt": "EMERGÊNCIA PEDE\nLIQUIDEZ DIÁRIA.", "tam": 82, "cor": "tinta", "y": 250, "t": "9:0.05"},
+      {"tipo": "boneco", "cor": "azul", "num": 1, "x": 150, "y": 1330, "s": 0.92, "festa": "10:0.3", "t": 0.2},
+      {"tipo": "boneco", "cor": "verde", "num": 2, "x": 410, "y": 1330, "s": 0.92, "festa": "10:0.3+0.32", "t": 0.3},
+      {"tipo": "boneco", "cor": "amarelo", "num": 3, "x": 670, "y": 1330, "s": 0.92, "festa": "10:0.3+0.64", "t": 0.4},
+      {"tipo": "boneco", "cor": "laranja", "num": 4, "x": 930, "y": 1330, "s": 0.92, "festa": "10:0.3+0.96", "t": 0.5},
+      {"tipo": "circulo", "num": 1, "cor": "azul", "x": 150, "y": 950, "t": "10:0.3"},
+      {"tipo": "circulo", "num": 2, "cor": "verde", "x": 410, "y": 950, "t": "10:0.3+0.32"},
+      {"tipo": "circulo", "num": 3, "cor": "amarelo", "x": 670, "y": 950, "t": "10:0.3+0.64"},
+      {"tipo": "circulo", "num": 4, "cor": "laranja", "x": 930, "y": 950, "t": "10:0.3+0.96"},
+      {"tipo": "etiqueta", "txt": "TERRENO", "x": 150, "y": 1395, "t": 0.6},
+      {"tipo": "etiqueta", "txt": "LCI", "x": 410, "y": 1395, "t": 0.7},
+      {"tipo": "etiqueta", "txt": "AÇÕES", "x": 670, "y": 1395, "t": 0.8},
+      {"tipo": "etiqueta", "txt": "CDB DIÁRIO", "tam": 30, "x": 930, "y": 1395, "t": 0.9}
+    ]}
+  ]
+}

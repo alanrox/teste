@@ -1,0 +1,78 @@
+{
+  "titulo": "ETF",
+  "proximo": "Todos os ovos na mesma cesta?",
+  "falas": [
+    {"cena": 0, "fala": "Como comprar dezenas de empresas de uma vez só?", "legendas": ["Como comprar dezenas de empresas de uma vez só?"]},
+    {"cena": 1, "fala": "Quatro irmãos queriam investir nas maiores empresas da bolsa.", "legendas": ["Quatro irmãos queriam investir nas maiores empresas da bolsa."]},
+    {"cena": 1, "fala": "O primeiro escolheu só uma. O segundo, cinco. O terceiro passou dias montando uma carteira com vinte.", "legendas": ["O primeiro escolheu só uma. O segundo, cinco.", "O terceiro passou dias montando uma carteira com vinte."]},
+    {"cena": 2, "fala": "E o quarto comprou uma cesta pronta, com dezenas de empresas, numa compra só.", "legendas": ["E o quarto comprou uma cesta pronta…", "…com dezenas de empresas, numa compra só."]},
+    {"cena": 3, "fala": "Essa cesta copia um índice, como o Ibovespa. Se o índice sobe, a cesta sobe junto.", "legendas": ["Essa cesta copia um índice, como o Ibovespa.", "Se o índice sobe, a cesta sobe junto."]},
+    {"cena": 4, "fala": "Isso se chama é tê éfe: um fundo negociado na bolsa, que copia um índice.", "legendas": ["Isso se chama ETF:", "um fundo negociado na bolsa, que copia um índice."]},
+    {"cena": 4, "fala": "Você diversifica com uma compra só, e costuma pagar taxas baixas.", "legendas": ["Você diversifica com uma compra só…", "…e costuma pagar taxas baixas."]},
+    {"cena": 5, "fala": "E você, faria como qual irmão? Um, dois, três ou quatro?", "legendas": ["E você, faria como qual irmão? 1, 2, 3 ou 4?"]}
+  ],
+  "cenas": [
+    {"fundo": "escuro", "els": [
+      {"tipo": "texto", "txt": "DEZENAS DE EMPRESAS\nNUMA COMPRA SÓ?", "cores": ["branco", "ouro"], "tam": 88, "y": 280, "t": 0.1},
+      {"tipo": "emoji", "e": "🧺", "x": 580, "y": 800, "tam": 280, "t": 0.3},
+      {"tipo": "emoji", "e": "🏢", "x": 470, "y": 650, "tam": 110, "t": 0.6, "flutua": true},
+      {"tipo": "emoji", "e": "🏭", "x": 600, "y": 620, "tam": 110, "t": 0.8, "flutua": true},
+      {"tipo": "emoji", "e": "🏦", "x": 720, "y": 660, "tam": 110, "t": 1.0, "flutua": true},
+      {"tipo": "boneco", "cor": "cinza", "x": 200, "y": 1420, "s": 0.95, "olhar": true, "t": 0.2},
+      {"tipo": "emoji", "e": "🤔", "x": 310, "y": 1030, "tam": 110, "t": "1:0.75", "flutua": true}
+    ]},
+    {"fundo": "cidade", "els": [
+      {"tipo": "selo", "txt": "AS MAIORES DA BOLSA", "tam": 58, "y": 290, "t": "2:0.3"},
+      {"tipo": "boneco", "cor": "azul", "num": 1, "x": 165, "y": 1410, "s": 0.95, "t": 0.05},
+      {"tipo": "boneco", "cor": "verde", "num": 2, "x": 415, "y": 1410, "s": 0.95, "t": 0.12},
+      {"tipo": "boneco", "cor": "amarelo", "num": 3, "x": 665, "y": 1410, "s": 0.95, "t": 0.19},
+      {"tipo": "boneco", "cor": "laranja", "num": 4, "x": 915, "y": 1410, "s": 0.95, "t": 0.26},
+      {"tipo": "grade", "n": 1, "cols": 1, "cel": 60, "corA": "azul", "x": 165, "y": 960, "t": "3:0.1"},
+      {"tipo": "grade", "n": 5, "cols": 3, "cel": 46, "gap": 8, "corA": "verde", "x": 415, "y": 950, "t": "3:0.3", "passo": 0.05},
+      {"tipo": "grade", "n": 20, "cols": 5, "cel": 34, "gap": 6, "corA": "amarelo", "x": 665, "y": 930, "t": "3:0.55", "passo": 0.06},
+      {"tipo": "emoji", "e": "⏳", "x": 760, "y": 790, "tam": 80, "t": "3:0.8"},
+      {"tipo": "emoji", "e": "❓", "x": 915, "y": 950, "tam": 90, "t": "3:0.9", "flutua": true}
+    ]},
+    {"fundo": "cidade", "els": [
+      {"tipo": "boneco", "cor": "laranja", "num": 4, "x": 260, "y": 1410, "s": 1.15, "boca": "feliz", "festa": "4:0.8", "t": 0.05},
+      {"tipo": "emoji", "e": "🧺", "x": 700, "y": 1060, "tam": 320, "t": "4:0.25"},
+      {"tipo": "grade", "n": 40, "cols": 8, "cel": 26, "gap": 6, "corA": "ouro", "x": 700, "y": 870, "t": "4:0.4", "passo": 0.015},
+      {"tipo": "selo", "txt": "CESTA PRONTA", "tam": 64, "y": 290, "t": "4:0.3"},
+      {"tipo": "etiqueta", "txt": "uma compra só", "tam": 42, "y": 420, "t": "4:0.85"}
+    ]},
+    {"fundo": "escuro", "els": [
+      {"tipo": "selo", "txt": "ÍNDICE: IBOVESPA", "tam": 60, "cor": "azul", "y": 300, "t": "5:0.2"},
+      {"tipo": "texto", "txt": "índice", "tam": 64, "x": 300, "y": 560, "t": "5:0.5"},
+      {"tipo": "texto", "txt": "cesta", "tam": 64, "x": 780, "y": 560, "t": "5:0.55"},
+      {"tipo": "emoji", "e": "📈", "x": 300, "y": 760, "tam": 180, "t": "5:0.65"},
+      {"tipo": "emoji", "e": "📈", "x": 780, "y": 760, "tam": 180, "t": "5:0.75"},
+      {"tipo": "texto", "txt": "=", "tam": 140, "x": 540, "y": 760, "t": "5:0.8"},
+      {"tipo": "etiqueta", "txt": "sobem e caem juntos", "tam": 40, "y": 1000, "t": "5:0.85"}
+    ]},
+    {"fundo": "escuro", "els": [
+      {"tipo": "selo", "txt": "ETF", "tam": 120, "y": 300, "t": "6:0.15", "brilho": true},
+      {"tipo": "texto", "txt": "fundo negociado na bolsa\nque copia um índice", "tam": 58, "peso": 800, "y": 500, "t": "6:0.4"},
+      {"tipo": "caixa", "w": 900, "h": 130, "y": 800, "t": "7:0.05", "som": false},
+      {"tipo": "ok", "r": 32, "x": 170, "y": 800, "t": "7:0.05"},
+      {"tipo": "texto", "txt": "diversifica numa compra", "alinha": "left", "tam": 52, "x": 240, "y": 800, "t": "7:0.05", "som": false},
+      {"tipo": "caixa", "w": 900, "h": 130, "y": 960, "t": "7:0.6", "som": false},
+      {"tipo": "ok", "r": 32, "x": 170, "y": 960, "t": "7:0.6"},
+      {"tipo": "texto", "txt": "taxas costumam ser baixas", "alinha": "left", "tam": 52, "x": 240, "y": 960, "t": "7:0.6", "som": false}
+    ]},
+    {"fundo": "claro", "els": [
+      {"tipo": "texto", "txt": "A CESTA TODA\nNUMA COMPRA SÓ.", "tam": 82, "cor": "tinta", "y": 250, "t": 0.1},
+      {"tipo": "boneco", "cor": "azul", "num": 1, "x": 150, "y": 1330, "s": 0.92, "festa": "8:0.4", "t": 0.2},
+      {"tipo": "boneco", "cor": "verde", "num": 2, "x": 410, "y": 1330, "s": 0.92, "festa": "8:0.4+0.32", "t": 0.3},
+      {"tipo": "boneco", "cor": "amarelo", "num": 3, "x": 670, "y": 1330, "s": 0.92, "festa": "8:0.4+0.64", "t": 0.4},
+      {"tipo": "boneco", "cor": "laranja", "num": 4, "x": 930, "y": 1330, "s": 0.92, "festa": "8:0.4+0.96", "t": 0.5},
+      {"tipo": "circulo", "num": 1, "cor": "azul", "x": 150, "y": 950, "t": "8:0.4"},
+      {"tipo": "circulo", "num": 2, "cor": "verde", "x": 410, "y": 950, "t": "8:0.4+0.32"},
+      {"tipo": "circulo", "num": 3, "cor": "amarelo", "x": 670, "y": 950, "t": "8:0.4+0.64"},
+      {"tipo": "circulo", "num": 4, "cor": "laranja", "x": 930, "y": 950, "t": "8:0.4+0.96"},
+      {"tipo": "etiqueta", "txt": "1 EMPRESA", "tam": 30, "x": 150, "y": 1395, "t": 0.6},
+      {"tipo": "etiqueta", "txt": "5", "x": 410, "y": 1395, "t": 0.7},
+      {"tipo": "etiqueta", "txt": "20", "x": 670, "y": 1395, "t": 0.8},
+      {"tipo": "etiqueta", "txt": "ETF", "x": 930, "y": 1395, "t": 0.9}
+    ]}
+  ]
+}

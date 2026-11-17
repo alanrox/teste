@@ -1,0 +1,75 @@
+{
+  "titulo": "Ações",
+  "proximo": "Como receber lucro sem trabalhar lá?",
+  "falas": [
+    {"cena": 0, "fala": "Dá para ser dono de uma empresa com cinquenta reais?", "legendas": ["Dá para ser dono de uma empresa com R$ 50?"]},
+    {"cena": 1, "fala": "Uma grande rede de padarias foi dividida em cem mil pedaços, de dez reais cada.", "legendas": ["Uma grande rede de padarias foi dividida em 100 mil pedaços…", "…de R$ 10 cada."]},
+    {"cena": 1, "fala": "Qualquer pessoa pode comprar esses pedaços na bolsa de valores.", "legendas": ["Qualquer pessoa pode comprar esses pedaços na bolsa de valores."]},
+    {"cena": 2, "fala": "Quatro irmãos compraram: cinco pedaços, cinquenta, quinhentos e cinco mil.", "legendas": ["Quatro irmãos compraram:", "5 pedaços, 50, 500 e 5 mil."]},
+    {"cena": 3, "fala": "Anos depois, a rede cresceu e passou a valer o dobro.", "legendas": ["Anos depois, a rede cresceu e passou a valer o dobro."]},
+    {"cena": 3, "fala": "Cada pedaço foi de dez para vinte reais. E o dinheiro de cada irmão dobrou junto.", "legendas": ["Cada pedaço foi de R$ 10 para R$ 20.", "E o dinheiro de cada irmão dobrou junto."]},
+    {"cena": 3, "fala": "Mas, se a empresa fosse mal, os pedaços valeriam menos.", "legendas": ["Mas, se a empresa fosse mal, os pedaços valeriam menos."]},
+    {"cena": 4, "fala": "Isso se chama ação: um pedaço de uma empresa. Quem compra vira sócio.", "legendas": ["Isso se chama ação: um pedaço de uma empresa.", "Quem compra vira sócio."]},
+    {"cena": 5, "fala": "E você, compraria quantos pedaços? Um, dois, três ou quatro?", "legendas": ["E você, compraria quantos pedaços? 1, 2, 3 ou 4?"]}
+  ],
+  "cenas": [
+    {"fundo": "escuro", "els": [
+      {"tipo": "texto", "txt": "DONO DE EMPRESA\nCOM R$ 50?", "cores": ["branco", "ouro"], "tam": 104, "y": 280, "t": 0.1},
+      {"tipo": "emoji", "e": "🏢", "x": 600, "y": 760, "tam": 260, "t": 0.3},
+      {"tipo": "nota", "w": 220, "txt": "R$ 50", "x": 820, "y": 1060, "t": "1:0.5", "balanca": true},
+      {"tipo": "boneco", "cor": "cinza", "x": 220, "y": 1420, "s": 0.95, "olhar": true, "t": 0.2},
+      {"tipo": "emoji", "e": "🤔", "x": 330, "y": 1030, "tam": 110, "t": "1:0.7", "flutua": true}
+    ]},
+    {"fundo": "cidade", "els": [
+      {"tipo": "selo", "txt": "BOLSA DE VALORES", "tam": 60, "cor": "azul", "y": 290, "t": "3:0.45"},
+      {"tipo": "emoji", "e": "🥖", "x": 540, "y": 470, "tam": 150, "t": 0.2},
+      {"tipo": "grade", "n": 100, "cols": 10, "cel": 50, "gap": 8, "corA": "ouro", "x": 540, "y": 870, "t": "2:0.35", "passo": 0.012},
+      {"tipo": "etiqueta", "txt": "cada pedaço: R$ 10", "tam": 40, "y": 1230, "t": "2:0.75"}
+    ]},
+    {"fundo": "cidade", "els": [
+      {"tipo": "selo", "txt": "PEDAÇOS COMPRADOS", "tam": 58, "y": 290, "t": 0.2},
+      {"tipo": "boneco", "cor": "azul", "num": 1, "x": 165, "y": 1410, "s": 0.95, "t": 0.05},
+      {"tipo": "boneco", "cor": "verde", "num": 2, "x": 415, "y": 1410, "s": 0.95, "t": 0.12},
+      {"tipo": "boneco", "cor": "amarelo", "num": 3, "x": 665, "y": 1410, "s": 0.95, "t": 0.19},
+      {"tipo": "boneco", "cor": "laranja", "num": 4, "x": 915, "y": 1410, "s": 0.95, "t": 0.26},
+      {"tipo": "selo", "txt": "5", "tam": 50, "x": 165, "y": 1040, "t": "4:0.42"},
+      {"tipo": "selo", "txt": "50", "tam": 50, "x": 415, "y": 1040, "t": "4:0.56"},
+      {"tipo": "selo", "txt": "500", "tam": 50, "x": 665, "y": 1040, "t": "4:0.7"},
+      {"tipo": "selo", "txt": "5 MIL", "tam": 50, "x": 915, "y": 1040, "t": "4:0.86"},
+      {"tipo": "etiqueta", "txt": "R$ 50", "tam": 30, "x": 165, "y": 930, "t": "4:0.45"},
+      {"tipo": "etiqueta", "txt": "R$ 500", "tam": 30, "x": 415, "y": 930, "t": "4:0.6"},
+      {"tipo": "etiqueta", "txt": "R$ 5 mil", "tam": 30, "x": 665, "y": 930, "t": "4:0.74"},
+      {"tipo": "etiqueta", "txt": "R$ 50 mil", "tam": 30, "x": 915, "y": 930, "t": "4:0.9"}
+    ]},
+    {"fundo": "escuro", "els": [
+      {"tipo": "texto", "txt": "A EMPRESA DOBROU DE VALOR", "tam": 64, "y": 210, "t": "5:0.2"},
+      {"tipo": "texto", "txt": "R$ 10", "tam": 96, "x": 290, "y": 390, "t": "6:0.1"},
+      {"tipo": "emoji", "e": "➡️", "x": 540, "y": 390, "tam": 110, "t": "6:0.2"},
+      {"tipo": "texto", "txt": "R$ 20", "tam": 96, "cor": "verde", "x": 790, "y": 390, "t": "6:0.32"},
+      {"tipo": "conta", "linhas": ["R$ 50 → R$ 100", "R$ 500 → R$ 1.000", "R$ 5 mil → R$ 10 mil", "R$ 50 mil → R$ 100 mil"], "tam": 58, "y": 760, "ts": ["6:0.6", "6:0.7", "6:0.8", "6:0.9"]},
+      {"tipo": "emoji", "e": "📉", "x": 400, "y": 1180, "tam": 120, "t": "7:0.4"},
+      {"tipo": "etiqueta", "txt": "se for mal, cai", "tam": 40, "cor": "vermelho", "x": 640, "y": 1180, "t": "7:0.45"}
+    ]},
+    {"fundo": "escuro", "els": [
+      {"tipo": "selo", "txt": "AÇÃO", "tam": 120, "y": 300, "t": "8:0.15", "brilho": true},
+      {"tipo": "texto", "txt": "um pedaço de uma empresa", "tam": 60, "peso": 800, "y": 480, "t": "8:0.35"},
+      {"tipo": "emoji", "e": "🤝", "x": 540, "y": 780, "tam": 220, "t": "8:0.6"},
+      {"tipo": "texto", "txt": "quem compra vira sócio", "tam": 70, "cor": "ouro", "y": 1020, "t": "8:0.75"}
+    ]},
+    {"fundo": "claro", "els": [
+      {"tipo": "texto", "txt": "COM POUCO, VOCÊ\nJÁ PODE SER SÓCIO.", "tam": 76, "cor": "tinta", "y": 250, "t": 0.1},
+      {"tipo": "boneco", "cor": "azul", "num": 1, "x": 150, "y": 1330, "s": 0.92, "festa": "9:0.45", "t": 0.2},
+      {"tipo": "boneco", "cor": "verde", "num": 2, "x": 410, "y": 1330, "s": 0.92, "festa": "9:0.45+0.32", "t": 0.3},
+      {"tipo": "boneco", "cor": "amarelo", "num": 3, "x": 670, "y": 1330, "s": 0.92, "festa": "9:0.45+0.64", "t": 0.4},
+      {"tipo": "boneco", "cor": "laranja", "num": 4, "x": 930, "y": 1330, "s": 0.92, "festa": "9:0.45+0.96", "t": 0.5},
+      {"tipo": "circulo", "num": 1, "cor": "azul", "x": 150, "y": 950, "t": "9:0.45"},
+      {"tipo": "circulo", "num": 2, "cor": "verde", "x": 410, "y": 950, "t": "9:0.45+0.32"},
+      {"tipo": "circulo", "num": 3, "cor": "amarelo", "x": 670, "y": 950, "t": "9:0.45+0.64"},
+      {"tipo": "circulo", "num": 4, "cor": "laranja", "x": 930, "y": 950, "t": "9:0.45+0.96"},
+      {"tipo": "etiqueta", "txt": "5", "x": 150, "y": 1395, "t": 0.6},
+      {"tipo": "etiqueta", "txt": "50", "x": 410, "y": 1395, "t": 0.7},
+      {"tipo": "etiqueta", "txt": "500", "x": 670, "y": 1395, "t": 0.8},
+      {"tipo": "etiqueta", "txt": "5 MIL", "x": 930, "y": 1395, "t": 0.9}
+    ]}
+  ]
+}

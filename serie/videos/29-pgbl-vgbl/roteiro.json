@@ -1,0 +1,79 @@
+{
+  "titulo": "PGBL ou VGBL",
+  "proximo": "Quanto você precisa para viver de renda?",
+  "falas": [
+    {"cena": 0, "fala": "Previdência privada: pê gê bê éle ou vê gê bê éle?", "legendas": ["Previdência privada: PGBL ou VGBL?"]},
+    {"cena": 1, "fala": "Três irmãos decidiram fazer previdência privada, pensando na aposentadoria.", "legendas": ["Três irmãos decidiram fazer previdência privada…", "…pensando na aposentadoria."]},
+    {"cena": 2, "fala": "O primeiro faz a declaração completa do imposto de renda. Para ele, o pê gê bê éle.", "legendas": ["O primeiro faz a declaração completa do Imposto de Renda.", "Para ele, o PGBL."]},
+    {"cena": 2, "fala": "Ele abate até doze por cento da renda no imposto de hoje. Mas, no resgate, paga imposto sobre o valor total.", "legendas": ["Ele abate até 12% da renda no imposto de hoje.", "Mas, no resgate, paga imposto sobre o valor total."]},
+    {"cena": 3, "fala": "O segundo usa a declaração simplificada. Para ele, o vê gê bê éle.", "legendas": ["O segundo usa a declaração simplificada.", "Para ele, o VGBL."]},
+    {"cena": 3, "fala": "Não abate nada hoje. Mas, no resgate, paga imposto só sobre o rendimento.", "legendas": ["Não abate nada hoje.", "Mas, no resgate, paga imposto só sobre o rendimento."]},
+    {"cena": 3, "fala": "E o terceiro, que é isento do imposto de renda, também vai de vê gê bê éle.", "legendas": ["E o terceiro, que é isento do Imposto de Renda, também vai de VGBL."]},
+    {"cena": 4, "fala": "Isso se chama previdência privada. O pê serve para quem faz a declaração completa. O vê, para quase todo o resto.", "legendas": ["Isso se chama previdência privada.", "O P serve para quem faz a declaração completa. O V, para quase todo o resto."]},
+    {"cena": 4, "fala": "E fique de olho nas taxas: elas comem o rendimento.", "legendas": ["E fique de olho nas taxas: elas comem o rendimento."]},
+    {"cena": 5, "fala": "E você, seria qual irmão? Um, dois ou três?", "legendas": ["E você, seria qual irmão? 1, 2 ou 3?"]}
+  ],
+  "cenas": [
+    {"fundo": "escuro", "els": [
+      {"tipo": "texto", "txt": "PGBL OU VGBL?", "cores": ["ouro"], "tam": 120, "y": 270, "t": 0.1},
+      {"tipo": "emoji", "e": "👴", "x": 580, "y": 760, "tam": 260, "t": 0.3},
+      {"tipo": "emoji", "e": "🏖️", "x": 820, "y": 1060, "tam": 160, "t": 0.9},
+      {"tipo": "boneco", "cor": "cinza", "x": 200, "y": 1420, "s": 0.95, "olhar": true, "t": 0.2},
+      {"tipo": "emoji", "e": "🤔", "x": 310, "y": 1030, "tam": 110, "t": "1:0.6", "flutua": true}
+    ]},
+    {"fundo": "claro", "els": [
+      {"tipo": "selo", "txt": "PREVIDÊNCIA PRIVADA", "tam": 60, "y": 290, "t": "2:0.3"},
+      {"tipo": "emoji", "e": "🏖️", "x": 540, "y": 640, "tam": 200, "t": "2:0.7"},
+      {"tipo": "boneco", "cor": "azul", "num": 1, "x": 240, "y": 1410, "s": 0.95, "t": 0.05},
+      {"tipo": "boneco", "cor": "verde", "num": 2, "x": 540, "y": 1410, "s": 0.95, "t": 0.12},
+      {"tipo": "boneco", "cor": "laranja", "num": 3, "x": 840, "y": 1410, "s": 0.95, "t": 0.19}
+    ]},
+    {"fundo": "escuro", "els": [
+      {"tipo": "circulo", "num": 1, "cor": "azul", "x": 160, "y": 260, "t": 0.1},
+      {"tipo": "selo", "txt": "PGBL", "tam": 90, "cor": "azul", "x": 560, "y": 260, "t": "3:0.75"},
+      {"tipo": "emoji", "e": "📋", "x": 540, "y": 520, "tam": 160, "t": "3:0.2"},
+      {"tipo": "etiqueta", "txt": "declaração completa", "tam": 40, "y": 650, "t": "3:0.3"},
+      {"tipo": "caixa", "w": 960, "h": 150, "y": 860, "t": "4:0.05", "som": false},
+      {"tipo": "ok", "r": 32, "x": 170, "y": 860, "t": "4:0.05"},
+      {"tipo": "texto", "txt": "abate até 12% da renda hoje", "alinha": "left", "tam": 50, "x": 240, "y": 860, "t": "4:0.05", "som": false},
+      {"tipo": "caixa", "w": 960, "h": 150, "y": 1040, "t": "4:0.55", "som": false},
+      {"tipo": "xis", "r": 28, "x": 170, "y": 1040, "t": "4:0.55"},
+      {"tipo": "texto", "txt": "no resgate: IR sobre o total", "alinha": "left", "tam": 50, "x": 240, "y": 1040, "t": "4:0.55", "som": false}
+    ]},
+    {"fundo": "escuro", "els": [
+      {"tipo": "circulo", "num": 2, "cor": "verde", "x": 160, "y": 260, "t": 0.1},
+      {"tipo": "selo", "txt": "VGBL", "tam": 90, "cor": "verde", "x": 560, "y": 260, "t": "5:0.7"},
+      {"tipo": "emoji", "e": "📄", "x": 540, "y": 520, "tam": 160, "t": "5:0.2"},
+      {"tipo": "etiqueta", "txt": "declaração simplificada", "tam": 40, "y": 650, "t": "5:0.3"},
+      {"tipo": "caixa", "w": 960, "h": 150, "y": 860, "t": "6:0.05", "som": false},
+      {"tipo": "xis", "r": 28, "x": 170, "y": 860, "t": "6:0.05"},
+      {"tipo": "texto", "txt": "não abate nada hoje", "alinha": "left", "tam": 50, "x": 240, "y": 860, "t": "6:0.05", "som": false},
+      {"tipo": "caixa", "w": 960, "h": 150, "y": 1040, "t": "6:0.45", "som": false},
+      {"tipo": "ok", "r": 32, "x": 170, "y": 1040, "t": "6:0.45"},
+      {"tipo": "texto", "txt": "no resgate: IR só no rendimento", "alinha": "left", "tam": 50, "x": 240, "y": 1040, "t": "6:0.45", "som": false},
+      {"tipo": "circulo", "num": 3, "cor": "laranja", "r": 48, "x": 160, "y": 1260, "t": "7:0.1"},
+      {"tipo": "texto", "txt": "isento de IR: também VGBL", "alinha": "left", "tam": 50, "x": 240, "y": 1260, "t": "7:0.4"}
+    ]},
+    {"fundo": "escuro", "els": [
+      {"tipo": "selo", "txt": "PREVIDÊNCIA PRIVADA", "tam": 70, "y": 300, "t": "8:0.25", "brilho": true},
+      {"tipo": "selo", "txt": "P", "tam": 110, "cor": "azul", "x": 280, "y": 560, "t": "8:0.5"},
+      {"tipo": "texto", "txt": "declaração\ncompleta", "tam": 48, "x": 280, "y": 760, "t": "8:0.55", "som": false},
+      {"tipo": "selo", "txt": "V", "tam": 110, "cor": "verde", "x": 800, "y": 560, "t": "8:0.8"},
+      {"tipo": "texto", "txt": "quase todo\no resto", "tam": 48, "x": 800, "y": 760, "t": "8:0.85", "som": false},
+      {"tipo": "emoji", "e": "🐛", "x": 380, "y": 1060, "tam": 120, "t": "9:0.3"},
+      {"tipo": "texto", "txt": "cuidado com as taxas", "tam": 54, "cor": "ouro", "x": 640, "y": 1060, "t": "9:0.4"}
+    ]},
+    {"fundo": "claro", "els": [
+      {"tipo": "texto", "txt": "A LETRA CERTA\nDEPENDE DA SUA\nDECLARAÇÃO.", "tam": 70, "cor": "tinta", "y": 270, "t": 0.1},
+      {"tipo": "boneco", "cor": "azul", "num": 1, "x": 220, "y": 1330, "s": 1.0, "festa": "10:0.4", "t": 0.2},
+      {"tipo": "boneco", "cor": "verde", "num": 2, "x": 540, "y": 1330, "s": 1.0, "festa": "10:0.4+0.32", "t": 0.3},
+      {"tipo": "boneco", "cor": "laranja", "num": 3, "x": 860, "y": 1330, "s": 1.0, "festa": "10:0.4+0.64", "t": 0.4},
+      {"tipo": "circulo", "num": 1, "cor": "azul", "x": 220, "y": 920, "t": "10:0.4"},
+      {"tipo": "circulo", "num": 2, "cor": "verde", "x": 540, "y": 920, "t": "10:0.4+0.32"},
+      {"tipo": "circulo", "num": 3, "cor": "laranja", "x": 860, "y": 920, "t": "10:0.4+0.64"},
+      {"tipo": "etiqueta", "txt": "COMPLETA: PGBL", "tam": 28, "x": 220, "y": 1395, "t": 0.6},
+      {"tipo": "etiqueta", "txt": "SIMPLIFICADA: VGBL", "tam": 26, "x": 540, "y": 1395, "t": 0.7},
+      {"tipo": "etiqueta", "txt": "ISENTO: VGBL", "tam": 28, "x": 860, "y": 1395, "t": 0.8}
+    ]}
+  ]
+}

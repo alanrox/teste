@@ -1,0 +1,87 @@
+{
+  "titulo": "Reserva de emergência",
+  "proximo": "Como R$ 1.000 vira uma bola de neve no cartão",
+  "falas": [
+    {"cena": 0, "fala": "Quanto dinheiro guardar antes de começar a investir?", "legendas": ["Quanto dinheiro guardar antes de começar a investir?"]},
+    {"cena": 1, "fala": "Quatro irmãos gastam dois mil reais por mês.", "legendas": ["Quatro irmãos gastam R$ 2 mil por mês."]},
+    {"cena": 1, "fala": "O primeiro não tinha nada guardado. O segundo, um mês de gastos. O terceiro, três. O quarto, seis.", "legendas": ["O primeiro não tinha nada guardado.", "O segundo, 1 mês de gastos. O terceiro, 3. O quarto, 6."]},
+    {"cena": 2, "fala": "Um dia, os quatro perderam o emprego.", "legendas": ["Um dia, os quatro perderam o emprego."]},
+    {"cena": 3, "fala": "O primeiro entrou no cheque especial no mesmo mês, pagando juros altíssimos.", "legendas": ["O primeiro entrou no cheque especial no mesmo mês…", "…pagando juros altíssimos."]},
+    {"cena": 3, "fala": "O segundo aguentou um mês. O terceiro, três.", "legendas": ["O segundo aguentou 1 mês. O terceiro, 3."]},
+    {"cena": 3, "fala": "E o quarto teve seis meses para achar outro emprego, sem nenhuma dívida.", "legendas": ["E o quarto teve 6 meses para achar outro emprego…", "…sem nenhuma dívida."]},
+    {"cena": 4, "fala": "Isso se chama reserva de emergência.", "legendas": ["Isso se chama reserva de emergência."]},
+    {"cena": 4, "fala": "De três a seis meses dos seus gastos, num investimento seguro, que você consegue sacar na hora.", "legendas": ["De 3 a 6 meses dos seus gastos…", "…num investimento seguro, que você consegue sacar na hora."]},
+    {"cena": 5, "fala": "Primeiro a reserva. Depois, os outros investimentos.", "legendas": ["Primeiro a reserva. Depois, os outros investimentos."]},
+    {"cena": 5, "fala": "E você, qual irmão é hoje? Um, dois, três ou quatro?", "legendas": ["E você, qual irmão é hoje? 1, 2, 3 ou 4?"]}
+  ],
+  "cenas": [
+    {"fundo": "escuro", "els": [
+      {"tipo": "texto", "txt": "QUANTO GUARDAR\nANTES DE INVESTIR?", "cores": ["branco", "ouro"], "tam": 92, "y": 290, "t": 0.1},
+      {"tipo": "emoji", "e": "🐷", "x": 560, "y": 800, "tam": 300, "t": 0.3, "flutua": true},
+      {"tipo": "emoji", "e": "🛟", "x": 850, "y": 1120, "tam": 170, "t": "1:0.6", "gira": 0.4},
+      {"tipo": "boneco", "cor": "cinza", "x": 220, "y": 1420, "s": 0.95, "olhar": true, "t": 0.2},
+      {"tipo": "emoji", "e": "❓", "x": 330, "y": 1030, "tam": 110, "t": "1:0.75", "flutua": true}
+    ]},
+    {"fundo": "cidade", "els": [
+      {"tipo": "selo", "txt": "GASTAM R$ 2 MIL POR MÊS", "tam": 56, "y": 300, "t": "2:0.15"},
+      {"tipo": "boneco", "cor": "azul", "num": 1, "x": 165, "y": 1410, "s": 0.95, "t": 0.05},
+      {"tipo": "boneco", "cor": "verde", "num": 2, "x": 415, "y": 1410, "s": 0.95, "t": 0.12},
+      {"tipo": "boneco", "cor": "amarelo", "num": 3, "x": 665, "y": 1410, "s": 0.95, "t": 0.19},
+      {"tipo": "boneco", "cor": "laranja", "num": 4, "x": 915, "y": 1410, "s": 0.95, "t": 0.26},
+      {"tipo": "xis", "r": 42, "x": 165, "y": 860, "t": "3:0.12"},
+      {"tipo": "emoji", "e": "🐷", "x": 415, "y": 870, "tam": 120, "s": 0.6, "t": "3:0.42"},
+      {"tipo": "emoji", "e": "🐷", "x": 665, "y": 860, "tam": 120, "s": 0.9, "t": "3:0.65"},
+      {"tipo": "emoji", "e": "🐷", "x": 915, "y": 845, "tam": 120, "s": 1.25, "t": "3:0.86"},
+      {"tipo": "etiqueta", "txt": "NADA", "tam": 32, "x": 165, "y": 1060, "t": "3:0.12"},
+      {"tipo": "etiqueta", "txt": "1 MÊS", "tam": 32, "x": 415, "y": 1060, "t": "3:0.42"},
+      {"tipo": "etiqueta", "txt": "3 MESES", "tam": 32, "x": 665, "y": 1060, "t": "3:0.65"},
+      {"tipo": "etiqueta", "txt": "6 MESES", "tam": 32, "x": 915, "y": 1060, "t": "3:0.86"}
+    ]},
+    {"fundo": "cidade", "els": [
+      {"tipo": "emoji", "e": "💼", "x": 540, "y": 640, "tam": 260, "t": 0.15},
+      {"tipo": "xis", "r": 110, "x": 540, "y": 640, "t": "4:0.6"},
+      {"tipo": "selo", "txt": "SEM SALÁRIO", "tam": 70, "cor": "vermelho", "y": 300, "t": "4:0.55"},
+      {"tipo": "boneco", "cor": "azul", "num": 1, "x": 165, "y": 1410, "s": 0.95, "boca": "triste", "anim": "nenhum"},
+      {"tipo": "boneco", "cor": "verde", "num": 2, "x": 415, "y": 1410, "s": 0.95, "boca": "triste", "anim": "nenhum"},
+      {"tipo": "boneco", "cor": "amarelo", "num": 3, "x": 665, "y": 1410, "s": 0.95, "boca": "triste", "anim": "nenhum"},
+      {"tipo": "boneco", "cor": "laranja", "num": 4, "x": 915, "y": 1410, "s": 0.95, "boca": "triste", "anim": "nenhum"}
+    ]},
+    {"fundo": "escuro", "els": [
+      {"tipo": "texto", "txt": "QUANTO TEMPO AGUENTARAM", "tam": 72, "y": 210, "t": 0.1},
+      {"tipo": "barras", "x": 540, "y": 1330, "w": 960, "h": 720, "valores": [0, 1, 3, 6], "max": 6,
+       "cores": ["azul", "verde", "amarelo", "laranja"], "rotulos": ["nada", "R$ 2 mil", "R$ 6 mil", "R$ 12 mil"], "tamRotulo": 34,
+       "ts": ["5:0.15", "6:0.15", "6:0.62", "7:0.25"], "suf": " meses", "textos": ["0 meses", "1 mês", "3 meses", "6 meses"], "tamValor": 44},
+      {"tipo": "emoji", "e": "🔥", "x": 180, "y": 1085, "tam": 110, "t": "5:0.5", "flutua": 6},
+      {"tipo": "etiqueta", "txt": "cheque especial", "tam": 30, "cor": "vermelho", "x": 190, "y": 1195, "t": "5:0.5"},
+      {"tipo": "boneco", "cor": "laranja", "num": 4, "x": 900, "y": 490, "s": 0.5, "festa": "7:0.6", "t": "7:0.55"}
+    ]},
+    {"fundo": "escuro", "els": [
+      {"tipo": "selo", "txt": "RESERVA DE EMERGÊNCIA", "tam": 62, "y": 300, "t": "8:0.3", "brilho": true},
+      {"tipo": "caixa", "w": 960, "h": 130, "y": 600, "t": "9:0.05", "som": false},
+      {"tipo": "ok", "r": 34, "x": 150, "y": 600, "t": "9:0.05"},
+      {"tipo": "texto", "txt": "3 a 6 meses dos seus gastos", "alinha": "left", "tam": 54, "x": 220, "y": 600, "t": "9:0.05", "som": false},
+      {"tipo": "caixa", "w": 960, "h": 130, "y": 770, "t": "9:0.42", "som": false},
+      {"tipo": "ok", "r": 34, "x": 150, "y": 770, "t": "9:0.42"},
+      {"tipo": "texto", "txt": "investimento seguro", "alinha": "left", "tam": 54, "x": 220, "y": 770, "t": "9:0.42", "som": false},
+      {"tipo": "caixa", "w": 960, "h": 130, "y": 940, "t": "9:0.72", "som": false},
+      {"tipo": "ok", "r": 34, "x": 150, "y": 940, "t": "9:0.72"},
+      {"tipo": "texto", "txt": "saque na hora", "alinha": "left", "tam": 54, "x": 220, "y": 940, "t": "9:0.72", "som": false},
+      {"tipo": "emoji", "e": "🛟", "x": 540, "y": 1220, "tam": 200, "t": "8:0.5", "gira": 0.3}
+    ]},
+    {"fundo": "claro", "els": [
+      {"tipo": "texto", "txt": "PRIMEIRO A RESERVA.\nDEPOIS, INVESTIR.", "tam": 78, "cor": "tinta", "y": 250, "t": "10:0.05"},
+      {"tipo": "boneco", "cor": "azul", "num": 1, "x": 150, "y": 1330, "s": 0.92, "festa": "11:0.35", "t": 0.2},
+      {"tipo": "boneco", "cor": "verde", "num": 2, "x": 410, "y": 1330, "s": 0.92, "festa": "11:0.35+0.32", "t": 0.3},
+      {"tipo": "boneco", "cor": "amarelo", "num": 3, "x": 670, "y": 1330, "s": 0.92, "festa": "11:0.35+0.64", "t": 0.4},
+      {"tipo": "boneco", "cor": "laranja", "num": 4, "x": 930, "y": 1330, "s": 0.92, "festa": "11:0.35+0.96", "t": 0.5},
+      {"tipo": "circulo", "num": 1, "cor": "azul", "x": 150, "y": 950, "t": "11:0.35"},
+      {"tipo": "circulo", "num": 2, "cor": "verde", "x": 410, "y": 950, "t": "11:0.35+0.32"},
+      {"tipo": "circulo", "num": 3, "cor": "amarelo", "x": 670, "y": 950, "t": "11:0.35+0.64"},
+      {"tipo": "circulo", "num": 4, "cor": "laranja", "x": 930, "y": 950, "t": "11:0.35+0.96"},
+      {"tipo": "etiqueta", "txt": "NADA", "x": 150, "y": 1395, "t": 0.6},
+      {"tipo": "etiqueta", "txt": "1 MÊS", "x": 410, "y": 1395, "t": 0.7},
+      {"tipo": "etiqueta", "txt": "3 MESES", "x": 670, "y": 1395, "t": 0.8},
+      {"tipo": "etiqueta", "txt": "6 MESES", "x": 930, "y": 1395, "t": 0.9}
+    ]}
+  ]
+}

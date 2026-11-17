@@ -1,0 +1,78 @@
+{
+  "titulo": "Selic",
+  "proximo": "O que é render 100% do CDI?",
+  "falas": [
+    {"cena": 0, "fala": "Quem decide os juros do país inteiro?", "legendas": ["Quem decide os juros do país inteiro?"]},
+    {"cena": 1, "fala": "A cada quarenta e cinco dias, o Banco Central se reúne e define uma taxa: a Selic.", "legendas": ["A cada 45 dias, o Banco Central se reúne…", "…e define uma taxa: a Selic."]},
+    {"cena": 1, "fala": "Ela funciona como o termostato da economia.", "legendas": ["Ela funciona como o termostato da economia."]},
+    {"cena": 2, "fala": "Quando a Selic sobe, os juros ficam mais caros para todo mundo.", "legendas": ["Quando a Selic sobe, os juros ficam mais caros para todo mundo."]},
+    {"cena": 2, "fala": "O primeiro irmão, que queria financiar um carro, vai pagar mais caro.", "legendas": ["O primeiro, que queria financiar um carro…", "…vai pagar mais caro."]},
+    {"cena": 2, "fala": "A loja do segundo vende menos, porque as pessoas compram menos a prazo.", "legendas": ["A loja do segundo vende menos…", "…porque as pessoas compram menos a prazo."]},
+    {"cena": 3, "fala": "O terceiro, que investe em renda fixa, passa a ganhar mais.", "legendas": ["O terceiro, que investe em renda fixa, passa a ganhar mais."]},
+    {"cena": 3, "fala": "E, para o quarto, os preços param de subir tão rápido.", "legendas": ["E, para o quarto, os preços param de subir tão rápido."]},
+    {"cena": 4, "fala": "Isso se chama taxa Selic: os juros básicos, que esfriam ou aquecem a economia.", "legendas": ["Isso se chama taxa Selic:", "os juros básicos, que esfriam ou aquecem a economia."]},
+    {"cena": 4, "fala": "Quando ela cai, acontece o contrário.", "legendas": ["Quando ela cai, acontece o contrário."]},
+    {"cena": 5, "fala": "E você, qual irmão é? Um, dois, três ou quatro?", "legendas": ["E você, qual irmão é? 1, 2, 3 ou 4?"]}
+  ],
+  "cenas": [
+    {"fundo": "escuro", "els": [
+      {"tipo": "texto", "txt": "QUEM DECIDE\nOS JUROS?", "cores": ["branco", "ouro"], "tam": 110, "y": 290, "t": 0.1},
+      {"tipo": "emoji", "e": "🏦", "x": 520, "y": 780, "tam": 280, "t": 0.3},
+      {"tipo": "termometro", "x": 860, "y": 1020, "h": 420, "v": 0.3, "t": 0.5, "niveis": [{"t": "1:0.35", "v": 0.85}]},
+      {"tipo": "boneco", "cor": "cinza", "x": 220, "y": 1420, "s": 0.95, "olhar": true, "t": 0.2},
+      {"tipo": "emoji", "e": "❓", "x": 330, "y": 1030, "tam": 110, "t": "1:0.7", "flutua": true}
+    ]},
+    {"fundo": "escuro", "els": [
+      {"tipo": "selo", "txt": "SELIC", "tam": 110, "y": 290, "t": "2:0.88", "brilho": true},
+      {"tipo": "emoji", "e": "🔁", "x": 190, "y": 520, "tam": 130, "t": "2:0.05"},
+      {"tipo": "etiqueta", "txt": "a cada 45 dias", "tam": 34, "x": 200, "y": 650, "t": "2:0.12"},
+      {"tipo": "predio", "txt": "BANCO CENTRAL", "governo": true, "x": 430, "y": 1180, "s": 0.95, "t": "2:0.3"},
+      {"tipo": "termometro", "x": 880, "y": 1000, "h": 420, "v": 0.45, "t": "3:0.1", "niveis": [{"t": "3:0.35", "v": 0.85, "dur": 0.7}, {"t": "3:0.75", "v": 0.3, "dur": 0.7}]},
+      {"tipo": "etiqueta", "txt": "termostato", "tam": 36, "x": 880, "y": 720, "t": "3:0.3"}
+    ]},
+    {"fundo": "cidade", "els": [
+      {"tipo": "selo", "txt": "SELIC SUBIU", "tam": 72, "cor": "vermelho", "y": 290, "t": "4:0.1"},
+      {"tipo": "emoji", "e": "📈", "x": 880, "y": 520, "tam": 150, "t": "4:0.3"},
+      {"tipo": "boneco", "cor": "azul", "num": 1, "x": 220, "y": 1410, "s": 1.05, "boca": "triste", "t": "5:0.0"},
+      {"tipo": "emoji", "e": "🚗", "x": 220, "y": 960, "tam": 140, "t": "5:0.2"},
+      {"tipo": "etiqueta", "txt": "financiamento mais caro", "tam": 30, "x": 300, "y": 830, "t": "5:0.55"},
+      {"tipo": "boneco", "cor": "verde", "num": 2, "x": 620, "y": 1410, "s": 1.05, "boca": "triste", "t": "6:0.0"},
+      {"tipo": "emoji", "e": "🏪", "x": 900, "y": 1190, "tam": 200, "t": "6:0.05"},
+      {"tipo": "etiqueta", "txt": "vende menos", "tam": 32, "x": 800, "y": 940, "t": "6:0.45"}
+    ]},
+    {"fundo": "escuro", "els": [
+      {"tipo": "caixa", "w": 980, "h": 170, "y": 470, "t": "7:0.0", "som": false},
+      {"tipo": "circulo", "num": 3, "cor": "amarelo", "x": 130, "y": 470, "t": "7:0.0"},
+      {"tipo": "texto", "txt": "renda fixa rende mais", "alinha": "left", "tam": 54, "maxW": 660, "x": 220, "y": 470, "t": "7:0.3", "som": false},
+      {"tipo": "emoji", "e": "📈", "x": 950, "y": 470, "tam": 100, "t": "7:0.6"},
+      {"tipo": "caixa", "w": 980, "h": 170, "y": 690, "t": "8:0.0", "som": false},
+      {"tipo": "circulo", "num": 4, "cor": "laranja", "x": 130, "y": 690, "t": "8:0.0"},
+      {"tipo": "texto", "txt": "preços sobem devagar", "alinha": "left", "tam": 54, "maxW": 660, "x": 220, "y": 690, "t": "8:0.35", "som": false},
+      {"tipo": "emoji", "e": "🧺", "x": 950, "y": 690, "tam": 100, "t": "8:0.6"},
+      {"tipo": "boneco", "cor": "amarelo", "num": 3, "x": 380, "y": 1340, "s": 1.0, "festa": "7:0.6", "boca": "feliz", "t": "7:0.05"},
+      {"tipo": "boneco", "cor": "laranja", "num": 4, "x": 700, "y": 1340, "s": 1.0, "boca": "feliz", "t": "8:0.05"}
+    ]},
+    {"fundo": "escuro", "els": [
+      {"tipo": "selo", "txt": "TAXA SELIC", "tam": 84, "y": 290, "t": "9:0.25", "brilho": true},
+      {"tipo": "texto", "txt": "os juros básicos da economia", "tam": 54, "peso": 800, "y": 440, "t": "9:0.45"},
+      {"tipo": "termometro", "x": 540, "y": 870, "h": 440, "v": 0.8, "t": "9:0.5", "niveis": [{"t": "10:0.3", "v": 0.25}]},
+      {"tipo": "etiqueta", "txt": "SOBE: ESFRIA", "tam": 38, "cor": "vermelho", "x": 260, "y": 760, "t": "9:0.75"},
+      {"tipo": "etiqueta", "txt": "CAI: AQUECE", "tam": 38, "cor": "azul", "x": 820, "y": 1000, "t": "10:0.4"}
+    ]},
+    {"fundo": "claro", "els": [
+      {"tipo": "texto", "txt": "OS JUROS MEXEM\nCOM TODO MUNDO.", "tam": 78, "cor": "tinta", "y": 250, "t": 0.1},
+      {"tipo": "boneco", "cor": "azul", "num": 1, "x": 150, "y": 1330, "s": 0.92, "festa": "11:0.3", "t": 0.2},
+      {"tipo": "boneco", "cor": "verde", "num": 2, "x": 410, "y": 1330, "s": 0.92, "festa": "11:0.3+0.32", "t": 0.3},
+      {"tipo": "boneco", "cor": "amarelo", "num": 3, "x": 670, "y": 1330, "s": 0.92, "festa": "11:0.3+0.64", "t": 0.4},
+      {"tipo": "boneco", "cor": "laranja", "num": 4, "x": 930, "y": 1330, "s": 0.92, "festa": "11:0.3+0.96", "t": 0.5},
+      {"tipo": "circulo", "num": 1, "cor": "azul", "x": 150, "y": 950, "t": "11:0.3"},
+      {"tipo": "circulo", "num": 2, "cor": "verde", "x": 410, "y": 950, "t": "11:0.3+0.32"},
+      {"tipo": "circulo", "num": 3, "cor": "amarelo", "x": 670, "y": 950, "t": "11:0.3+0.64"},
+      {"tipo": "circulo", "num": 4, "cor": "laranja", "x": 930, "y": 950, "t": "11:0.3+0.96"},
+      {"tipo": "etiqueta", "txt": "FINANCIA", "x": 150, "y": 1395, "t": 0.6},
+      {"tipo": "etiqueta", "txt": "TEM LOJA", "x": 410, "y": 1395, "t": 0.7},
+      {"tipo": "etiqueta", "txt": "INVESTE", "x": 670, "y": 1395, "t": 0.8},
+      {"tipo": "etiqueta", "txt": "CONSOME", "x": 930, "y": 1395, "t": 0.9}
+    ]}
+  ]
+}

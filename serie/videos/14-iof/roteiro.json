@@ -1,0 +1,67 @@
+{
+  "titulo": "IOF",
+  "proximo": "Dá para ser dono de uma empresa com R$ 50?",
+  "falas": [
+    {"cena": 0, "fala": "Por que sacar um investimento em dez dias pode sair caro?", "legendas": ["Por que sacar um investimento em 10 dias pode sair caro?"]},
+    {"cena": 1, "fala": "Quatro irmãos investiram num cê dê bê, e cada um já tinha cem reais de rendimento.", "legendas": ["Quatro irmãos investiram num CDB…", "…e cada um já tinha R$ 100 de rendimento."]},
+    {"cena": 1, "fala": "Mas cada um sacou num dia diferente.", "legendas": ["Mas cada um sacou num dia diferente."]},
+    {"cena": 2, "fala": "Quem sacou em cinco dias perdeu oitenta e três reais do rendimento para um imposto.", "legendas": ["Quem sacou em 5 dias perdeu R$ 83 do rendimento…", "…para um imposto."]},
+    {"cena": 2, "fala": "Em dez dias, sessenta e seis. Em vinte, trinta e três.", "legendas": ["Em 10 dias, R$ 66.", "Em 20, R$ 33."]},
+    {"cena": 2, "fala": "E quem esperou trinta dias não pagou nada desse imposto.", "legendas": ["E quem esperou 30 dias não pagou nada desse imposto."]},
+    {"cena": 3, "fala": "Isso se chama i ó éfe. Ele morde o rendimento de quem saca antes de trinta dias, e diminui a cada dia.", "legendas": ["Isso se chama IOF.", "Ele morde o rendimento de quem saca antes de 30 dias, e diminui a cada dia."]},
+    {"cena": 3, "fala": "Depois de trinta dias, ele some.", "legendas": ["Depois de 30 dias, ele some."]},
+    {"cena": 4, "fala": "E você, sacaria em quantos dias? Um, dois, três ou quatro?", "legendas": ["E você, sacaria em quantos dias? 1, 2, 3 ou 4?"]}
+  ],
+  "cenas": [
+    {"fundo": "escuro", "els": [
+      {"tipo": "texto", "txt": "SACAR EM 10 DIAS\nSAI CARO?", "cores": ["branco", "vermelho"], "tam": 100, "y": 280, "t": 0.1},
+      {"tipo": "emoji", "e": "⏳", "x": 400, "y": 780, "tam": 220, "t": 0.3},
+      {"tipo": "emoji", "e": "🦷", "x": 760, "y": 800, "tam": 180, "t": "1:0.55", "balanca": true},
+      {"tipo": "boneco", "cor": "cinza", "x": 220, "y": 1420, "s": 0.95, "olhar": true, "t": 0.2},
+      {"tipo": "emoji", "e": "❓", "x": 330, "y": 1030, "tam": 110, "t": "1:0.7", "flutua": true}
+    ]},
+    {"fundo": "cidade", "els": [
+      {"tipo": "selo", "txt": "CDB", "tam": 64, "cor": "verde", "y": 290, "t": "2:0.35"},
+      {"tipo": "selo", "txt": "RENDIMENTO: R$ 100", "tam": 60, "y": 420, "t": "2:0.8"},
+      {"tipo": "boneco", "cor": "azul", "num": 1, "x": 165, "y": 1410, "s": 0.95, "t": 0.05},
+      {"tipo": "boneco", "cor": "verde", "num": 2, "x": 415, "y": 1410, "s": 0.95, "t": 0.12},
+      {"tipo": "boneco", "cor": "amarelo", "num": 3, "x": 665, "y": 1410, "s": 0.95, "t": 0.19},
+      {"tipo": "boneco", "cor": "laranja", "num": 4, "x": 915, "y": 1410, "s": 0.95, "t": 0.26},
+      {"tipo": "etiqueta", "txt": "5 DIAS", "tam": 32, "x": 165, "y": 1060, "t": "3:0.3"},
+      {"tipo": "etiqueta", "txt": "10 DIAS", "tam": 32, "x": 415, "y": 1060, "t": "3:0.3+0.15"},
+      {"tipo": "etiqueta", "txt": "20 DIAS", "tam": 32, "x": 665, "y": 1060, "t": "3:0.3+0.3"},
+      {"tipo": "etiqueta", "txt": "30 DIAS", "tam": 32, "x": 915, "y": 1060, "t": "3:0.3+0.45"}
+    ]},
+    {"fundo": "escuro", "els": [
+      {"tipo": "texto", "txt": "QUANTO FOI MORDIDO", "tam": 78, "y": 210, "t": 0.1},
+      {"tipo": "emoji", "e": "🦷", "x": 540, "y": 350, "tam": 120, "t": 0.3},
+      {"tipo": "barras", "x": 540, "y": 1330, "w": 960, "h": 700, "valores": [83, 66, 33, 0], "max": 100,
+       "cores": ["azul", "verde", "amarelo", "laranja"], "rotulos": ["5 dias", "10 dias", "20 dias", "30 dias"], "tamRotulo": 38,
+       "ts": ["4:0.35", "5:0.1", "5:0.6", "6:0.4"], "pre": "R$ ", "textos": ["R$ 83", "R$ 66", "R$ 33", "R$ 0"], "tamValor": 52},
+      {"tipo": "boneco", "cor": "laranja", "num": 4, "x": 900, "y": 1250, "s": 0.5, "festa": "6:0.6", "t": "6:0.55"}
+    ]},
+    {"fundo": "escuro", "els": [
+      {"tipo": "selo", "txt": "IOF", "tam": 120, "cor": "vermelho", "y": 300, "t": "7:0.15", "brilho": true},
+      {"tipo": "texto", "txt": "morde o rendimento\nde quem saca antes de 30 dias", "tam": 54, "peso": 800, "y": 500, "t": "7:0.35"},
+      {"tipo": "emoji", "e": "🦷", "x": 540, "y": 800, "tam": 240, "t": "7:0.6", "move": [{"t": "8:0.1", "s": 0.01, "dur": 1.2, "som": "descida"}]},
+      {"tipo": "contador", "de": 96, "para": 0, "suf": "%", "tam": 110, "cor": "vermelho", "y": 1080, "t": "7:0.7", "dur": 2.2},
+      {"tipo": "etiqueta", "txt": "dia 1 → dia 30", "tam": 36, "y": 1210, "t": "7:0.75"},
+      {"tipo": "selo", "txt": "DEPOIS DE 30 DIAS: ZERO", "tam": 48, "cor": "verde", "y": 1340, "t": "8:0.5"}
+    ]},
+    {"fundo": "claro", "els": [
+      {"tipo": "texto", "txt": "ESPERE PELO\nMENOS 30 DIAS.", "tam": 86, "cor": "tinta", "y": 250, "t": 0.1},
+      {"tipo": "boneco", "cor": "azul", "num": 1, "x": 150, "y": 1330, "s": 0.92, "festa": "9:0.45", "t": 0.2},
+      {"tipo": "boneco", "cor": "verde", "num": 2, "x": 410, "y": 1330, "s": 0.92, "festa": "9:0.45+0.32", "t": 0.3},
+      {"tipo": "boneco", "cor": "amarelo", "num": 3, "x": 670, "y": 1330, "s": 0.92, "festa": "9:0.45+0.64", "t": 0.4},
+      {"tipo": "boneco", "cor": "laranja", "num": 4, "x": 930, "y": 1330, "s": 0.92, "festa": "9:0.45+0.96", "t": 0.5},
+      {"tipo": "circulo", "num": 1, "cor": "azul", "x": 150, "y": 950, "t": "9:0.45"},
+      {"tipo": "circulo", "num": 2, "cor": "verde", "x": 410, "y": 950, "t": "9:0.45+0.32"},
+      {"tipo": "circulo", "num": 3, "cor": "amarelo", "x": 670, "y": 950, "t": "9:0.45+0.64"},
+      {"tipo": "circulo", "num": 4, "cor": "laranja", "x": 930, "y": 950, "t": "9:0.45+0.96"},
+      {"tipo": "etiqueta", "txt": "5 DIAS", "x": 150, "y": 1395, "t": 0.6},
+      {"tipo": "etiqueta", "txt": "10 DIAS", "x": 410, "y": 1395, "t": 0.7},
+      {"tipo": "etiqueta", "txt": "20 DIAS", "x": 670, "y": 1395, "t": 0.8},
+      {"tipo": "etiqueta", "txt": "30 DIAS", "x": 930, "y": 1395, "t": 0.9}
+    ]}
+  ]
+}

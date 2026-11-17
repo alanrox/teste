@@ -1,0 +1,63 @@
+{
+  "titulo": "Risco e retorno",
+  "proximo": "Rende 10% ao mês. Cadê o problema?",
+  "falas": [
+    {"cena": 0, "fala": "Por que o investimento que pode render mais é o que mais assusta?", "legendas": ["Por que o investimento que pode render mais…", "…é o que mais assusta?"]},
+    {"cena": 1, "fala": "Imagine uma escada de investimentos. Quatro irmãos subiram até degraus diferentes.", "legendas": ["Imagine uma escada de investimentos.", "Quatro irmãos subiram até degraus diferentes."]},
+    {"cena": 1, "fala": "O primeiro ficou no Tesouro Selic: rende menos, mas quase não balança.", "legendas": ["O primeiro ficou no Tesouro Selic:", "rende menos, mas quase não balança."]},
+    {"cena": 1, "fala": "O segundo foi para o cê dê bê de um banco menor: rende um pouco mais, com um pouco mais de risco.", "legendas": ["O segundo foi para o CDB de um banco menor:", "rende um pouco mais, com um pouco mais de risco."]},
+    {"cena": 1, "fala": "O terceiro comprou ações: num ano, pode subir quarenta por cento, ou cair vinte.", "legendas": ["O terceiro comprou ações:", "num ano, pode subir 40%, ou cair 20%."]},
+    {"cena": 1, "fala": "E o quarto foi para as criptomoedas: pode dobrar, ou perder mais da metade.", "legendas": ["E o quarto foi para as criptomoedas:", "pode dobrar, ou perder mais da metade."]},
+    {"cena": 2, "fala": "Isso se chama prêmio de risco: quem aceita mais sustos espera ganhar mais. Mas não há garantia.", "legendas": ["Isso se chama prêmio de risco:", "quem aceita mais sustos espera ganhar mais. Mas não há garantia."]},
+    {"cena": 3, "fala": "E você, até que degrau subiria? Um, dois, três ou quatro?", "legendas": ["E você, até que degrau subiria? 1, 2, 3 ou 4?"]}
+  ],
+  "cenas": [
+    {"fundo": "escuro", "els": [
+      {"tipo": "texto", "txt": "RENDE MAIS,\nASSUSTA MAIS?", "cores": ["ouro", "branco"], "tam": 108, "y": 280, "t": 0.1},
+      {"tipo": "emoji", "e": "🎢", "x": 580, "y": 790, "tam": 280, "t": 0.3, "balanca": true},
+      {"tipo": "emoji", "e": "😱", "x": 840, "y": 1080, "tam": 140, "t": "1:0.55"},
+      {"tipo": "boneco", "cor": "cinza", "x": 200, "y": 1420, "s": 0.95, "olhar": true, "t": 0.2},
+      {"tipo": "emoji", "e": "🤔", "x": 310, "y": 1030, "tam": 110, "t": "1:0.75", "flutua": true}
+    ]},
+    {"fundo": "escuro", "els": [
+      {"tipo": "texto", "txt": "A ESCADA DO RISCO", "tam": 80, "y": 200, "t": "2:0.05"},
+      {"tipo": "escada", "x": 540, "y": 1050, "w": 880, "h": 560, "cores": ["#1e3a8a", "#14532d", "#713f12", "#7c2d12"], "t": "2:0.2"},
+      {"tipo": "boneco", "cor": "azul", "num": 1, "x": 210, "y": 1190, "s": 0.6, "t": "3:0.0"},
+      {"tipo": "selo", "txt": "TESOURO SELIC", "tam": 26, "cor": "azul", "x": 210, "y": 1270, "t": "3:0.1"},
+      {"tipo": "etiqueta", "txt": "+10%", "tam": 34, "cor": "verde", "x": 210, "y": 960, "t": "3:0.5"},
+      {"tipo": "boneco", "cor": "verde", "num": 2, "x": 430, "y": 1050, "s": 0.6, "t": "4:0.0"},
+      {"tipo": "selo", "txt": "CDB MENOR", "tam": 26, "cor": "verde", "x": 430, "y": 1130, "t": "4:0.1"},
+      {"tipo": "etiqueta", "txt": "+12%", "tam": 34, "cor": "verde", "x": 430, "y": 820, "t": "4:0.5"},
+      {"tipo": "boneco", "cor": "amarelo", "num": 3, "x": 650, "y": 910, "s": 0.6, "balanca": true, "t": "5:0.0"},
+      {"tipo": "selo", "txt": "AÇÕES", "tam": 26, "cor": "amarelo", "x": 650, "y": 990, "t": "5:0.1"},
+      {"tipo": "etiqueta", "txt": "−20% a +40%", "tam": 30, "cor": "ouro", "x": 650, "y": 680, "t": "5:0.5"},
+      {"tipo": "boneco", "cor": "laranja", "num": 4, "x": 870, "y": 770, "s": 0.6, "balanca": true, "t": "6:0.0"},
+      {"tipo": "selo", "txt": "CRIPTO", "tam": 26, "cor": "laranja", "x": 870, "y": 850, "t": "6:0.1"},
+      {"tipo": "etiqueta", "txt": "−60% a +100%", "tam": 30, "cor": "vermelho", "x": 860, "y": 540, "t": "6:0.5"},
+      {"tipo": "emoji", "e": "🎢", "x": 870, "y": 410, "tam": 110, "t": "6:0.6"}
+    ]},
+    {"fundo": "escuro", "els": [
+      {"tipo": "selo", "txt": "PRÊMIO DE RISCO", "tam": 80, "y": 300, "t": "7:0.25", "brilho": true},
+      {"tipo": "texto", "txt": "mais sustos, mais retorno esperado", "tam": 52, "peso": 800, "y": 460, "t": "7:0.45"},
+      {"tipo": "seta", "de": [200, 1050], "para": [880, 650], "cor": "ouro", "larg": 14, "t": "7:0.5", "dur": 0.9},
+      {"tipo": "etiqueta", "txt": "risco", "tam": 38, "x": 760, "y": 1060, "t": "7:0.55"},
+      {"tipo": "etiqueta", "txt": "retorno esperado", "tam": 38, "x": 300, "y": 760, "t": "7:0.6"},
+      {"tipo": "selo", "txt": "SEM GARANTIA", "tam": 52, "cor": "vermelho", "y": 1230, "t": "7:0.85"}
+    ]},
+    {"fundo": "claro", "els": [
+      {"tipo": "texto", "txt": "ESCOLHA O DEGRAU\nQUE VOCÊ AGUENTA.", "tam": 78, "cor": "tinta", "y": 250, "t": 0.1},
+      {"tipo": "boneco", "cor": "azul", "num": 1, "x": 150, "y": 1330, "s": 0.92, "festa": "8:0.4", "t": 0.2},
+      {"tipo": "boneco", "cor": "verde", "num": 2, "x": 410, "y": 1330, "s": 0.92, "festa": "8:0.4+0.32", "t": 0.3},
+      {"tipo": "boneco", "cor": "amarelo", "num": 3, "x": 670, "y": 1330, "s": 0.92, "festa": "8:0.4+0.64", "t": 0.4},
+      {"tipo": "boneco", "cor": "laranja", "num": 4, "x": 930, "y": 1330, "s": 0.92, "festa": "8:0.4+0.96", "t": 0.5},
+      {"tipo": "circulo", "num": 1, "cor": "azul", "x": 150, "y": 950, "t": "8:0.4"},
+      {"tipo": "circulo", "num": 2, "cor": "verde", "x": 410, "y": 950, "t": "8:0.4+0.32"},
+      {"tipo": "circulo", "num": 3, "cor": "amarelo", "x": 670, "y": 950, "t": "8:0.4+0.64"},
+      {"tipo": "circulo", "num": 4, "cor": "laranja", "x": 930, "y": 950, "t": "8:0.4+0.96"},
+      {"tipo": "etiqueta", "txt": "TESOURO", "x": 150, "y": 1395, "t": 0.6},
+      {"tipo": "etiqueta", "txt": "CDB", "x": 410, "y": 1395, "t": 0.7},
+      {"tipo": "etiqueta", "txt": "AÇÕES", "x": 670, "y": 1395, "t": 0.8},
+      {"tipo": "etiqueta", "txt": "CRIPTO", "x": 930, "y": 1395, "t": 0.9}
+    ]}
+  ]
+}
