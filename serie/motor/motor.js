@@ -424,7 +424,7 @@
       if (el.mostraValor) text(fmt(lerp(el.min ?? 0, el.max ?? 100, v), el.casas || 0) + (el.suf || '%'), 150, h / 2 - 40 - fh, 64, '#fff', { weight: 900, stroke: PALETA.tinta, strokeWidth: 10, align: 'left' });
     },
     multidao(el, t, ci) {
-      const linhas = el.linhas || [5], s = el.s || 0.32, dx = el.dx || 90 , dy = el.dy || 120, t0 = T(el.t ?? 0, ci);
+      const linhas = el.linhas || [5], s = el.sb || 0.32, dx = el.dx || 90 , dy = el.dy || 120, t0 = T(el.t ?? 0, ci);
       linhas.forEach((qtd, r) => {
         const k = pop(t, t0 + r * (el.passo ?? 0.25), 0.3); if (k <= 0) return;
         for (let i = 0; i < qtd; i++) {
