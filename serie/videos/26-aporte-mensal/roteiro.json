@@ -34,8 +34,8 @@
       {"tipo": "texto", "txt": "DEPOIS DE 10 ANOS", "tam": 80, "y": 210, "t": 0.1},
       {"tipo": "barras", "x": 540, "y": 1290, "w": 960, "h": 760, "valores": [20022, 26017, 60065, 86083],
        "cores": ["azul", "verde", "amarelo", "laranja"], "rotulos": ["R$ 100/mês", "R$ 10 mil", "R$ 300/mês", "os dois"], "tamRotulo": 34,
-       "ts": ["3:0.8", "4:0.8", "5:0.8", "6:0.85"], "pre": "R$ ", "suf": " mil", "div": 1000, "textos": ["R$ 20 mil", "R$ 26 mil", "R$ 60 mil", "R$ 86 mil"], "tamValor": 46},
-      {"tipo": "boneco", "cor": "laranja", "num": 4, "x": 900, "y": 445, "s": 0.5, "festa": "6:0.95", "t": "6:0.9"}
+       "ts": ["3:0.75", "4:0.75", "5:0.75", "6:0.55"], "pre": "R$ ", "suf": " mil", "div": 1000, "textos": ["R$ 20 mil", "R$ 26 mil", "R$ 60 mil", "R$ 86 mil"], "tamValor": 46},
+      {"tipo": "boneco", "cor": "laranja", "num": 4, "x": 900, "y": 445, "s": 0.5, "festa": "6:0.85", "t": "6:0.8"}
     ]},
     {"fundo": "escuro", "els": [
       {"tipo": "selo", "txt": "APORTE", "tam": 110, "y": 300, "t": "7:0.2", "brilho": true},

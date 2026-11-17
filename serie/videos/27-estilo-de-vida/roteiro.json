@@ -32,10 +32,10 @@
       {"tipo": "texto", "txt": "QUANTO GUARDARAM EM 5 ANOS", "tam": 62, "y": 210, "t": 0.1},
       {"tipo": "barras", "x": 540, "y": 1290, "w": 960, "h": 760, "valores": [0, 7200, 36000, 72000],
        "cores": ["azul", "verde", "amarelo", "laranja"], "rotulos": ["gastou tudo", "10%", "metade", "tudo"], "tamRotulo": 36,
-       "ts": ["3:0.8", "4:0.75", "5:0.75", "6:0.85"], "pre": "R$ ", "textos": ["R$ 0", "R$ 7.200", "R$ 36 mil", "R$ 72 mil"], "tamValor": 46},
+       "ts": ["3:0.8", "4:0.75", "5:0.75", "6:0.65"], "pre": "R$ ", "textos": ["R$ 0", "R$ 7.200", "R$ 36 mil", "R$ 72 mil"], "tamValor": 46},
       {"tipo": "emoji", "e": "🚗", "x": 180, "y": 1100, "tam": 110, "t": "3:0.35"},
       {"tipo": "emoji", "e": "🏢", "x": 180, "y": 960, "tam": 100, "t": "3:0.55"},
-      {"tipo": "boneco", "cor": "laranja", "num": 4, "x": 900, "y": 445, "s": 0.5, "festa": "6:0.95", "t": "6:0.9"}
+      {"tipo": "boneco", "cor": "laranja", "num": 4, "x": 900, "y": 445, "s": 0.5, "festa": "6:0.85", "t": "6:0.8"}
     ]},
     {"fundo": "escuro", "els": [
       {"tipo": "selo", "txt": "INFLAÇÃO DO ESTILO DE VIDA", "tam": 54, "cor": "vermelho", "y": 300, "t": "7:0.25", "brilho": true},
