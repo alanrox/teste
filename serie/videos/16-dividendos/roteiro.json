@@ -21,7 +21,7 @@
       {"tipo": "emoji", "e": "🤔", "x": 330, "y": 1030, "tam": 110, "t": "1:0.75", "flutua": true}
     ]},
     {"fundo": "cidade", "els": [
-      {"tipo": "emoji", "e": "🥖", "x": 540, "y": 480, "tam": 170, "t": 0.2},
+      {"tipo": "emoji", "e": "🥖", "x": 180, "y": 470, "tam": 130, "t": 0.2},
       {"tipo": "selo", "txt": "LUCRO DIVIDIDO: R$ 50 MIL", "tam": 50, "y": 290, "t": "3:0.35"},
       {"tipo": "grade", "n": 100, "cols": 10, "cel": 46, "gap": 8, "corA": "ouro", "x": 540, "y": 860, "t": 0.3, "passo": 0.008},
       {"tipo": "moedas", "n": 5, "r": 34, "x": 540, "y": 1210, "t": "3:0.7"},
@@ -32,7 +32,7 @@
       {"tipo": "barras", "x": 540, "y": 1310, "w": 960, "h": 760, "valores": [2.5, 25, 250, 2500], "escala": "log",
        "cores": ["azul", "verde", "amarelo", "laranja"], "rotulos": ["5 pedaços", "50", "500", "5 mil"], "tamRotulo": 38,
        "ts": ["4:0.55", "5:0.3", "5:0.85", "6:0.6"], "pre": "R$ ", "casas": 0, "textos": ["R$ 2,50", "R$ 25", "R$ 250", "R$ 2.500"], "tamValor": 48},
-      {"tipo": "boneco", "cor": "laranja", "num": 4, "x": 900, "y": 500, "s": 0.5, "festa": "6:0.85", "t": "6:0.8"}
+      {"tipo": "boneco", "cor": "laranja", "num": 4, "x": 900, "y": 465, "s": 0.5, "festa": "6:0.85", "t": "6:0.8"}
     ]},
     {"fundo": "escuro", "els": [
       {"tipo": "selo", "txt": "DIVIDENDOS", "tam": 100, "y": 300, "t": "7:0.25", "brilho": true},
