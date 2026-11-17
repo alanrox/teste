@@ -22,7 +22,7 @@
     ]},
     {"fundo": "cidade", "els": [
       {"tipo": "selo", "txt": "BOLSA DE VALORES", "tam": 60, "cor": "azul", "y": 290, "t": "3:0.45"},
-      {"tipo": "emoji", "e": "🥖", "x": 540, "y": 470, "tam": 150, "t": 0.2},
+      {"tipo": "emoji", "e": "🥖", "x": 180, "y": 470, "tam": 130, "t": 0.2},
       {"tipo": "grade", "n": 100, "cols": 10, "cel": 50, "gap": 8, "corA": "ouro", "x": 540, "y": 870, "t": "2:0.35", "passo": 0.012},
       {"tipo": "etiqueta", "txt": "cada pedaço: R$ 10", "tam": 40, "y": 1230, "t": "2:0.75"}
     ]},
