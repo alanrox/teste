@@ -22,8 +22,8 @@
       {"tipo": "emoji", "e": "🚗", "x": 540, "y": 1180, "tam": 260, "t": 0.1},
       {"tipo": "selo", "txt": "R$ 50 MIL", "tam": 76, "y": 300, "t": "2:0.7"},
       {"tipo": "boneco", "cor": "azul", "num": 1, "x": 180, "y": 1410, "s": 0.95, "t": 0.2},
-      {"tipo": "boneco", "cor": "verde", "num": 2, "x": 860, "y": 1410, "s": 0.95, "t": 0.3},
-      {"tipo": "boneco", "cor": "laranja", "num": 3, "x": 1000, "y": 1410, "s": 0.8, "t": 0.4}
+      {"tipo": "boneco", "cor": "verde", "num": 2, "x": 790, "y": 1410, "s": 0.9, "t": 0.3},
+      {"tipo": "boneco", "cor": "laranja", "num": 3, "x": 950, "y": 1410, "s": 0.9, "t": 0.4}
     ]},
     {"fundo": "escuro", "els": [
       {"tipo": "texto", "txt": "QUANTO SAIU DO BOLSO", "tam": 74, "y": 210, "t": 0.1},
@@ -36,9 +36,9 @@
     ]},
     {"fundo": "escuro", "els": [
       {"tipo": "emoji", "e": "⚡", "x": 300, "y": 420, "tam": 150, "t": "6:0.1"},
-      {"tipo": "texto", "txt": "na hora = mais caro", "tam": 52, "cor": "vermelho", "x": 300, "y": 560, "t": "6:0.15"},
+      {"tipo": "texto", "txt": "na hora =\nmais caro", "tam": 52, "cor": "vermelho", "x": 300, "y": 560, "t": "6:0.15"},
       {"tipo": "emoji", "e": "⏳", "x": 780, "y": 420, "tam": 150, "t": "6:0.55"},
-      {"tipo": "texto", "txt": "esperar = mais barato", "tam": 52, "cor": "verde", "x": 780, "y": 560, "t": "6:0.6"},
+      {"tipo": "texto", "txt": "esperar =\nmais barato", "tam": 52, "cor": "verde", "x": 780, "y": 560, "t": "6:0.6"},
       {"tipo": "selo", "txt": "CUSTO TOTAL", "tam": 90, "y": 820, "t": "7:0.25", "brilho": true},
       {"tipo": "texto", "txt": "olhe o total, não a parcela", "tam": 60, "peso": 800, "y": 1000, "t": "7:0.6"}
     ]},
