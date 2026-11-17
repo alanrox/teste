@@ -1,6 +1,6 @@
 {
   "titulo": "Inflação do estilo de vida",
-  "proximo": "Quanto custa seu café em 20 anos?",
+  "proximo": "Quanto custa seu café em 30 anos?",
   "falas": [
     {"cena": 0, "fala": "Ganhou aumento, e continua sem dinheiro no fim do mês?", "legendas": ["Ganhou aumento…", "…e continua sem dinheiro no fim do mês?"]},
     {"cena": 1, "fala": "Quatro irmãos ganhavam três mil reais. Em cinco anos, o salário de todos chegou a cinco mil e quatrocentos.", "legendas": ["Quatro irmãos ganhavam R$ 3 mil.", "Em 5 anos, o salário de todos chegou a R$ 5.400."]},
