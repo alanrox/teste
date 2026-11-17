@@ -1,0 +1,15 @@
+[
+  {"cena": "gancho",   "fala": "Tesouro, cê dê bê, éle cê i, éle cê á. Parece sopa de letrinhas?", "legendas": ["Tesouro, CDB, LCI, LCA…", "Parece sopa de letrinhas?"]},
+  {"cena": "premissa", "fala": "É tudo a mesma coisa: você empresta dinheiro, e recebe de volta com juros.", "legendas": ["É tudo a mesma coisa: você empresta dinheiro…", "…e recebe de volta com juros."]},
+  {"cena": "premissa", "fala": "Só muda para quem você empresta.", "legendas": ["Só muda para quem você empresta."]},
+  {"cena": "c1",       "fala": "Emprestou para o governo? Isso se chama Tesouro Direto.", "legendas": ["Emprestou para o governo?", "Isso se chama Tesouro Direto."]},
+  {"cena": "c2",       "fala": "Emprestou para o banco? Isso se chama cê dê bê.", "legendas": ["Emprestou para o banco?", "Isso se chama CDB."]},
+  {"cena": "c3",       "fala": "O banco usou seu dinheiro para financiar imóveis? Éle cê i.", "legendas": ["O banco usou seu dinheiro para financiar imóveis?", "LCI."]},
+  {"cena": "c4",       "fala": "E para financiar o agro? Éle cê á.", "legendas": ["E para financiar o agro?", "LCA."]},
+  {"cena": "imposto",  "fala": "No Tesouro e no cê dê bê, uma parte do lucro vira imposto.", "legendas": ["No Tesouro e no CDB, uma parte do lucro vira imposto."]},
+  {"cena": "imposto",  "fala": "Éle cê i e éle cê á são isentas. Mas o dinheiro fica preso por alguns meses.", "legendas": ["LCI e LCA são isentas.", "Mas o dinheiro fica preso por alguns meses."]},
+  {"cena": "protecao", "fala": "E se o banco quebrar? Um fundo garante até duzentos e cinquenta mil reais.", "legendas": ["E se o banco quebrar?", "Um fundo garante até 250 mil reais."]},
+  {"cena": "protecao", "fala": "No Tesouro, quem garante é o próprio governo.", "legendas": ["No Tesouro, quem garante é o próprio governo."]},
+  {"cena": "final",    "fala": "Não é sopa de letrinhas. É só escolher para quem emprestar.", "legendas": ["Não é sopa de letrinhas.", "É só escolher para quem emprestar."]},
+  {"cena": "final",    "fala": "E você, emprestaria para quem?", "legendas": ["E você, emprestaria para quem? 1, 2, 3 ou 4?"]}
+]
