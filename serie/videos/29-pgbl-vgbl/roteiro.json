@@ -50,7 +50,7 @@
       {"tipo": "texto", "txt": "não abate nada hoje", "alinha": "left", "tam": 50, "x": 240, "y": 860, "t": "6:0.05", "som": false},
       {"tipo": "caixa", "w": 960, "h": 150, "y": 1040, "t": "6:0.45", "som": false},
       {"tipo": "ok", "r": 32, "x": 170, "y": 1040, "t": "6:0.45"},
-      {"tipo": "texto", "txt": "no resgate: IR só no rendimento", "alinha": "left", "tam": 50, "x": 240, "y": 1040, "t": "6:0.45", "som": false},
+      {"tipo": "texto", "txt": "no resgate: IR só no rendimento", "alinha": "left", "tam": 50, "maxW": 760, "x": 240, "y": 1040, "t": "6:0.45", "som": false},
       {"tipo": "circulo", "num": 3, "cor": "laranja", "r": 48, "x": 160, "y": 1260, "t": "7:0.1"},
       {"tipo": "texto", "txt": "isento de IR: também VGBL", "alinha": "left", "tam": 50, "x": 240, "y": 1260, "t": "7:0.4"}
     ]},
@@ -60,8 +60,8 @@
       {"tipo": "texto", "txt": "declaração\ncompleta", "tam": 48, "x": 280, "y": 760, "t": "8:0.55", "som": false},
       {"tipo": "selo", "txt": "V", "tam": 110, "cor": "verde", "x": 800, "y": 560, "t": "8:0.8"},
       {"tipo": "texto", "txt": "quase todo\no resto", "tam": 48, "x": 800, "y": 760, "t": "8:0.85", "som": false},
-      {"tipo": "emoji", "e": "🐛", "x": 380, "y": 1060, "tam": 120, "t": "9:0.3"},
-      {"tipo": "texto", "txt": "cuidado com as taxas", "tam": 54, "cor": "ouro", "x": 640, "y": 1060, "t": "9:0.4"}
+      {"tipo": "emoji", "e": "🐛", "x": 180, "y": 1060, "tam": 120, "t": "9:0.3"},
+      {"tipo": "texto", "txt": "cuidado com as taxas", "tam": 54, "cor": "ouro", "x": 600, "y": 1060, "t": "9:0.4"}
     ]},
     {"fundo": "claro", "els": [
       {"tipo": "texto", "txt": "A LETRA CERTA\nDEPENDE DA SUA\nDECLARAÇÃO.", "tam": 70, "cor": "tinta", "y": 270, "t": 0.1},
