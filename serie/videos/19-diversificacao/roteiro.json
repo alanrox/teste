@@ -48,15 +48,15 @@
       {"tipo": "barras", "x": 540, "y": 1310, "w": 960, "h": 760, "valores": [10000, 5000, 2500, 1000],
        "cores": ["vermelho", "vermelho", "vermelho", "vermelho"], "rotulos": ["1 cesta", "2", "4", "10"], "tamRotulo": 40,
        "ts": ["5:0.2", "5:0.7", "6:0.2", "6:0.7"], "pre": "R$ ", "textos": ["−R$ 10 mil", "−R$ 5 mil", "−R$ 2.500", "−R$ 1.000"], "tamValor": 42},
-      {"tipo": "boneco", "cor": "laranja", "num": 4, "x": 900, "y": 1140, "s": 0.5, "festa": "6:0.9", "boca": "feliz", "t": "6:0.85"}
+      {"tipo": "boneco", "cor": "laranja", "num": 4, "x": 900, "y": 1110, "s": 0.5, "festa": "6:0.9", "boca": "feliz", "t": "6:0.85"}
     ]},
     {"fundo": "escuro", "els": [
       {"tipo": "selo", "txt": "DIVERSIFICAÇÃO", "tam": 84, "y": 300, "t": "7:0.25", "brilho": true},
       {"tipo": "texto", "txt": "espalhar o dinheiro para que\num tropeço não derrube tudo", "tam": 54, "peso": 800, "y": 500, "t": "7:0.5"},
-      {"tipo": "emoji", "e": "🧺", "x": 270, "y": 860, "tam": 150, "t": "7:0.6"},
-      {"tipo": "emoji", "e": "🧺", "x": 450, "y": 860, "tam": 150, "t": "7:0.65"},
-      {"tipo": "emoji", "e": "🧺", "x": 630, "y": 860, "tam": 150, "t": "7:0.7"},
-      {"tipo": "emoji", "e": "🧺", "x": 810, "y": 860, "tam": 150, "t": "7:0.75"}
+      {"tipo": "emoji", "e": "🧺", "x": 240, "y": 860, "tam": 140, "t": "7:0.6"},
+      {"tipo": "emoji", "e": "🧺", "x": 440, "y": 860, "tam": 140, "t": "7:0.65"},
+      {"tipo": "emoji", "e": "🧺", "x": 640, "y": 860, "tam": 140, "t": "7:0.7"},
+      {"tipo": "emoji", "e": "🧺", "x": 840, "y": 860, "tam": 140, "t": "7:0.75"}
     ]},
     {"fundo": "claro", "els": [
       {"tipo": "texto", "txt": "UM TROPEÇO NÃO\nPRECISA DERRUBAR TUDO.", "tam": 74, "cor": "tinta", "y": 250, "t": 0.1},
