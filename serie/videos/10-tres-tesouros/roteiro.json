@@ -24,7 +24,7 @@
     ]},
     {"fundo": "claro", "els": [
       {"tipo": "predio", "txt": "GOVERNO", "governo": true, "x": 760, "y": 1320, "s": 1.0, "t": 0.1},
-      {"tipo": "boneco", "cor": "azul", "num": 1, "x": 120, "y": 1410, "s": 0.85, "segura": "nota", "t": 0.15},
+      {"tipo": "boneco", "cor": "azul", "num": 1, "x": 120, "y": 1410, "s": 0.85, "t": 0.15},
       {"tipo": "boneco", "cor": "verde", "num": 2, "x": 290, "y": 1410, "s": 0.85, "t": 0.22},
       {"tipo": "boneco", "cor": "laranja", "num": 3, "x": 460, "y": 1410, "s": 0.85, "t": 0.29},
       {"tipo": "selo", "txt": "EMPRÉSTIMO AO GOVERNO", "tam": 50, "cor": "azul", "y": 300, "t": "2:0.3"},
