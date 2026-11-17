@@ -36,7 +36,7 @@
     {"fundo": "cidade", "els": [
       {"tipo": "boneco", "cor": "laranja", "num": 4, "x": 260, "y": 1410, "s": 1.15, "boca": "feliz", "festa": "4:0.8", "t": 0.05},
       {"tipo": "emoji", "e": "🧺", "x": 700, "y": 1060, "tam": 320, "t": "4:0.25"},
-      {"tipo": "grade", "n": 40, "cols": 8, "cel": 26, "gap": 6, "corA": "ouro", "x": 700, "y": 870, "t": "4:0.4", "passo": 0.015},
+      {"tipo": "grade", "n": 40, "cols": 8, "cel": 24, "gap": 6, "corA": "ouro", "x": 700, "y": 960, "t": "4:0.4", "passo": 0.015},
       {"tipo": "selo", "txt": "CESTA PRONTA", "tam": 64, "y": 290, "t": "4:0.3"},
       {"tipo": "etiqueta", "txt": "uma compra só", "tam": 42, "y": 420, "t": "4:0.85"}
     ]},
