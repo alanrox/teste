@@ -23,8 +23,8 @@
     ]},
     {"fundo": "cidade", "els": [
       {"tipo": "emoji", "e": "📺", "x": 540, "y": 560, "tam": 220, "t": 0.1},
-      {"tipo": "selo", "txt": "10x DE R$ 200", "tam": 52, "cor": "verde", "x": 300, "y": 800, "t": "2:0.2"},
-      {"tipo": "selo", "txt": "À VISTA: R$ 1.800", "tam": 52, "x": 760, "y": 800, "t": "2:0.7", "brilho": true},
+      {"tipo": "selo", "txt": "10x DE R$ 200", "tam": 52, "cor": "verde", "x": 540, "y": 780, "t": "2:0.2"},
+      {"tipo": "selo", "txt": "À VISTA: R$ 1.800", "tam": 52, "x": 540, "y": 910, "t": "2:0.7", "brilho": true},
       {"tipo": "boneco", "cor": "azul", "num": 1, "x": 240, "y": 1410, "s": 0.95, "t": "3:0.0"},
       {"tipo": "boneco", "cor": "verde", "num": 2, "x": 540, "y": 1410, "s": 0.95, "t": "3:0.1"},
       {"tipo": "boneco", "cor": "laranja", "num": 3, "x": 840, "y": 1410, "s": 0.95, "t": "3:0.2"}
@@ -35,7 +35,7 @@
        "cores": ["azul", "verde", "laranja"], "rotulos": ["parcelou", "parcelou + rendeu", "à vista"], "tamRotulo": 34,
        "ts": ["4:0.5", "5:0.75", "6:0.4"], "pre": "R$ ", "textos": ["R$ 2.000", "R$ 1.883", "R$ 1.800"], "tamValor": 50},
       {"tipo": "etiqueta", "txt": "+R$ 117 rendendo", "tam": 30, "cor": "verde", "x": 540, "y": 1430, "t": "5:0.85"},
-      {"tipo": "boneco", "cor": "laranja", "num": 3, "x": 840, "y": 870, "s": 0.5, "festa": "6:0.75", "t": "6:0.7"}
+      {"tipo": "boneco", "cor": "laranja", "num": 3, "x": 840, "y": 760, "s": 0.5, "festa": "6:0.75", "t": "6:0.7"}
     ]},
     {"fundo": "escuro", "els": [
       {"tipo": "emoji", "e": "🕵️", "x": 540, "y": 380, "tam": 200, "t": "7:0.1"},
