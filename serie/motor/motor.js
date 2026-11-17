@@ -290,7 +290,8 @@
       lines.forEach((l, i) => text(l, 0, (i - (lines.length - 1) / 2) * lh, tam, cor((el.cores && el.cores[i]) || el.cor || 'branco'),
         { weight: el.peso || 900, align: el.alinha, stroke: el.contorno ? PALETA.tinta : null, strokeWidth: tam * 0.17 }));
     },
-    selo(el) { const c = el.cor || 'ouro'; selo(String(el.txt), el.tam || 54, cor(c), cor(el.corTxt) || corTexto(c), el.borda ?? 6); },
+    // texto branco por padrão (padrão visual da série); escuro só em selos brancos
+    selo(el) { const c = el.cor || 'ouro'; selo(String(el.txt), el.tam || 54, cor(c), el.corTxt ? cor(el.corTxt) : (c === 'branco' || c === 'claro' ? PALETA.tinta : '#ffffff'), el.borda ?? 6); },
     etiqueta(el) { selo(String(el.txt), el.tam || 36, el.cor ? cor(el.cor) : 'rgba(11,16,32,0.88)', '#ffffff', 4); },
     boneco(el, t, ci) {
       let arms = 0;
