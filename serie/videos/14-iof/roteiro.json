@@ -38,7 +38,7 @@
       {"tipo": "barras", "x": 540, "y": 1330, "w": 960, "h": 700, "valores": [83, 66, 33, 0], "max": 100,
        "cores": ["azul", "verde", "amarelo", "laranja"], "rotulos": ["5 dias", "10 dias", "20 dias", "30 dias"], "tamRotulo": 38,
        "ts": ["4:0.35", "5:0.1", "5:0.6", "6:0.4"], "pre": "R$ ", "textos": ["R$ 83", "R$ 66", "R$ 33", "R$ 0"], "tamValor": 52},
-      {"tipo": "boneco", "cor": "laranja", "num": 4, "x": 900, "y": 1250, "s": 0.5, "festa": "6:0.6", "t": "6:0.55"}
+      {"tipo": "boneco", "cor": "laranja", "num": 4, "x": 900, "y": 1195, "s": 0.5, "festa": "6:0.6", "t": "6:0.55"}
     ]},
     {"fundo": "escuro", "els": [
       {"tipo": "selo", "txt": "IOF", "tam": 120, "cor": "vermelho", "y": 300, "t": "7:0.15", "brilho": true},
