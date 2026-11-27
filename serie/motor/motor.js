@@ -6,11 +6,12 @@
 //   número  -> segundos a partir do início da cena
 //   "n:f"   -> fala n (contando de 1) na fração f da sua duração; aceita "+0.3" no fim
 (function () {
-  const W = 1080, H = 1920, GROUND = 1290;
   const RT = window.ROTEIRO, TP = window.TEMPOS;
   const DURATION = TP.duracao;
   const canvas = document.getElementById('c');
   const ctx = canvas.getContext('2d');
+  // vertical (1080x1920, Shorts) ou horizontal (1920x1080, vídeo longo)
+  const W = canvas.width, H = canvas.height, HZ = W > H, GROUND = Math.round(H * 0.672);
   const FONT = '"Inter", "DejaVu Sans", Arial, sans-serif';
   const EMOJI = '"Noto Color Emoji"';
 
@@ -77,7 +78,7 @@
     const g = ctx.createLinearGradient(0, 0, 0, H);
     g.addColorStop(0, '#0a1230'); g.addColorStop(0.55, '#101d4a'); g.addColorStop(1, '#070b1e');
     ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
-    const r = ctx.createRadialGradient(W / 2, 820, 50, W / 2, 820, 900);
+    const r = ctx.createRadialGradient(W / 2, H * 0.43, 50, W / 2, H * 0.43, Math.max(W, H) * 0.47);
     r.addColorStop(0, 'rgba(80,120,255,0.22)'); r.addColorStop(1, 'rgba(80,120,255,0)');
     ctx.fillStyle = r; ctx.fillRect(0, 0, W, H);
     for (let i = 0; i < 70; i++) {
@@ -105,19 +106,19 @@
     const g = ctx.createLinearGradient(0, 0, 0, GROUND);
     g.addColorStop(0, '#6ec3ff'); g.addColorStop(1, '#d6f0ff');
     ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
-    ctx.save(); ctx.translate(900, 640); ctx.rotate(t * 0.25);
+    ctx.save(); ctx.translate(W - 180, H * 0.333); ctx.rotate(t * 0.25);
     ctx.strokeStyle = 'rgba(255,214,64,0.75)'; ctx.lineWidth = 12; ctx.lineCap = 'round';
     for (let i = 0; i < 12; i++) { ctx.rotate(Math.PI / 6); ctx.beginPath(); ctx.moveTo(88, 0); ctx.lineTo(118, 0); ctx.stroke(); }
     ctx.restore();
-    ctx.fillStyle = '#ffd640'; ctx.beginPath(); ctx.arc(900, 640, 70, 0, 7); ctx.fill();
-    nuvem(((120 + t * 14) % (W + 300)) - 150, 610, 0.9);
-    nuvem(((620 + t * 9) % (W + 300)) - 150, 720, 0.7);
+    ctx.fillStyle = '#ffd640'; ctx.beginPath(); ctx.arc(W - 180, H * 0.333, 70, 0, 7); ctx.fill();
+    nuvem(((120 + t * 14) % (W + 300)) - 150, H * 0.318, 0.9);
+    nuvem(((620 + t * 9) % (W + 300)) - 150, H * 0.375, 0.7);
   }
   function bgClaro(t) {
     ceu(t);
     ctx.fillStyle = '#7ccf6b';
-    ctx.beginPath(); ctx.ellipse(250, GROUND + 40, 520, 200, 0, 0, 7); ctx.fill();
-    ctx.beginPath(); ctx.ellipse(900, GROUND + 60, 560, 230, 0, 0, 7); ctx.fill();
+    ctx.beginPath(); ctx.ellipse(W * 0.23, GROUND + 40, W * 0.48, 200, 0, 0, 7); ctx.fill();
+    ctx.beginPath(); ctx.ellipse(W * 0.83, GROUND + 60, W * 0.52, 230, 0, 0, 7); ctx.fill();
     const gg = ctx.createLinearGradient(0, GROUND, 0, H);
     gg.addColorStop(0, '#56b947'); gg.addColorStop(1, '#2f8a2c');
     ctx.fillStyle = gg; ctx.fillRect(0, GROUND, W, H - GROUND);
@@ -132,7 +133,7 @@
     const cores = ['#94a3c4', '#a5b4d4', '#8796b8', '#b3c0dc'];
     let x = -30;
     for (let i = 0; x < W; i++) {
-      const w = 120 + rand(i + 40) * 110, h = 260 + rand(i + 80) * 420;
+      const w = 120 + rand(i + 40) * 110, h = (260 + rand(i + 80) * 420) * (HZ ? 0.55 : 1);
       ctx.fillStyle = cores[i % 4]; ctx.fillRect(x, GROUND - h, w - 8, h);
       ctx.fillStyle = 'rgba(255,255,255,0.45)';
       for (let wy = GROUND - h + 30; wy < GROUND - 40; wy += 56)
@@ -142,7 +143,7 @@
     ctx.fillStyle = '#9aa3b2'; ctx.fillRect(0, GROUND, W, 70);
     ctx.fillStyle = '#4b5563'; ctx.fillRect(0, GROUND + 70, W, H - GROUND - 70);
     ctx.fillStyle = '#f8fafc';
-    for (let sx = ((-t * 60) % 160 + 160) % 160 - 160; sx < W; sx += 160) ctx.fillRect(sx, GROUND + 230, 80, 12);
+    for (let sx = ((-t * 60) % 160 + 160) % 160 - 160; sx < W; sx += 160) ctx.fillRect(sx, GROUND + (HZ ? 160 : 230), 80, 12);
   }
   const FUNDOS = { escuro: bgEscuro, claro: bgClaro, cidade: bgCidade };
 
@@ -455,13 +456,27 @@
       }
       ctx.restore();
     },
+    // painel fixo com uma linha por personagem; o texto muda nos instantes de "passos"
+    placar(el, t, ci) {
+      const itens = el.itens, w = el.w || 440, lh = el.lh || 58, h = itens.length * lh + 26;
+      rr(0, 0, w, h, 24); ctx.fillStyle = 'rgba(8,12,28,0.84)'; ctx.fill();
+      ctx.lineWidth = 3; ctx.strokeStyle = 'rgba(255,255,255,0.25)'; ctx.stroke();
+      itens.forEach((it, i) => {
+        const y = 13 + lh * (i + 0.5);
+        let txt = it.txt0 || '?', tc = -1e9, c = '#ffffff';
+        for (const p of it.passos || []) { const tp = T(p.t, ci); if (t >= tp) { txt = p.txt; tc = tp; c = p.cor ? cor(p.cor) : '#ffffff'; } }
+        ctx.save(); ctx.translate(36, y); circulo(21, cor(it.cor), it.num); ctx.restore();
+        const k = 1 + 0.3 * (1 - easeOut(prog(t, tc, tc + 0.45)));
+        scaled(72, y, k, () => text(txt, 72, y + 2, el.tam || 30, c, { weight: 800, align: 'left' }));
+      });
+    },
     som() {},
   };
   const SEMPOP = new Set(['contador', 'conta', 'barras', 'grade', 'pizza', 'seta', 'moedas', 'multidao', 'som', 'termometro']);
   const ABSOLUTO = new Set(['seta']);
 
   function estado(el, t, ci) {
-    let x = el.x ?? 540, y = el.y ?? 960, s = el.s ?? 1, rot = el.rot ?? 0, a = 1;
+    let x = el.x ?? W / 2, y = el.y ?? H / 2, s = el.s ?? 1, rot = el.rot ?? 0, a = 1;
     for (const mv of el.move || []) {
       const t0 = T(mv.t, ci), k = easeInOut(prog(t, t0, t0 + (mv.dur ?? 0.7)));
       if (k <= 0) continue;
@@ -500,8 +515,8 @@
     let c = null;
     for (const f of TP.falas) for (const l of f.legendas) if (t >= l.s - 0.05 && t < l.e) c = l;
     if (!c) return;
-    const k = pop(t, c.s - 0.05, 0.25), size = 60, lines = wrapLines(c.t, size, 880, 800);
-    const lh = size * 1.25, bh = lines.length * lh + 56, cy = 1590;
+    const size = HZ ? 48 : 60, k = pop(t, c.s - 0.05, 0.25), lines = wrapLines(c.t, size, HZ ? 1400 : 880, 800);
+    const lh = size * 1.25, bh = lines.length * lh + 56, cy = HZ ? H - 95 : 1590;
     scaled(W / 2, cy, lerp(0.85, 1, clamp(k)), () => {
       ctx.save(); ctx.globalAlpha = clamp(k * 1.5);
       const bw = Math.max(...lines.map(l => largura(l, size, 800)));
@@ -515,11 +530,24 @@
     if (!RT.proximo) return;
     const ul = TP.cenas.length - 1, t0 = TP.cenas[ul] + 0.8;
     const k = pop(t, t0, 0.4); if (k <= 0) return;
-    scaled(W / 2, 1800, k, () => { ctx.save(); ctx.translate(W / 2, 1800); selo('AMANHÃ: ' + RT.proximo, 34, 'rgba(245,179,1,0.95)', PALETA.tinta, 4); ctx.restore(); });
+    const py = HZ ? 60 : 1800;
+    scaled(W / 2, py, k, () => { ctx.save(); ctx.translate(W / 2, py); selo('AMANHÃ: ' + RT.proximo, 34, 'rgba(245,179,1,0.95)', PALETA.tinta, 4); ctx.restore(); });
+  }
+
+  // câmera por cena: keyframes {t, x, y, zoom, dur}; o fundo não se move
+  function camera(cena, t, ci) {
+    let x = W / 2, y = H / 2, z = 1;
+    for (const kf of cena.camera || []) {
+      const t0 = T(kf.t, ci), k = easeInOut(prog(t, t0, t0 + (kf.dur ?? 1.0)));
+      if (k <= 0) continue;
+      x = lerp(x, kf.x ?? x, k); y = lerp(y, kf.y ?? y, k); z = lerp(z, kf.zoom ?? z, k);
+    }
+    return { x, y, z };
   }
 
   // índice de cada elemento (usado para variar flutuação)
   RT.cenas.forEach(c => c.els.forEach((el, i) => { el._i = i; }));
+  (RT.hud || []).forEach((el, i) => { el._i = 100 + i; });
 
   function render(t) {
     t = clamp(t, 0, DURATION - 0.001);
@@ -528,7 +556,11 @@
     const cena = RT.cenas[ci];
     ctx.clearRect(0, 0, W, H);
     (FUNDOS[cena.fundo] || bgEscuro)(t);
+    const cam = camera(cena, t, ci);
+    ctx.save(); ctx.translate(W / 2, H / 2); ctx.scale(cam.z, cam.z); ctx.translate(-cam.x, -cam.y);
     for (const el of cena.els) desenha(el, t, ci);
+    ctx.restore();
+    for (const el of RT.hud || []) desenha(el, t, ci);
     legendas(t);
     proximo(t);
     for (let i = 1; i < TP.cenas.length; i++) {
@@ -543,9 +575,9 @@
   // Lista de sons com o instante de cada um; sonorizar.py sintetiza e mistura.
   function sons() {
     const out = [];
-    const add = (t, som, f, g, extra = {}) => out.push(Object.assign({ t: +t.toFixed(3), som, f, g }, extra));
+    const add = (t, som, f, g, extra = {}) => out.push(Object.assign({ t: +t.toFixed(3), som, f, g: HZ && (som === 'pop' || som === 'tique') ? g * 0.55 : g }, extra));
     for (let i = 1; i < TP.cenas.length; i++) add(TP.cenas[i] - 0.25, 'sopro', 0, 0.55);
-    RT.cenas.forEach((cena, ci) => cena.els.forEach(el => {
+    const proc = (el, ci) => {
       const t0 = T(el.t ?? 0, ci);
       const inicioCena = Math.abs(t0 - TP.cenas[ci]) < 0.12;
       const g = inicioCena ? 0.6 : 1;
@@ -584,13 +616,16 @@
             break;
           case 'pizza': el.fatias.forEach((_, i) => add(el.ts ? T(el.ts[i], ci) : t0 + i * (el.passo ?? 0.7), 'pop', 520 + i * 80, 0.4)); break;
           case 'multidao': (el.linhas || [5]).forEach((_, r) => add(t0 + r * (el.passo ?? 0.25), 'pop', 480 + r * 60, 0.3)); break;
+          case 'placar': for (const it of el.itens) for (const p of it.passos || []) add(T(p.t, ci), 'pop', 640, 0.4); break;
           case 'termometro': (el.niveis || []).forEach(kf => add(T(kf.t, ci), kf.v > (el.v ?? 0.3) ? 'subida' : 'descida', 0, 0.12, { dur: kf.dur ?? 0.9 })); break;
           default: break;
         }
       }
       for (const mv of el.move || []) if (mv.som !== false && (mv.arco || mv.som)) add(T(mv.t, ci), mv.som || 'sopro', 0, 0.28, { dur: mv.dur ?? 0.7 });
       for (const sx of el.sons || []) add(T(sx.t, ci), sx.som, sx.f || 0, sx.g ?? 0.5, { dur: sx.dur });
-    }));
+    };
+    RT.cenas.forEach((cena, ci) => cena.els.forEach(el => proc(el, ci)));
+    (RT.hud || []).forEach(el => proc(el, 0));
     if (RT.proximo) add(TP.cenas[TP.cenas.length - 1] + 0.8, 'pop', 700, 0.35);
     return out.sort((a, b) => a.t - b.t);
   }

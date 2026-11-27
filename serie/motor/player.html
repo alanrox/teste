@@ -16,6 +16,8 @@
   // ?v=pasta/do/video (relativa a este arquivo) carrega dados.js daquela pasta.
   const p = new URLSearchParams(location.search);
   document.write('<script src="' + (p.get('v') || '.') + '/dados.js"><\/script>');
+  // formato horizontal (vídeo longo): 1920x1080
+  document.write('<script>if (window.ROTEIRO && ROTEIRO.formato === "horizontal") { const c = document.getElementById("c"); c.width = 1920; c.height = 1080; c.style.aspectRatio = "16 / 9"; c.style.height = "auto"; c.style.width = "100vw"; }<\/script>');
   document.write('<script src="motor.js"><\/script>');
 </script>
 <script>

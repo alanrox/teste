@@ -24,9 +24,10 @@ echo "folha: $W/folha.png"
 [ "${2:-}" = "so-quadros" ] && exit 0
 
 node "$M/render.js" "$D" "$W/mudo.mp4" "$W/sons.json"
-for v in pm_alex pf_dora; do
+VS=$(python3 -c "import json; print(' '.join(json.load(open('$W/tempos.json')).get('vozes', ['pm_alex', 'pf_dora'])))")
+for v in $VS; do
   python3 "$M/sonorizar.py" "$W/tempos.json" "$W/sons.json" "$W/$v.wav" "$W/mix_$v.wav" "$TOM"
+  case $v in pm_alex) SUF="" ;; pf_dora) SUF="-voz-feminina" ;; *) SUF="-$v" ;; esac
+  ffmpeg -y -loglevel error -i "$W/mudo.mp4" -i "$W/mix_$v.wav" -map 0:v -map 1:a -c:v copy -c:a aac -b:a 192k -movflags +faststart "$D/$NOME$SUF.mp4"
 done
-ffmpeg -y -loglevel error -i "$W/mudo.mp4" -i "$W/mix_pm_alex.wav" -map 0:v -map 1:a -c:v copy -c:a aac -b:a 192k -movflags +faststart "$D/$NOME.mp4"
-ffmpeg -y -loglevel error -i "$W/mudo.mp4" -i "$W/mix_pf_dora.wav" -map 0:v -map 1:a -c:v copy -c:a aac -b:a 192k -movflags +faststart "$D/$NOME-voz-feminina.mp4"
 echo "pronto: $D/$NOME.mp4 ($(ffprobe -v error -show_entries format=duration -of csv=p=0 "$D/$NOME.mp4")s)"

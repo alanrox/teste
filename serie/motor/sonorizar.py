@@ -159,8 +159,24 @@ def almofada(freqs, dur):
     return x * env / len(freqs)
 
 
-def trilha(dur, tom=0):
-    """96 bpm, Dó – Lá menor – Fá – Sol (transposto por `tom`)."""
+def pluck(f, dur=0.6):
+    t = t_(dur)
+    x = sum(np.sin(2 * np.pi * f * h * t) / h for h in (1, 2, 3, 4)) * np.exp(-t / 0.12)
+    return bordas(filtro(x, "lowpass", 3000), 0.002, 0.05)
+
+
+def campainha(f, dur=0.9):
+    return sino(f, dur) * 0.8
+
+
+def marimba_alta(f, dur=0.9):
+    return marimba(f * 2, dur) * 0.7
+
+
+def trilha(dur, tom=0, secoes=()):
+    """96 bpm, Dó – Lá menor – Fá – Sol (transposto por `tom`).
+    Em vídeos com capítulos, o instrumento do arpejo muda a cada capítulo."""
+    timbres = [marimba, pluck, campainha, marimba_alta]
     n = int(SR * dur)
     batida = 60 / 96
     compasso = 4 * batida
@@ -182,7 +198,8 @@ def trilha(dur, tom=0):
             padrao = [2, 1, 0, 1, 2, 0, 1, 0]
         for i, p in enumerate(padrao):
             if p is not None:
-                por(m, marimba(hz(notas[p], tom) * 2), ini + i * batida / 2, 0.20 if i % 2 == 0 else 0.13)
+                sec = sum(1 for x in secoes if x <= ini + i * batida / 2 + 0.01)
+                por(m, timbres[sec % 4](hz(notas[p], tom) * 2), ini + i * batida / 2, 0.20 if i % 2 == 0 else 0.13)
     m = filtro(m[:n], "lowpass", 5200)
     k = np.arange(n)
     return m * np.minimum(k / (0.6 * SR), 1) * np.minimum((n - k) / (1.5 * SR), 1)
@@ -203,7 +220,8 @@ def rms_db(x):
 def main():
     tempos, sons_json, entrada, saida = sys.argv[1:5]
     tom = int(sys.argv[5]) if len(sys.argv) > 5 else 0
-    dur = json.load(open(tempos))["duracao"]
+    tp = json.load(open(tempos))
+    dur = tp["duracao"]
     n = int(SR * dur)
     voz, sr = sf.read(entrada, dtype="float32")
     if voz.ndim > 1:
@@ -213,7 +231,14 @@ def main():
     voz = np.pad(voz, (0, max(0, n - len(voz))))[:n]
     voz = voz / np.abs(voz).max() * 0.85
 
-    musica = trilha(dur, tom)
+    musica = trilha(dur, tom, tp.get("secoes", []))
+    for a, b in tp.get("silencios", []):  # suspense: a trilha some e volta
+        env = np.ones(n)
+        i0, i1, rampa = int((a - 0.15) * SR), int(b * SR), int(0.25 * SR)
+        env[max(0, i0): i1] = 0
+        env[max(0, i0 - rampa): max(0, i0)] = np.linspace(1, 0, max(0, i0) - max(0, i0 - rampa))
+        env[i1: i1 + rampa] = np.linspace(0, 1, len(env[i1: i1 + rampa]))
+        musica = musica * env
     musica *= 0.11 / np.abs(musica).max()
     fx = np.zeros(n)
     for s in json.load(open(sons_json)):

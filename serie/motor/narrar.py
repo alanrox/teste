@@ -38,6 +38,8 @@ def main():
     modelo, vozes, pasta, trabalho = sys.argv[1:5]
     rt = json.load(open(os.path.join(pasta, "roteiro.json"), encoding="utf-8"))
     falas_rt = rt["falas"]
+    global VOZES
+    VOZES = rt.get("vozes", VOZES)  # vozes do narrador (uma versão de vídeo por voz)
     tts = None
     sr = 24000
     cache = os.path.join(trabalho, "cache")
@@ -46,19 +48,20 @@ def main():
     for v in VOZES:
         for item in falas_rt:
             vel = item.get("vel", VELOCIDADE)
-            chave = hashlib.sha1(f"{v}|{vel}|{item['fala']}".encode()).hexdigest()[:16]
+            voz = item.get("voz", v)  # personagem com voz própria
+            chave = hashlib.sha1(f"{voz}|{vel}|{item['fala']}".encode()).hexdigest()[:16]
             arq = os.path.join(cache, chave + ".npy")
             if os.path.exists(arq):           # reaproveita falas que não mudaram
                 clipes[v].append(np.load(arq))
                 continue
             if tts is None:
                 tts = Kokoro(modelo, vozes)
-            audio, sr = tts.create(item["fala"], voice=v, speed=vel, lang="pt-br")
+            audio, sr = tts.create(item["fala"], voice=voz, speed=vel, lang="pt-br")
             audio = aparar(audio, sr)
             np.save(arq, audio)
             clipes[v].append(audio)
 
-    falas, cenas, t = [], {}, RESPIRO
+    falas, cenas, t, silencios = [], {}, RESPIRO, []
     for i, item in enumerate(falas_rt):
         dur = max(len(clipes[v][i]) for v in VOZES) / sr
         if i > 0:
@@ -66,6 +69,7 @@ def main():
             t += item.get("pausa", 0)
         if item["cena"] not in cenas:
             cenas[item["cena"]] = 0.0 if i == 0 else round(t - RESPIRO, 3)
+            t += item.get("atraso", 0)
         legs = item.get("legendas") or [item["fala"]]
         total = sum(len(x) for x in legs)
         legendas, a = [], t
@@ -76,10 +80,15 @@ def main():
         legendas[-1]["e"] = round(t + dur + PAUSA_FALA * 0.8, 3)
         falas.append({"cena": item["cena"], "s": round(t, 3), "e": round(t + dur, 3), "legendas": legendas})
         t += dur
+        if item.get("suspense"):  # silêncio dramático depois da fala (a trilha some)
+            silencios.append([round(t, 3), round(t + item["suspense"], 3)])
+            t += item["suspense"]
     n_cenas = len(rt["cenas"])
     assert sorted(cenas) == list(range(n_cenas)), f"cenas sem fala: {set(range(n_cenas)) - set(cenas)}"
     duracao = math.ceil((t + rt.get("cauda", 1.2)) / COMPASSO) * COMPASSO
-    tempos = {"duracao": duracao, "cenas": [cenas[i] for i in range(n_cenas)], "falas": falas}
+    tempos = {"duracao": duracao, "cenas": [cenas[i] for i in range(n_cenas)], "falas": falas,
+              "silencios": silencios, "vozes": VOZES,
+              "secoes": [cenas[i] for i in range(n_cenas) if rt["cenas"][i].get("capitulo")]}
     with open(os.path.join(pasta, "dados.js"), "w", encoding="utf-8") as f:
         f.write("// Gerado por narrar.py a partir de roteiro.json. Não edite à mão.\n")
         f.write("window.ROTEIRO = " + json.dumps(rt, ensure_ascii=False) + ";\n")
