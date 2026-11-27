@@ -18,6 +18,9 @@ import numpy as np
 import soundfile as sf
 from kokoro_onnx import Kokoro
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from sotaque import fonemas  # noqa: E402  (ajustes de pronúncia do português do Brasil)
+
 VOZES = ["pm_alex", "pf_dora"]
 VELOCIDADE = 1.15
 PAUSA_FALA = 0.22
@@ -40,6 +43,8 @@ def main():
     falas_rt = rt["falas"]
     global VOZES
     VOZES = rt.get("vozes", VOZES)  # vozes do narrador (uma versão de vídeo por voz)
+    br = rt.get("sotaque", "br") == "br"
+    vel_padrao = rt.get("velocidade", VELOCIDADE)
     tts = None
     sr = 24000
     cache = os.path.join(trabalho, "cache")
@@ -47,16 +52,19 @@ def main():
     clipes = {v: [] for v in VOZES}
     for v in VOZES:
         for item in falas_rt:
-            vel = item.get("vel", VELOCIDADE)
+            vel = item.get("vel", vel_padrao)
             voz = item.get("voz", v)  # personagem com voz própria
-            chave = hashlib.sha1(f"{voz}|{vel}|{item['fala']}".encode()).hexdigest()[:16]
+            chave = hashlib.sha1(f"{voz}|{vel}|{'br|' if br else ''}{item['fala']}".encode()).hexdigest()[:16]
             arq = os.path.join(cache, chave + ".npy")
             if os.path.exists(arq):           # reaproveita falas que não mudaram
                 clipes[v].append(np.load(arq))
                 continue
             if tts is None:
                 tts = Kokoro(modelo, vozes)
-            audio, sr = tts.create(item["fala"], voice=voz, speed=vel, lang="pt-br")
+            if br:
+                audio, sr = tts.create(fonemas(item["fala"]), voice=voz, speed=vel, is_phonemes=True)
+            else:
+                audio, sr = tts.create(item["fala"], voice=voz, speed=vel, lang="pt-br")
             audio = aparar(audio, sr)
             np.save(arq, audio)
             clipes[v].append(audio)
@@ -88,7 +96,10 @@ def main():
     duracao = math.ceil((t + rt.get("cauda", 1.2)) / COMPASSO) * COMPASSO
     tempos = {"duracao": duracao, "cenas": [cenas[i] for i in range(n_cenas)], "falas": falas,
               "silencios": silencios, "vozes": VOZES,
-              "secoes": [cenas[i] for i in range(n_cenas) if rt["cenas"][i].get("capitulo")]}
+              "secoes": [cenas[i] for i in range(n_cenas) if rt["cenas"][i].get("capitulo")],
+              # clima musical de cada cena (leve, normal, tenso, final) e cenas que entram com impacto
+              "climas": [[cenas[i], rt["cenas"][i]["clima"]] for i in range(n_cenas) if rt["cenas"][i].get("clima")],
+              "impactos": [cenas[i] for i in range(n_cenas) if rt["cenas"][i].get("impacto")]}
     with open(os.path.join(pasta, "dados.js"), "w", encoding="utf-8") as f:
         f.write("// Gerado por narrar.py a partir de roteiro.json. Não edite à mão.\n")
         f.write("window.ROTEIRO = " + json.dumps(rt, ensure_ascii=False) + ";\n")

@@ -205,6 +205,135 @@ def trilha(dur, tom=0, secoes=()):
     return m * np.minimum(k / (0.6 * SR), 1) * np.minimum((n - k) / (1.5 * SR), 1)
 
 
+# ---------- bateria e transições (vídeos longos) ----------
+def kick():
+    t = t_(0.35)
+    f = 45 + 85 * np.exp(-t / 0.05)
+    return bordas(np.sin(2 * np.pi * np.cumsum(f) / SR) * np.exp(-t / 0.16))
+
+
+def caixa_bateria():
+    t = t_(0.22)
+    ruido = filtro(rng.standard_normal(len(t)), "bandpass", [1200, 6000]) * np.exp(-t / 0.07)
+    return bordas(0.7 * ruido + 0.5 * np.sin(2 * np.pi * 190 * t) * np.exp(-t / 0.05))
+
+
+def chimbal(aberto=False):
+    t = t_(0.25 if aberto else 0.05)
+    x = filtro(rng.standard_normal(len(t)), "highpass", 7000) * np.exp(-t / (0.09 if aberto else 0.015))
+    return bordas(x, 0.001, 0.01)
+
+
+def prato():
+    t = t_(1.6)
+    return bordas(filtro(rng.standard_normal(len(t)), "highpass", 4000) * np.exp(-t / 0.5), 0.002, 0.2)
+
+
+def riser(dur=1.6):
+    """Ruído que sobe de grave para agudo e cresce: prepara uma entrada."""
+    t = t_(dur)
+    k = t / dur
+    r = rng.standard_normal(len(t))
+    x = (filtro(r, "bandpass", [400, 1200]) * (1 - k) + filtro(r, "bandpass", [2500, 8000]) * k) * k ** 2
+    return bordas(x, 0.05, 0.02)
+
+
+PROG = {"maior": [("C3", ["C4", "E4", "G4"]), ("A2", ["A3", "C4", "E4"]), ("F2", ["F3", "A3", "C4"]), ("G2", ["G3", "B3", "D4"])],
+        "menor": [("A2", ["A3", "C4", "E4"]), ("F2", ["F3", "A3", "C4"]), ("D2", ["D3", "F3", "A3"]), ("E2", ["E3", "G#3", "B3"])]}
+
+
+def trilha_climas(dur, tom, climas, impactos, secoes):
+    """Trilha com clima por trecho: leve (sem bateria), normal (bateria), tenso (menor,
+    pulso grave) e final (um tom acima, bateria cheia), mais subidas e impactos nas entradas."""
+    n = int(SR * dur)
+    batida = 60 / 96
+    compasso = 4 * batida
+    m = np.zeros(n + 2 * SR)
+    K, S, H, HA = kick(), caixa_bateria(), chimbal(), chimbal(True)
+    timbres = [marimba, pluck, campainha, marimba_alta]
+
+    def clima_em(t):
+        atual = "leve"
+        for a, c in climas:
+            if a <= t + 0.01:
+                atual = c
+        return atual
+
+    for c in range(int(round(dur / compasso))):
+        ini = c * compasso
+        cl = clima_em(ini)
+        tt = tom + (2 if cl == "final" else 0)
+        baixo, notas = PROG["menor" if cl == "tenso" else "maior"][c % 4]
+        por(m, almofada([hz(x, tt) for x in notas], compasso + 0.5), ini,
+            {"leve": 0.30, "normal": 0.24, "tenso": 0.32, "final": 0.28}[cl])
+
+        def grave(at, g, dd=1.6):
+            t = t_(batida * dd)
+            por(m, bordas(np.sin(2 * np.pi * hz(baixo, tt) * t) * np.exp(-t / 0.5)), ini + at * batida, g)
+        if cl == "leve":
+            grave(0, 0.4, 3.5)
+        elif cl == "tenso":
+            for i in range(8):
+                grave(i * 0.5, 0.30 if i % 2 == 0 else 0.2, 0.45)
+        elif cl == "final":
+            for a in (0, 1.5, 2, 3):
+                grave(a, 0.42)
+        else:
+            for a in (0, 2):
+                grave(a, 0.42)
+
+        if cl == "leve":
+            padrao = [0, None, 2, None, 1, None, 2, None]
+        elif cl == "tenso":
+            padrao = [0, None, 1, None, 2, None, 1, None]
+        elif (c // 4) % 2 == 0:
+            padrao = [0, 1, 2, 1, 0, 2, 1, 2]
+        else:
+            padrao = [2, 1, 0, 1, 2, 0, 1, 0]
+        sec = sum(1 for x in secoes if x <= ini + 0.01)
+        timbre = pluck if cl == "tenso" else marimba_alta if cl == "final" else timbres[sec % 4]
+        for i, p in enumerate(padrao):
+            if p is not None:
+                por(m, timbre(hz(notas[p], tt) * 2), ini + i * batida / 2, 0.20 if i % 2 == 0 else 0.13)
+        if cl == "final" and c % 2 == 0:
+            por(m, campainha(hz(notas[0], tt) * 4, 0.8), ini, 0.08)
+
+        if cl == "normal":
+            for b in (0, 2):
+                por(m, K, ini + b * batida, 0.55)
+            for b in (1, 3):
+                por(m, S, ini + b * batida, 0.28)
+            for i in range(8):
+                por(m, H, ini + i * batida / 2, 0.10 if i % 2 else 0.06)
+        elif cl == "tenso":
+            por(m, K, ini, 0.6)
+            por(m, K, ini + 2.5 * batida, 0.45)
+            por(m, S, ini + 2 * batida, 0.3)
+        elif cl == "final":
+            for b in range(4):
+                por(m, K, ini + b * batida, 0.5)
+            for b in (1, 3):
+                por(m, S, ini + b * batida, 0.3)
+            for i in range(8):
+                por(m, HA if i % 2 else H, ini + i * batida / 2, 0.08 if i % 2 else 0.07)
+
+    for ti in impactos:  # subida antes da cena e impacto na entrada
+        por(m, riser(1.6), ti - 1.6, 0.35)
+        por(m, K, ti, 0.9)
+        por(m, prato(), ti, 0.25)
+    m = filtro(m[:n], "lowpass", 9000)
+    k = np.arange(n)
+    return m * np.minimum(k / (0.6 * SR), 1) * np.minimum((n - k) / (1.5 * SR), 1)
+
+
+def acorde_destaque(tom=0):
+    """Acorde curto depois de um silêncio de suspense."""
+    x = sum(sino(hz(nota, tom) * 2, 1.4) for nota in ("C4", "E4", "G4")) / 3
+    y = np.zeros(len(x))
+    y[: len(kick())] += kick() * 0.8
+    return x + y
+
+
 def envelope(x, janela=0.05):
     n = int(janela * SR)
     env = np.sqrt(np.convolve(x ** 2, np.ones(n) / n, mode="same"))
@@ -231,7 +360,10 @@ def main():
     voz = np.pad(voz, (0, max(0, n - len(voz))))[:n]
     voz = voz / np.abs(voz).max() * 0.85
 
-    musica = trilha(dur, tom, tp.get("secoes", []))
+    if tp.get("climas"):
+        musica = trilha_climas(dur, tom, tp["climas"], tp.get("impactos", []), tp.get("secoes", []))
+    else:
+        musica = trilha(dur, tom, tp.get("secoes", []))
     for a, b in tp.get("silencios", []):  # suspense: a trilha some e volta
         env = np.ones(n)
         i0, i1, rampa = int((a - 0.15) * SR), int(b * SR), int(0.25 * SR)
@@ -239,6 +371,10 @@ def main():
         env[max(0, i0 - rampa): max(0, i0)] = np.linspace(1, 0, max(0, i0) - max(0, i0 - rampa))
         env[i1: i1 + rampa] = np.linspace(0, 1, len(env[i1: i1 + rampa]))
         musica = musica * env
+    if tp.get("silencios"):
+        musica *= 0.11 / np.abs(musica).max()
+        for a, b in tp["silencios"]:
+            por(musica, acorde_destaque(tom) * 0.09, b)
     musica *= 0.11 / np.abs(musica).max()
     fx = np.zeros(n)
     for s in json.load(open(sons_json)):

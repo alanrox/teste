@@ -470,6 +470,19 @@
         scaled(72, y, k, () => text(txt, 72, y + 2, el.tam || 30, c, { weight: 800, align: 'left' }));
       });
     },
+    // cartão de explicação: "Na prática", "Erro comum", "Atenção"...
+    cartao(el) {
+      const w = el.w || 720, tam = el.tam || 34, pad = 26, c = cor(el.cor || 'ouro');
+      const linhas = [];
+      String(el.txt).split('\n').forEach(par => wrapLines(par, tam, w - pad * 2 - 24, 700).forEach(l => linhas.push(l)));
+      const lh = tam * 1.32, th = el.titulo ? tam * 1.45 : 0, h = pad * 2 + th + linhas.length * lh;
+      rr(-w / 2, -h / 2, w, h, 22); ctx.fillStyle = 'rgba(8,12,28,0.92)'; ctx.fill();
+      ctx.lineWidth = 3; ctx.strokeStyle = 'rgba(255,255,255,0.18)'; ctx.stroke();
+      rr(-w / 2, -h / 2, 12, h, 6); ctx.fillStyle = c; ctx.fill();
+      let y = -h / 2 + pad;
+      if (el.titulo) { text((el.icone ? el.icone + '  ' : '') + el.titulo, -w / 2 + pad + 16, y + tam * 0.55, tam * 0.85, c, { weight: 900, align: 'left' }); y += th; }
+      linhas.forEach(l => { text(l, -w / 2 + pad + 16, y + lh / 2, tam, '#ffffff', { weight: 700, align: 'left' }); y += lh; });
+    },
     som() {},
   };
   const SEMPOP = new Set(['contador', 'conta', 'barras', 'grade', 'pizza', 'seta', 'moedas', 'multidao', 'som', 'termometro']);
@@ -616,6 +629,7 @@
             break;
           case 'pizza': el.fatias.forEach((_, i) => add(el.ts ? T(el.ts[i], ci) : t0 + i * (el.passo ?? 0.7), 'pop', 520 + i * 80, 0.4)); break;
           case 'multidao': (el.linhas || [5]).forEach((_, r) => add(t0 + r * (el.passo ?? 0.25), 'pop', 480 + r * 60, 0.3)); break;
+          case 'cartao': add(t0, 'pop', 600, 0.45); add(t0 + 0.02, 'sino', 1319, 0.18); break;
           case 'placar': for (const it of el.itens) for (const p of it.passos || []) add(T(p.t, ci), 'pop', 640, 0.4); break;
           case 'termometro': (el.niveis || []).forEach(kf => add(T(kf.t, ci), kf.v > (el.v ?? 0.3) ? 'subida' : 'descida', 0, 0.12, { dur: kf.dur ?? 0.9 })); break;
           default: break;
