@@ -371,11 +371,13 @@ def main():
         env[max(0, i0 - rampa): max(0, i0)] = np.linspace(1, 0, max(0, i0) - max(0, i0 - rampa))
         env[i1: i1 + rampa] = np.linspace(0, 1, len(env[i1: i1 + rampa]))
         musica = musica * env
+    # trilha com bateria tem picos maiores: mira um nível um pouco mais alto para soar presente
+    alvo = 0.16 if tp.get("climas") else 0.11
     if tp.get("silencios"):
-        musica *= 0.11 / np.abs(musica).max()
+        musica *= alvo / np.abs(musica).max()
         for a, b in tp["silencios"]:
             por(musica, acorde_destaque(tom) * 0.09, b)
-    musica *= 0.11 / np.abs(musica).max()
+    musica *= alvo / np.abs(musica).max()
     fx = np.zeros(n)
     for s in json.load(open(sons_json)):
         fn = EFEITOS[s["som"]]
